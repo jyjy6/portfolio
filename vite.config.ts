@@ -9,6 +9,6 @@ export default defineConfig({
     vuetify({ autoImport: true }), // vuetify 플러그인 추가
   ],
   server: {
-    port: 5174, // 여기를 원하는 포트로 바꿔주면 됩니다!
+    port: 5173, // 여기를 원하는 포트로 바꿔주면 됩니다!
   },
 });

@@ -9,7 +9,7 @@
       title: '글작성 기능',
       icon: 'mdi-check-circle-outline',
       contents:
-        'TipTap 기반  WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부',
+        'TipTap 기반 WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부',
     },
     {
       title: '페이지 관리기능',
@@ -19,7 +19,7 @@
     {
       title: '동영상, 오디오 제공',
       icon: 'mdi-check-circle-outline',
-      contents: '라디오 웹사이트의 ',
+      contents: '라디오 웹사이트의 플레이목록, 스트리밍',
     },
     {
       title: 'AWS S3 영상, 이미지 업로드 기능(axios 사용).',
@@ -39,7 +39,7 @@
     {
       title: 'Docker 및 유지보수 환경 구축',
       icon: 'mdi-check-circle-outline',
-      contents: '어쩌구',
+      contents: 'Docker compose, nginx',
     },
   ];
 
@@ -71,7 +71,7 @@
   <v-container class="pa-10">
     <h1 class="text-center mb-10">NUXT3 Project</h1>
     <v-card class="mb-10 pa-6">
-      <v-btn :to="'/vuepring/develop'" style="margin-right: 10px" color="red"
+      <v-btn :to="'/nuxt3/develop'" style="margin-right: 10px" color="red"
         >상세개발로그</v-btn
       >
       <v-tooltip
@@ -83,7 +83,7 @@
         <template #activator="{ props }" style="">
           <v-btn
             v-bind="props"
-            href="https://ec2-15-164-166-39.ap-northeast-2.compute.amazonaws.com/"
+            href="http://ec2-3-35-20-226.ap-northeast-2.compute.amazonaws.com/"
             target="_blank"
             color="primary"
             class="mr-4"
@@ -106,16 +106,16 @@
       <p>
         Vue3+Spring 프로젝트를 끝내고 서버사이드 렌더링 기술도 갖춰두고 싶었는데
         React사용자가 NextJS를 쓰듯 Vue는 NuxtJS를 사용한다고 하기에 선택했다.
-        <br />
-        컨텐츠적인 측면으론 본인은 12월 시력교정수술로인해 약 3~4개월간 컴퓨터나
-        TV 스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 일본어 청해
-        능력이라도 강화하고자 일본 웹 라디오(onsen.com)를 자주 듣게 되었고 그
+        <br /><br />
+        컨텐츠적인 측면으론 본인은 12월 시력교정수술로 인해 약 3~4개월간 컴퓨터나
+        스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 외국어 청해
+        능력이라도 강화하고자 일본 웹 라디오(onsen.com)를 자주 듣게 되었고 그 웹
         페이지와 비슷한 페이지를 만들면 역량강화에 도움이 되겠다고 생각하여
         시작했다.
       </p>
 
       <v-tooltip
-        text="물론 express+mongoDB의 개발경험도 있고 고민도 많이 했지만 NUXT3가 훨씬 더 편한 설정, 정해진 구조(유지보수 하기 좋은)로 설계돼있는 프레임워크여서 선택했다."
+        text="물론 express+mongoDB의 기초개발경험도 있고 고민도 많이 했지만 NUXT3가 훨씬 더 편한 설정, 정해진 구조(유지보수 하기 좋은)로 설계돼있는 프레임워크여서 선택했다."
         location="bottom"
         max-width="500px"
       >
@@ -134,9 +134,17 @@
           <v-list-item-icon>
             <v-icon>{{ feature.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-content>
-            {{ feature.title }}
-          </v-list-item-content>
+          <v-tooltip
+            :text="feature.contents"
+            location="right"
+            style="max-width: 70%"
+          >
+            <template #activator="{ props }" style="">
+              <v-list-item-content v-bind="props">
+                {{ feature.title }}
+              </v-list-item-content>
+            </template>
+          </v-tooltip>
         </v-list-item>
       </v-list>
     </v-card>

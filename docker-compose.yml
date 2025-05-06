@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro  # 인증서 공유
+    env_file:
+      - .env.development
+    networks:
+      - mynet1
+
+networks:
+  mynet1:
+    driver: bridge
