@@ -9,7 +9,7 @@
     style="color: white; background-color: black; min-height: 100vh; min-width: 100vh"
   >
     <div class="text-center">
-      <h1 style="font-family: 'Poppins', sans-serif; font-size: 40px">I'm Jung Juneyoung</h1>
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 40px">I'm Jung Juneyoung 수정됐나확인용</h1>
       <p style="font-family: 'Poppins', sans-serif">FullStack WebProgrammer</p>
       <hr style="width: 500px; margin: 16px auto; border: 1px solid white" />
 
