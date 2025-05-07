@@ -87,7 +87,7 @@
         <template #activator="{ props }">
           <v-btn
             v-bind="props"
-            href="http://ec2-3-35-20-226.ap-northeast-2.compute.amazonaws.com/"
+            href="http://ec2-43-201-50-221.ap-northeast-2.compute.amazonaws.com"
             target="_blank"
             color="primary"
             class="ma-2"
