@@ -23,8 +23,14 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-            cd ~/portfolio
-            git pull origin main
-            docker compose down
-            docker compose up -d --build
+          set -e  # 에러 발생 시 즉시 종료
+          cd ~/portfolio
+          echo "📦 Pulling latest code..."
+          git pull origin main
+          echo "🐳 Restarting Docker..."
+          docker compose down
+          docker compose up -d --build
+          echo "✅ Deployment finished."
           EOF
+    
+
