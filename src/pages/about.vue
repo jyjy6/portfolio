@@ -44,8 +44,9 @@
         {
           label: 'AWS EC2',
           description:
-            '가상 서버 서비스. Git Action과의 연계도 가능하지만 EC2의 메모리 한계로 빌드된 프로젝트의 Docker파일을 옮겨서 EC2인스턴스 에서 직접 실행하거나 git clone하는 방식을 주로 사용했음.',
+            '가상 서버 서비스. Git Action과의 연계도 가능하지만 EC2의 메모리 한계로 빌드된 프로젝트의 Docker파일을 옮겨서 EC2인스턴스 에서 직접 실행하거나 git clone하는 방식을 주로 사용했음. 이 프로젝트는 Github Action으로 CI/CD를 구현했음.',
         },
+        { label: 'Github Action', description: 'CI/CD 자동화 플랫폼. 지금 보고계신 이 페이지가 Github Action+EC2 조합으로 배포됨.' },
         { label: 'OAuth', description: 'SNS 로그인 인증 프로토콜. Google 서비스를 주로 사용' },
         {
           label: 'nginx',
@@ -105,8 +106,10 @@
     <h1 class="text-center pa-10 d-inline-flex align-center">
       About Me
       <v-tooltip
-        text="각 기술 위에 마우스를 올리면 상세내용을 확인할 수 있습니다"
+        text="각 기술 위에 마우스를 올리거나 클릭하면 상세내용을 확인할 수 있습니다"
         location="bottom"
+        open-on-hover
+        open-on-click
       >
         <template #activator="{ props }">
           <v-icon small class="ml-2" v-bind="props"> mdi-information </v-icon>
@@ -121,7 +124,7 @@
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in frontEndStacks" :key="item.label" cols="auto">
-              <v-tooltip :text="item.description">
+              <v-tooltip open-on-hover open-on-click :text="item.description">
                 <template #activator="{ props }">
                   <v-chip v-bind="props" class="my-chip">{{ item.label }}</v-chip>
                 </template>
@@ -138,7 +141,12 @@
           <h5 class="sub-title">{{ section.section }}</h5>
           <v-row>
             <v-col v-for="chip in section.chips" :key="chip.label" cols="auto">
-              <v-tooltip :text="chip.description">
+              <v-tooltip
+                :text="chip.description"
+                location="bottom"
+                open-on-hover
+                open-on-click
+              >
                 <template #activator="{ props }">
                   <v-chip v-bind="props" class="my-chip">{{ chip.label }}</v-chip>
                 </template>
@@ -154,7 +162,12 @@
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in etcStacks" :key="item.label" cols="auto">
-              <v-tooltip :text="item.description">
+              <v-tooltip
+                :text="item.description"
+                location="bottom"
+                open-on-hover
+                open-on-click
+              >
                 <template #activator="{ props }">
                   <v-chip v-bind="props" class="my-chip">{{ item.label }}</v-chip>
                 </template>
