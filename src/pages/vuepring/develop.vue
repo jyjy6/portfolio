@@ -345,7 +345,10 @@
 
 <template>
   <v-container class="pa-10">
-    <h1 class="text-center mb-10">Vue3 + Spring Project DevelopmentLog</h1>
+    <h1 class="text-center mb-10">
+      <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
+      <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
+      Vue3 + Spring Project DevelopmentLog</h1>
 
     <!-- 나무위키 스타일의 섹션 목록 -->
     <v-card class="mb-8 wiki-toc" dark>

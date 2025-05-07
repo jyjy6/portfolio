@@ -120,7 +120,7 @@
     <v-expansion-panels v-model="panels" multiple>
       <!-- Front-End -->
       <v-expansion-panel value="front">
-        <v-expansion-panel-title> <h2>Front-End</h2></v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title">Front-End</v-expansion-panel-title>
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in frontEndStacks" :key="item.label" cols="auto">
@@ -136,7 +136,7 @@
 
       <!-- Back-End -->
       <v-expansion-panel value="back">
-        <v-expansion-panel-title> <h2>Back-End</h2> </v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title">Back-End</v-expansion-panel-title>
         <v-expansion-panel-text v-for="section in backEndStacks" :key="section.section">
           <h5 class="sub-title">{{ section.section }}</h5>
           <v-row>
@@ -158,7 +158,7 @@
 
       <!-- 기타 기술, 자격증 -->
       <v-expansion-panel value="etc">
-        <v-expansion-panel-title> <h2>기타 기술, 자격증</h2> </v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title">기타 기술, 자격증</v-expansion-panel-title>
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in etcStacks" :key="item.label" cols="auto">
@@ -179,11 +179,11 @@
 
       <!-- 소개 및 목표 -->
       <v-expansion-panel value="intro">
-        <v-expansion-panel-title> <h2>간략소개, 목표</h2> </v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title">간략소개, 목표</v-expansion-panel-title>
         <v-expansion-panel-text>
           AI 시대이기 때문에 개발자의 밥그릇이 위험하다. 라는 말이 많이 나오지만 산업혁명 마다 그 말
           나오지 않았을까..?<br /><br />
-          사회 변화에 맞추어 순응, 적응하려하지 않는 사람이 도태된다고 생각하고<br /><br />부족한
+          사회 변화에 적응하려하지 않는 사람이 도태된다고 생각하고<br /><br />부족한
           인간의 지능, 기억력을 AI가 메꿔준다면 <br /><br /> 그걸 활용하는 센스를 발휘하는게
           인간이 AI시대에 맞춰 해야할 일이라고 생각합니다🚀
           <br />
@@ -203,5 +203,18 @@
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+
+  .expansion-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+  }
+
+  .expansion-title:hover {
+    color: #45a049;
   }
 </style>

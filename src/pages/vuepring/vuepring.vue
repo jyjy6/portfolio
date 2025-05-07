@@ -65,7 +65,13 @@
 
 <template>
   <v-container class="pa-10">
-    <h1 class="text-center mb-10">Vue3 + Spring Project</h1>
+    <h1 class="text-center mb-10">
+  <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
+  <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
+  Vue3+
+  Spring Project
+</h1>
+
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/vuepring/develop'" class="ma-2" color="red">상세개발로그</v-btn
       >
@@ -197,4 +203,5 @@
   <router-view></router-view>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

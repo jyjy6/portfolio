@@ -247,7 +247,9 @@
 
 <template>
   <v-container class="pa-10">
-    <h1 class="text-center mb-10">NUXT3 Project DevelopmentLog</h1>
+    <h1 class="text-center mb-10">
+      <v-icon icon="mdi-nuxt" class="mr-2" size="x-large"></v-icon>
+      NUXT3 Project DevelopmentLog</h1>
 
     <!-- 나무위키 스타일의 섹션 목록 -->
     <v-card class="mb-8 wiki-toc" dark>

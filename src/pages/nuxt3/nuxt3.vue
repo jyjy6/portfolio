@@ -69,7 +69,9 @@
 
 <template>
   <v-container class="pa-10">
-    <h1 class="text-center mb-10">NUXT3 Project</h1>
+    <h1 class="text-center mb-10">
+      <v-icon icon="mdi-nuxt" class="mr-2" size="x-large"></v-icon>
+      NUXT3 Project</h1>
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/nuxt3/develop'" class="ma-2" color="red"
         >상세개발로그</v-btn

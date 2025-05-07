@@ -18,6 +18,10 @@ theme.global.name.value = 'dark'
               <v-icon start icon="mdi-at" class="mr-2"></v-icon>
               jungjuneyoung6@gmail.com
             </p>
+            <p class="text-subtitle-1 mt-4">
+              <v-icon start icon="mdi-github" class="mr-2"></v-icon>
+              <a href="https://github.com/jyjy6" target="_blank" class="github-link">jyjy6</a>
+            </p>
           </v-card-text>
         </v-card>
       </v-col>
@@ -52,6 +56,16 @@ theme.global.name.value = 'dark'
 
 .text-subtitle-1 {
   color: #9e9e9e;
+}
+
+.github-link {
+  color: #9e9e9e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.github-link:hover {
+  color: #4CAF50;
 }
 
 .v-card-text {
