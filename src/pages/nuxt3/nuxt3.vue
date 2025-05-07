@@ -132,7 +132,7 @@
     </v-card>
 
     <v-card class="mb-10 pa-6">
-      <h3 class="text-h5 mb-4">🚀주요 기능</h3>
+      <h4 class="mb-4">🚀주요 기능</h4>
       <v-list>
         <v-list-item v-for="(feature, index) in features" :key="index">
           <v-list-item-icon>
@@ -155,7 +155,7 @@
       </v-list>
     </v-card>
     <v-card class="mb-10 pa-6">
-      <h3 class="text-h5 mb-4">🛠️ Front-End 사용 기술</h3>
+      <h4 class="mb-4">🛠️ Front-End 사용 기술</h4>
       <div class="d-flex flex-wrap">
         <v-chip
           v-for="(tech, index) in frontTechStack"
@@ -168,7 +168,7 @@
     </v-card>
 
     <v-card class="mb-10 pa-6">
-      <h3 class="text-h5 mb-4">🛠️ Back-End 사용 기술</h3>
+      <h4 class="mb-4">🛠️ Back-End 사용 기술</h4>
       <div class="d-flex flex-wrap">
         <v-chip
           v-for="(tech, index) in backTechStack"
