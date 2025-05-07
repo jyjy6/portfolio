@@ -224,15 +224,15 @@
         '딱히 못할 이유도 없다고 생각해서 시작했다. \n\n' +
         '우선 nginx의 도커파일과 nginx.conf, 프론트, 백엔드의 Dockerfile을 작성하고, docker-compose.yml을 작성한다.\n\n' +
         'https인증관련 pem 파일을 생성하고 nginx.conf에 설정도 했다. 개발할땐 docker-compose.dev.yml파일을사용, 배포할땐 docker-compose.yml을 사용했다.' +
-        '이후 Github Action 방법을 숙지했고, 사용하려고했으나 눈물나게도 프리티어 t2.micro 인스턴스는 너무 낮은 성능으로 CI/CD 파이프라인을 구현하기 어려웠다. 메모리 부족으로 4억번정도의 오류와 수많은 빌드시간을 소모했다.' +
-        '어떻게 문제를 해결할까 AI 친구들과 같이 고민한 결과 EC2인스턴스에서 직접 git clone을하고 CLI명령어로 env파일을 복사하는 등의 방법으로 배포하는데에 성공했다.\n\n' +
+        '이후 Github Action 방법을 숙지했고, 사용하려고했으나 눈물나게도 프리티어 t2.micro 인스턴스는 너무 낮은 성능으로 CI/CD 파이프라인을 구현하기 어려웠다.\n\n 메모리 부족으로 4억번정도의 오류와 수많은 빌드시간을 소모했는데.' +
+        '어떻게 문제를 해결할까 AI와 함께 고민한 결과 EC2인스턴스에서 직접 git clone을하고 CLI명령어로 env파일을 복사하는 등의 방법으로 배포하는데에 성공했다.\n\n' +
         '하지만 이는 사실상 임시방편. docker를 사용해서 멀티스테이징을 해도 이 역시 빌드시간이 꽤 걸렸고 효율적인 CI/CD 구현을 위해선 역시 Github Action등이 필요하다고 생각했다. 방법은 이미 숙지해놨기때문에 구현에는 문제가 없다고 생각하기에 언젠간 구현해보고자 한다.\n\n' +
         '또, nginx를 사용한 기능도 여러가지 공부할 수 있었다. https 인증, 리버스프록시, 로드밸런서, IP로그출력 및 제한 등. 향후 프로젝트에선 적극적으로 사용 해볼 예정이다.',
-      isSpecial: false,
+      isSpecial: true,
       specialStyle: {},
       spDescription: {
-        image: [''],
-        comment: '',
+        image: [],
+        comment: '사실 지금보고계신 이 웹페이지가 Github Action+EC2 조합으로 배포됨.',
       },
       imageRight: false,
     },

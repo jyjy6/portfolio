@@ -164,7 +164,7 @@
       specialStyle: {},
       spDescription: {
         image: ['https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/deployGithubAction.PNG'],
-        comment: 'Github Action의 처참한 현장.. 그래도 성공하는것도 있는걸 보면 확실히 사용하는 큰그림은 터득했다.',
+        comment: 'Github Action의 처참한 현장.. 그래도 성공하는것도 있는걸 보면 확실히 사용하는 큰그림은 터득했다. \n 결국 지금보고계신 이 웹페이지를 Git Action+EC2로 배포하는데에 성공했다.',
       },
       imageRight: false,
     },
