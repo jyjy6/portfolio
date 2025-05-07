@@ -76,8 +76,7 @@
       <v-btn :to="'/vuepring/develop'" class="ma-2" color="red">상세개발로그</v-btn
       >
       <v-tooltip
-        text="https 인증서가 Let's encrypt를 사용한 것이 아닌 자체적으로 만든
-        페이크인증서이기에 고급->계속하기 눌러서 이동"
+        text="현재 인스턴스 꺼져있음.."
         location="bottom"
         style="max-width: 70%"
         open-on-hover
@@ -86,7 +85,7 @@
         <template #activator="{ props }" style="">
           <v-btn
             v-bind="props"
-            href="https://ec2-15-164-166-39.ap-northeast-2.compute.amazonaws.com/"
+            href=""
             target="_blank"
             color="primary"
             class="ma-2"
