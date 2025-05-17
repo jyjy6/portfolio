@@ -88,11 +88,11 @@
         <template #activator="{ props }">
           <v-btn
             v-bind="props"
-            href="http://ec2-43-201-50-221.ap-northeast-2.compute.amazonaws.com"
+            href="https://nuxt-onsen-1mkdru8pc-jung-juneyoungs-projects.vercel.app/"
             target="_blank"
             color="primary"
             class="ma-2"
-            >사이트 방문(현재 접속불가)
+            >사이트 방문
           </v-btn>
         </template>
       </v-tooltip>
