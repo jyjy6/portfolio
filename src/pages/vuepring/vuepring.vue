@@ -66,17 +66,17 @@
 <template>
   <v-container class="pa-10">
     <h1 class="text-center mb-10">
-  <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
-  <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
-  Vue3+
-  Spring Project
-</h1>
+      <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
+      <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
+      Vue3+ Spring Project
+    </h1>
 
     <v-card class="mb-10 pa-6">
-      <v-btn :to="'/vuepring/develop'" class="ma-2" color="red">상세개발로그</v-btn
+      <v-btn :to="'/vuepring/develop'" class="ma-2" color="red"
+        >상세개발로그</v-btn
       >
       <v-tooltip
-        text="현재 인스턴스 꺼져있음.."
+        text="현재 인스턴스 꺼져있음..->EC2 요금이슈"
         location="bottom"
         style="max-width: 70%"
         open-on-hover
@@ -89,7 +89,7 @@
             target="_blank"
             color="primary"
             class="ma-2"
-            >사이트 방문
+            >사이트 방문(현재 접속불가)
           </v-btn>
         </template>
       </v-tooltip>
@@ -202,5 +202,4 @@
   <router-view></router-view>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
