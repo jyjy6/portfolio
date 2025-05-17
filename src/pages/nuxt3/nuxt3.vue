@@ -71,13 +71,14 @@
   <v-container class="pa-10">
     <h1 class="text-center mb-10">
       <v-icon icon="mdi-nuxt" class="mr-2" size="x-large"></v-icon>
-      NUXT3 Project</h1>
+      NUXT3 Project
+    </h1>
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/nuxt3/develop'" class="ma-2" color="red"
         >상세개발로그</v-btn
       >
       <v-tooltip
-        text="https 인증서가 Let's encrypt를 사용한 것이 아닌 자체적으로 만든
+        text="(현재 접속불가-> EC2 요금 이슈)https 인증서가 Let's encrypt를 사용한 것이 아닌 자체적으로 만든
         페이크인증서이기에 고급->계속하기 눌러서 이동"
         location="right"
         style="max-width: 70%"
@@ -91,7 +92,7 @@
             target="_blank"
             color="primary"
             class="ma-2"
-            >사이트 방문
+            >사이트 방문(현재 접속불가)
           </v-btn>
         </template>
       </v-tooltip>
@@ -111,8 +112,8 @@
         Vue3+Spring 프로젝트를 끝내고 서버사이드 렌더링 기술도 갖춰두고 싶었는데
         React사용자가 NextJS를 쓰듯 Vue는 NuxtJS를 사용한다고 하기에 선택했다.
         <br /><br />
-        컨텐츠적인 측면으론 본인은 12월 시력교정수술로 인해 약 3~4개월간 컴퓨터나
-        스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 외국어 청해
+        컨텐츠적인 측면으론 본인은 12월 시력교정수술로 인해 약 3~4개월간
+        컴퓨터나 스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 외국어 청해
         능력이라도 강화하고자 일본 웹 라디오(onsen.com)를 자주 듣게 되었고 그 웹
         페이지와 비슷한 페이지를 만들면 역량강화에 도움이 되겠다고 생각하여
         시작했다.
@@ -125,7 +126,7 @@
         open-on-hover
         open-on-click
       >
-        <template #activator="{ props }" >
+        <template #activator="{ props }">
           <v-chip style="margin-top: 30px; margin-right: 10px" v-bind="props"
             >express.js 안씀?</v-chip
           >
