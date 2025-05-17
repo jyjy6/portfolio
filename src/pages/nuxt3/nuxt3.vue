@@ -78,8 +78,7 @@
         >상세개발로그</v-btn
       >
       <v-tooltip
-        text="(현재 접속불가-> EC2 요금 이슈)https 인증서가 Let's encrypt를 사용한 것이 아닌 자체적으로 만든
-        페이크인증서이기에 고급->계속하기 눌러서 이동"
+        text="(현재 접속가능 -> EC2에서 Vercel로 배포 플랫폼 변경)"
         location="right"
         style="max-width: 70%"
         open-on-hover
