@@ -11,7 +11,8 @@
     },
     {
       label: 'Vuetify',
-      description: 'Vue용 Material Design UI 라이브러리. Tailwind보다 훨씬 좋다고 생각한다',
+      description:
+        'Vue용 Material Design UI 라이브러리. Tailwind보다 훨씬 좋다고 생각한다',
     },
     {
       label: 'TypeScript',
@@ -36,18 +37,29 @@
           description:
             '토큰 기반 인증 방식. refreshToken, accessToken을 이용한 Stateless 로그인 구현 가능',
         },
-        { label: 'socket.io', description: 'WebSocket 실시간 통신. 채팅(상담)기능 구현' },
+        {
+          label: 'socket.io',
+          description: 'WebSocket 실시간 통신. 채팅(상담)기능 구현',
+        },
         {
           label: 'AWS S3',
-          description: '클라우드 스토리지 서비스. 파일업로드 기능은 주로 이 서비스를 사용함',
+          description:
+            '클라우드 스토리지 서비스. 파일업로드 기능은 주로 이 서비스를 사용함',
         },
         {
           label: 'AWS EC2',
           description:
             '가상 서버 서비스. Git Action과의 연계도 가능하지만 EC2의 메모리 한계로 빌드된 프로젝트의 Docker파일을 옮겨서 EC2인스턴스 에서 직접 실행하거나 git clone하는 방식을 주로 사용했음. 이 프로젝트는 Github Action으로 CI/CD를 구현했음.',
         },
-        { label: 'Github Action', description: 'CI/CD 자동화 플랫폼. 지금 보고계신 이 페이지가 Github Action+EC2 조합으로 배포됨.' },
-        { label: 'OAuth', description: 'SNS 로그인 인증 프로토콜. Google 서비스를 주로 사용' },
+        {
+          label: 'Github Action',
+          description:
+            'CI/CD 자동화 플랫폼. 지금 보고계신 이 페이지가 Github Action+EC2 조합으로 배포됨.',
+        },
+        {
+          label: 'OAuth',
+          description: 'SNS 로그인 인증 프로토콜. Google 서비스를 주로 사용',
+        },
         {
           label: 'nginx',
           description:
@@ -58,7 +70,10 @@
     {
       section: 'SpringBoot',
       chips: [
-        { label: 'Spring Security', description: 'Spring 기반 보안 프레임워크. 최신버전 사용.' },
+        {
+          label: 'Spring Security',
+          description: 'Spring 기반 보안 프레임워크. 최신버전 사용.',
+        },
         { label: 'Oracle', description: '오라클 데이터베이스' },
         {
           label: 'MySQL',
@@ -69,6 +84,16 @@
           label: 'JPA(Hibernate)',
           description:
             'ORM 프레임워크. Java Persistence API, 자바 어플리케이션에서 관계형 데이터베이스를 사용하는 방식을 정의한 인터페이스이고, Hibernate는 그걸 구현한 구현체인데 요즘은 그냥 둘 다 동의어로 쓰나보다. 개발 초창기엔 Derived Query Method가 혁명처럼 느껴졌다.',
+        },
+        {
+          label: 'JPA Specification',
+          description:
+            'JPA의 쿼리 생성 방식. 쿼리 메서드 방식이 아닌 메서드 인자를 통해 쿼리를 생성하는 방식. 쿼리 조건에 따라 쿼리를 생성하는 방식이라 쿼리 조건이 복잡해질수록 코드 가독성이 떨어진다는 단점이 있지만 쿼리 조건이 간단할 때는 편리하다.',
+        },
+        {
+          label: 'Redis',
+          description:
+            '메모리 기반 키-값 저장소. 캐싱, 세션 관리, 메시징 등 다양한 용도로 사용된다. 최근 프로젝트에서 캐싱 기능을 구현하는데 사용했다. 아직 초기단계라고 생각해서 더욱 학습하고싶다',
         },
       ],
     },
@@ -87,7 +112,7 @@
       description:
         '리눅스 컨테이너 기술. 휘발성이 강하고, 가볍고, 여러개의 서비스 구동하기에 용이하다. Docker-compose 까지 활용가능. NUXT프로젝트에선 도커파일을 tar.gz 압축해서 EC2로 scp -i 명령어로 전송 후 docker-compose로 해당 이미지를 사용하는 등 정말 활용법이 무궁무진한 좋은 기술 이라고 생각한다.',
     },
-    { label: 'Git', description: '주로 Trunk-based 사용합니다.' },
+    { label: 'Git', description: 'Trunk-based 사용합니다.' },
     {
       label: 'Git Action',
       description:
@@ -95,7 +120,8 @@
     },
     {
       label: 'JLPT N1',
-      description: '국제 일본어 능력 시험 최고 등급. 177/180점. 일본 1년 거주 경험있음',
+      description:
+        '국제 일본어 능력 시험 최고 등급. 177/180점. 일본 1년 거주 경험있음',
     },
     { label: '정보처리산업기사', description: '2024년도 과정평가형 취득' },
   ];
@@ -120,13 +146,17 @@
     <v-expansion-panels v-model="panels" multiple>
       <!-- Front-End -->
       <v-expansion-panel value="front">
-        <v-expansion-panel-title class="expansion-title">Front-End</v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title"
+          >Front-End</v-expansion-panel-title
+        >
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in frontEndStacks" :key="item.label" cols="auto">
               <v-tooltip open-on-hover open-on-click :text="item.description">
                 <template #activator="{ props }">
-                  <v-chip v-bind="props" class="my-chip">{{ item.label }}</v-chip>
+                  <v-chip v-bind="props" class="my-chip">{{
+                    item.label
+                  }}</v-chip>
                 </template>
               </v-tooltip>
             </v-col>
@@ -136,8 +166,13 @@
 
       <!-- Back-End -->
       <v-expansion-panel value="back">
-        <v-expansion-panel-title class="expansion-title">Back-End</v-expansion-panel-title>
-        <v-expansion-panel-text v-for="section in backEndStacks" :key="section.section">
+        <v-expansion-panel-title class="expansion-title"
+          >Back-End</v-expansion-panel-title
+        >
+        <v-expansion-panel-text
+          v-for="section in backEndStacks"
+          :key="section.section"
+        >
           <h5 class="sub-title">{{ section.section }}</h5>
           <v-row>
             <v-col v-for="chip in section.chips" :key="chip.label" cols="auto">
@@ -148,7 +183,9 @@
                 open-on-click
               >
                 <template #activator="{ props }">
-                  <v-chip v-bind="props" class="my-chip">{{ chip.label }}</v-chip>
+                  <v-chip v-bind="props" class="my-chip">{{
+                    chip.label
+                  }}</v-chip>
                 </template>
               </v-tooltip>
             </v-col>
@@ -158,7 +195,9 @@
 
       <!-- 기타 기술, 자격증 -->
       <v-expansion-panel value="etc">
-        <v-expansion-panel-title class="expansion-title">기타 기술, 자격증</v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title"
+          >기타 기술, 자격증</v-expansion-panel-title
+        >
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in etcStacks" :key="item.label" cols="auto">
@@ -169,7 +208,9 @@
                 open-on-click
               >
                 <template #activator="{ props }">
-                  <v-chip v-bind="props" class="my-chip">{{ item.label }}</v-chip>
+                  <v-chip v-bind="props" class="my-chip">{{
+                    item.label
+                  }}</v-chip>
                 </template>
               </v-tooltip>
             </v-col>
@@ -179,13 +220,16 @@
 
       <!-- 소개 및 목표 -->
       <v-expansion-panel value="intro">
-        <v-expansion-panel-title class="expansion-title">간략소개, 목표</v-expansion-panel-title>
+        <v-expansion-panel-title class="expansion-title"
+          >간략소개, 목표</v-expansion-panel-title
+        >
         <v-expansion-panel-text>
-          AI 시대이기 때문에 개발자의 밥그릇이 위험하다. 라는 말이 많이 나오지만 산업혁명 마다 그 말
-          나오지 않았을까..?<br /><br />
+          AI 시대이기 때문에 개발자의 밥그릇이 위험하다. 라는 말이 많이 나오지만
+          산업혁명 마다 그 말 나오지 않았을까..?<br /><br />
           사회 변화에 적응하려하지 않는 사람이 도태된다고 생각하고<br /><br />부족한
-          인간의 지능, 기억력을 AI가 메꿔준다면 <br /><br /> 그걸 활용하는 센스를 발휘하는게
-          인간이 AI시대에 맞춰 해야할 일이라고 생각합니다🚀
+          인간의 지능, 기억력을 AI가 메꿔준다면 <br /><br />
+          그걸 활용하는 센스를 발휘하는게 인간이 AI시대에 맞춰 해야할 일이라고
+          생각합니다🚀
           <br />
           <br />
         </v-expansion-panel-text>
@@ -210,7 +254,7 @@
     font-weight: 600;
     font-size: 1.2rem;
     letter-spacing: 0.5px;
-    color: #4CAF50;
+    color: #4caf50;
     transition: color 0.3s ease;
   }
 

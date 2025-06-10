@@ -232,7 +232,8 @@
       specialStyle: {},
       spDescription: {
         image: [],
-        comment: '사실 지금보고계신 이 웹페이지가 Github Action+EC2 조합으로 배포됨.',
+        comment:
+          '사실 지금보고계신 이 웹페이지가 Github Action+EC2 조합으로 배포됨.',
       },
       imageRight: false,
     },
@@ -348,7 +349,8 @@
     <h1 class="text-center mb-10">
       <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
       <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
-      Vue3 + Spring Project DevelopmentLog</h1>
+      Vue3 + Spring Project DevelopmentLog
+    </h1>
 
     <!-- 나무위키 스타일의 섹션 목록 -->
     <v-card class="mb-8 wiki-toc" dark>

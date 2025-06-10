@@ -24,7 +24,9 @@ const routes: Array<RouteRecordRaw> = [
     path: '/vuepring',
     name: 'Vuepring',
     component: () =>
-      import(/* webpackChunkName: "vuepring" */ '../pages/vuepring/vuepring.vue'),
+      import(
+        /* webpackChunkName: "vuepring" */ '../pages/vuepring/vuepring.vue'
+      ),
   },
   {
     path: '/vuepring/develop',
@@ -46,6 +48,20 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(
         /* webpackChunkName: "nuxt3develop" */ '../pages/nuxt3/develop.vue'
+      ),
+  },
+  {
+    path: '/imgbell',
+    name: 'Imgbell',
+    component: () =>
+      import(/* webpackChunkName: "imgbell" */ '../pages/imgbell/imgbell.vue'),
+  },
+  {
+    path: '/imgbell/develop',
+    name: 'ImgbellDevelop',
+    component: () =>
+      import(
+        /* webpackChunkName: "imgbelldevelop" */ '../pages/imgbell/develop.vue'
       ),
   },
 ];
