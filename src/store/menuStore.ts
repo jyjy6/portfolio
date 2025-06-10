@@ -13,6 +13,11 @@ export const useMenuStore = defineStore('menu', () => {
     { title: 'About Me', icon: 'mdi-account', route: '/about' },
     { title: 'Vue3+Spring Project', icon: 'mdi-leaf', route: '/vuepring' },
     { title: 'NUXT3 Project', icon: 'mdi-nuxt', route: '/nuxt3' },
+    {
+      title: 'ImageBell(Vue3+SpringBoot)',
+      icon: 'mdi-image-filter-none',
+      route: '/imgbell',
+    },
     { title: 'CONTACT', icon: 'mdi-email', route: '/contact' },
   ];
 
