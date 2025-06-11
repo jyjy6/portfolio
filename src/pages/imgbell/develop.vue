@@ -246,43 +246,41 @@
       },
       imageRight: false,
     },
-    // {
-    //   id: 7,
-    //   title: '7. 어드민 페이지 관리기능',
-    //   images: [
-    //     {
-    //       image: '/images/7.socket/chat1.PNG',
-    //       comment: '1.필요한 기능을 정한다',
-    //     },
-    //     {
-    //       image: '/images/7.socket/chat2.PNG',
-    //       comment:
-    //         '2. 코드짜다가 길거나 성가신 코드가있으면 한글로 먼저 필요한 코드를 정의한다(내가먼저 이해)',
-    //     },
-    //     {
-    //       image: '/images/7.socket/chat3.PNG',
-    //       comment:
-    //         '3. AI를 사용해서 코드를 반환받고 향후 수정한다(빈ArrayList말고 FORBIDDEN에러를 return 한다던지..)',
-    //     },
-    //     {
-    //       image: '/images/7.socket/chat4.webp',
-    //       comment: '실시간 상담 시연',
-    //     },
-    //   ],
-    //   description:
-    //     '대 고객 서비스에서 자주보이는 채팅기능도 구현해봤다.  \n' +
-    //     '우선 본인은 AI활용을 적극적으로 사용하는데, 기본적으로 좌측 절차를 걸친 활용법을 많이 사용한다.\n 무턱대고 코드 복붙은 강아지나 고양이도 가능하기 때문에 먼저 내 머리속으로 구현하고자 하는 기능을 확립하고 코드의 흐름을 이해하는게 가장 중요하다고 생각한다. \n\n' +
-    //     '상담기능의 구조자체는 운영자와 회원의 1:1대화. 예외상황으로 A유저가 B유저의 상담을 볼 수 없게끔 처리, 기존에 상담한적이 있던 회원은 이전상담내역을 가져오는 등의 처리를 생각했다.\n' +
-    //     '\n 실시간상담은 그냥 Websocket 혹은 socket.io라는 라이브러리를 쓰는 것 이기때문에 코드구현은 딱히 할게 없었지만 코드를 보고 이해하는데 신경을 썼다.' +
-    //     '\n\n 개발경력 1년이 채 안된 지금 단계의 본인은 라이브러리를 그냥 가져다 쓰고 사용방법을 이해하는 정도의 개발자지만 시간과 노력을들여서 라이브러리 코드 자체를 보고 이해할 수 있는 좀 더 근본적인 수준의 코드를 다를 줄 아는 개발자가 되어야겠다고 느꼈다.',
-    //   isSpecial: false,
-    //   specialStyle: {},
-    //   spDescription: {
-    //     image: ['/images/newfront.PNG'],
-    //     comment: '프론트 뉴스더보기 코드.',
-    //   },
-    //   imageRight: false,
-    // },
+    {
+      id: 7,
+      title: '7. 어드민 페이지 관리기능',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminDashboard.webp',
+          comment:
+            '대시보드 시연영상 이미지 디테일, 최근 작성된 게시판 글을 간단하게 확인',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminMemberlist.webp',
+          comment:
+            '유저 관리 시연영상. 검색어 입력후 0.5초 후에 자동으로 검색목록을 불러온다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminImageList.webp',
+          comment: '이미지 관리 시연영상. 간단하게 공개->비공개로 변경',
+        },
+      ],
+      description:
+        '역시 역사와 전통의 운영자페이지. 간단하게 대시보드, 유저, 이미지관리 기능을 구현했다.' +
+        '\n\n 대시보드는 간단하게 이미지 랭킹, 최근 작성된 게시판 글을 확인할 수 있다 최초 이미지 기능을 만들 때 이미지 디테일 컴포넌트를 분리해놔서 재사용가능이 손쉬웠다. ' +
+        '\n\n 유저 관리는 간단하게 검색어 입력후 0.5초 후에 자동으로 검색목록을 불러온다. 그렇다 NUXT프로젝트의 코드를 그대로 가져다썼다. 복붙 -> 좋은말로 재사용이야말로 개발의 시작이야 끝 아니겠나 하지만 Type수정과, 스프링 API는 새로 설계해야했기때문에 이 역시도 코드 재사용에 대해 학습할 수 있었다.' +
+        '\n\n 이미지관리도 페이지네이션, 이미지 검색 툴을 재사용하는 등 효율적으로 구현했다. 영상에 보이는 기능상으론 공개/비공개 등의 변경을 하고있는데 명시적인삭제(isDelete = true 등)로 업로드한 유저에게도 안보이게 한다던가 여러가지 확장을 할 수 있을 것 같다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: ['/images/newfront.PNG'],
+        comment: '프론트 뉴스더보기 코드.',
+      },
+      imageRight: false,
+    },
     // {
     //   id: 8,
     //   title: '8. 배포 AWS EC2, Docker',
@@ -306,15 +304,7 @@
     //     },
     //   ],
     //   description:
-    //     '내 집 컴퓨터를 24시간 켜놔도 좋겠지만 편리하게 AWS EC2 프리티어를 사용해서 배포하자. \n' +
-    //     '사실 공부 초기엔 배포란걸 신입에게 시킬리도 없고 설정마다 달라서 의미가 없지않을까? 라고도 생각했지만 결국엔 EC2인스턴스를 사용하는법은 숙지해야하고 ' +
-    //     '딱히 못할 이유도 없다고 생각해서 시작했다. \n\n' +
-    //     '우선 nginx의 도커파일과 nginx.conf, 프론트, 백엔드의 Dockerfile을 작성하고, docker-compose.yml을 작성한다.\n\n' +
-    //     'https인증관련 pem 파일을 생성하고 nginx.conf에 설정도 했다. 개발할땐 docker-compose.dev.yml파일을사용, 배포할땐 docker-compose.yml을 사용했다.' +
-    //     '이후 Github Action 방법을 숙지했고, 사용하려고했으나 눈물나게도 프리티어 t2.micro 인스턴스는 너무 낮은 성능으로 CI/CD 파이프라인을 구현하기 어려웠다.\n\n 메모리 부족으로 4억번정도의 오류와 수많은 빌드시간을 소모했는데.' +
-    //     '어떻게 문제를 해결할까 AI와 함께 고민한 결과 EC2인스턴스에서 직접 git clone을하고 CLI명령어로 env파일을 복사하는 등의 방법으로 배포하는데에 성공했다.\n\n' +
-    //     '하지만 이는 사실상 임시방편. docker를 사용해서 멀티스테이징을 해도 이 역시 빌드시간이 꽤 걸렸고 효율적인 CI/CD 구현을 위해선 역시 Github Action등이 필요하다고 생각했다. 방법은 이미 숙지해놨기때문에 구현에는 문제가 없다고 생각하기에 언젠간 구현해보고자 한다.\n\n' +
-    //     '또, nginx를 사용한 기능도 여러가지 공부할 수 있었다. https 인증, 리버스프록시, 로드밸런서, IP로그출력 및 제한 등. 향후 프로젝트에선 적극적으로 사용 해볼 예정이다.',
+    //     '내 집 컴퓨터를 24시간 켜놔도 좋겠지만 편리하게 AWS EC2 프리티어를 사용해서 배포하자. \n',
     //   isSpecial: true,
     //   specialStyle: {},
     //   spDescription: {
