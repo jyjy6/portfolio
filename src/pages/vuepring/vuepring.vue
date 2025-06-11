@@ -131,6 +131,8 @@
         하지만 Vue3는 꾸준한 업데이트, 정해져 있는 코딩방식으로 인한 타 개발자와의 협업+유지보수 용이, 간단한 코드 구조 등 많은 장점이 보였기때문에 선택함"
         location="bottom"
         max-width="500px"
+        open-on-hover
+        open-on-click
       >
         <template #activator="{ props }" style="">
           <v-chip style="margin-top: 30px; margin-right: 10px" v-bind="props"
@@ -143,6 +145,8 @@
         text="Spring Boot는 선점효과뿐만아니라 Java의 객체지향프로그래밍 학습과 대규모 트래픽, 복잡한 트랜잭션을 견디는 데 최적화돼 있고 에러 나도 구글링하면 대부분 해결됨 → 유지보수 쉬움. Controller-Service-Repository 구조로 계층화하기 쉬워서 협업도 체계적이다."
         location="bottom"
         max-width="500px"
+        open-on-hover
+        open-on-click
       >
         <template #activator="{ props }">
           <v-chip style="margin-top: 30px" v-bind="props"
@@ -163,6 +167,8 @@
             :text="feature.contents"
             location="right"
             style="max-width: 70%"
+            open-on-hover
+            open-on-click
           >
             <template #activator="{ props }" style="">
               <v-list-item-content v-bind="props">

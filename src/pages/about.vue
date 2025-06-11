@@ -152,7 +152,12 @@
         <v-expansion-panel-text>
           <v-row>
             <v-col v-for="item in frontEndStacks" :key="item.label" cols="auto">
-              <v-tooltip open-on-hover open-on-click :text="item.description">
+              <v-tooltip
+                :text="item.description"
+                location="bottom"
+                open-on-hover
+                open-on-click
+              >
                 <template #activator="{ props }">
                   <v-chip v-bind="props" class="my-chip">{{
                     item.label
