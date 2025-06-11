@@ -134,6 +134,8 @@
         text="그냥 별 이유는 없고 스프링부트에 종 모양이 있어서.. 따왔다.."
         location="bottom"
         max-width="500px"
+        open-on-hover
+        open-on-click
       >
         <template #activator="{ props }" style="">
           <v-chip style="margin-top: 30px; margin-right: 10px" v-bind="props"
@@ -154,6 +156,8 @@
             :text="feature.contents"
             location="right"
             style="max-width: 70%"
+            open-on-hover
+            open-on-click
           >
             <template #activator="{ props }" style="">
               <v-list-item-content v-bind="props">
