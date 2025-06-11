@@ -241,8 +241,11 @@
       isSpecial: true,
       specialStyle: {},
       spDescription: {
-        image: [''],
-        comment: '',
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6-1RedisRecentRefactoring.PNG',
+        ],
+        comment:
+          '레디스 활용 리팩토링코드. 기존의 최근 본 목록은 Image의 id를 리스트로 모아서 -> 해당 id에 맞는 이미지들을 API요청 -> DB에서 리스트로 불러왔는데 / 레디스를 활용해서 API, DB조회를 스킵하고 다이렉트로 ImageURL을 레디스에 저장하고 그 URL을 직접 렌더링하는 방식으로 개선했다. 물론 기존에 저장하던 이미지 id도 어디에선가 사용할 수 있을것 같아서 JSON형식으로 Value를 저장했다.',
       },
       imageRight: false,
     },
