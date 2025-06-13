@@ -24,6 +24,11 @@
         'TipTap 기반  WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부, 댓글 기능',
     },
     {
+      title: '댓글 알림 기능',
+      icon: 'mdi-check-circle-outline',
+      contents: 'Websocket을 활용한 댓글 실시간 스낵바 알림기능',
+    },
+    {
       title: 'Redis를 활용한 일간, 주간랭킹, 최근 본 항목',
       icon: 'mdi-check-circle-outline',
       contents: 'DB사용대신 Redis를 활용하여 빠르고 효율좋게 데이터 처리',
@@ -63,6 +68,7 @@
     'SpringSecurity',
     'OAuth2',
     'Redis',
+    'Websocket',
     'JPA Specification',
     'AWS S3',
     'AWS EC2',

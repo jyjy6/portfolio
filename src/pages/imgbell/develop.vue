@@ -205,6 +205,90 @@
       imageRight: false,
     },
     {
+      id: 5.1,
+      title:
+        '5-1. Websocket을 활용한 댓글 실시간 알림기능 + Cursor 등 AI, MCP활용',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8.WebSocketDemonstrate.webp',
+          comment:
+            '댓글 알림 기능 시연영상. 스마트폰으로 내 개발서버 들어와서 댓글을 달아보니 스낵바가 출력되고 클릭 시 해당 게시글 이동도 가능하다. 디자인은 다르지만 dcinside에서 보는 그거 처럼 구현.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketReady.PNG',
+          comment:
+            'Websocket 시험페이지. 댓글 알림 기능을 구현하기 전에 먼저 웹소켓 연결을 위한 시험 코드를 작성하고 연결해봤다. 시작부터 100을 내려고하기보단 1~2부터 시험해보는게 이해도, 기능구현도 더 빠르다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8.WebSocketCursor.PNG',
+          comment:
+            '커서 사용. 기존에 시험페이지에서는 단순 String으로 알림을 받았는데, 커서를 사용해서 JSON형태로 변경 후 받은 데이터를 가공하여 해당 댓글이 달린 글목록 페이지로 이동하게 하는등 여러 기능을 구현했다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketNotion.PNG',
+          comment: '커서MCP를 사용해서 Notion에 배운내용 정리하라고 지시',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketNotionPageview.PNG',
+          comment: 'Notion에 정상적으로 저장됐다.',
+        },
+      ],
+      description:
+        '댓글알림 기능도 구현했다. 처음엔 Redis와 WebSocket 둘 중 뭘로 구현할까 고민했는데 알림기능따윈 굳이 Redis에 저장까지해서 낭비할 필요가 없다고 판단했기에 WebSocket을 활용하기로 했다.' +
+        '\n\n 예전 프로젝트에 실시간 기능을구현하면서 사용한 코드를 참고할까 싶었는데 0에서 시작하는게 더 실력향상에 도움될 것 같아서 그러지 않았다. 알림기능의 큰 흐름부터 생각하면 A유저의 게시물에 B유저가 댓글을 단다-> 댓글이 API를 통해 저장되면서 알림도 쏴준다-> A유저가 알림을 받는다 라는 큰 그림이라고 생각했고 AI에 그렇게 지시했다. 예전 프로젝트에서 하던 실시간 채팅의 코드와는 완전히 다른 코드를 구현했는데, 결국 프론트<->백엔드로 통신하는 큰그림만 이해하면 이런 라이브러리? 프레임워크? 는 사용법을 알고있는 AI에게 간단한것부터 구현하게하고 그 이후 내가 상세하게 지시하거나 코드수정을 통해 결과물을 냈다.' +
+        '\n\n 처음엔 정말간단한 메세지만 받는방식 -> 서버와의 통신을확인 -> 잘되면 JSON등의 형식으로 바꿔서 받은 데이터를 프론트에서 가공하는방식.' +
+        '\n\n 구현자체엔 큰 어려움은 없었지만 Cursor에서 구현해준 코드에서 확장성있다고 하는 Callback함수를 활용한 코드의 흐름을 이해하는데에 시간을 더 쓴 것 같다.' +
+        '\n\n 학습이 끝나고 MCP를 활용하여 Notion에 정리하게 했다. 근데 이 MCP를 사용하는것도 상세하게 지시해야하는(예를들어 날짜지정해, XX데이터베이스 써 라던가)건 사람이라서 결국엔 세간에서 MCP MCP 호들갑 떨 정도는 "아직까지는" 아닌것 같았다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [],
+        comment: '',
+      },
+      imageRight: false,
+    },
+    {
+      id: 5.2,
+      title: '5-2. MCP 활용-> Google Keep 에서 Notion으로 데이터 이동',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp1.PNG',
+          comment: 'Google Takeout의 데이터들을 분석중인 모습',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp4.PNG',
+          comment:
+            '이런 상세한거 빼먹고 자기 맘대로 날짜지정하고 이상한걸 자기 맘대로 하려고한다. 역시 사람이 지시해야한다 아직까진',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp7.PNG',
+          comment:
+            '업로드성공 날짜는 역시나 지 마음대로 막 지정했지만 크게 중요하진않아서 추후 MCP로 Notion에 저장할때 날짜까지 꼭 지정하라고 지시내려야겠다.',
+        },
+      ],
+      description:
+        '이번 프로젝트랑 직접적인 상관은 없지만 MCP를 사용하기 시작했다. 딱히 쓸만한게 없고 Notion정도가 낫다고 생각해서 Google Keep에서 Notion으로 학습내역을 이전해봤다.' +
+        '\n\n 먼저 Google Keep에 있는 데이터들을 Google Takeout으로 JSON파일로 변환하고 그걸 Cursor AI에게 제공-> MCP를 활용해서 Notion에 데이터베이스 형식으로 저장하게 했다. 근데 세상에서 호들갑 떠는것처럼 정교하진 않아서 상세지시같은거 하나하나 해야했고 Cursor의 MCP정책때문에 매번 run tool버튼도 눌러줘야했다. 아니 좋은건 알겠는데 완전 자동화는 아니잖아.. 유튜버들 자중들좀 했으면 한다' +
+        '\n\n 어찌됐든 처음부터 끝까지 데이터 이전방법을 AI와 상담하고 필요한걸 내가 맞춰줘가면서 성공적으로 이동이 성공했고 더욱 더 가독성 좋은 학습내용 데이터베이스가 완성됐다. 만족한다 전체적으로',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcpgif.webp',
+        ],
+        comment: 'Cursor AI가 MCP를 활용해서 Notion으로 데이터가 채워지는 모습',
+      },
+      imageRight: false,
+    },
+    {
       id: 6,
       title: '6. 레디스 활용 -> 이미지랭킹, 최근 본 항목',
       images: [
@@ -273,7 +357,7 @@
       ],
       description:
         '역시 역사와 전통의 운영자페이지. 간단하게 대시보드, 유저, 이미지관리 기능을 구현했다.' +
-        '\n\n 대시보드는 간단하게 이미지 랭킹, 최근 작성된 게시판 글을 확인할 수 있다 최초 이미지 기능을 만들 때 이미지 디테일 컴포넌트를 분리해놔서 재사용가능이 손쉬웠다. ' +
+        '\n\n 대시보드는 간단하게 이미지 랭킹, 최근 작성된 게시판 글을 확인할 수 있다. 오늘 방문자는 일단 들어올 사람이 없어서 오늘 가입한 회원 수로 대체 테스트했다. 최초 이미지 기능을 만들 때 이미지 디테일 컴포넌트를 분리해놔서 재사용가능이 손쉬웠다. ' +
         '\n\n 유저 관리는 간단하게 검색어 입력후 0.5초 후에 자동으로 검색목록을 불러온다. 그렇다 NUXT프로젝트의 코드를 그대로 가져다썼다. 복붙 -> 좋은말로 재사용이야말로 개발의 시작이야 끝 아니겠나 하지만 Type수정과, 스프링 API는 새로 설계해야했기때문에 이 역시도 코드 재사용에 대해 학습할 수 있었다.' +
         '\n\n 이미지관리도 페이지네이션, 이미지 검색 툴을 재사용하는 등 효율적으로 구현했다. 영상에 보이는 기능상으론 공개/비공개 등의 변경을 하고있는데 명시적인삭제(isDelete = true 등)로 업로드한 유저에게도 안보이게 한다던가 여러가지 확장을 할 수 있을 것 같다.',
       isSpecial: false,
