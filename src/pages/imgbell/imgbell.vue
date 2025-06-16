@@ -5,7 +5,12 @@
       icon: 'mdi-check-circle-outline',
       contents: ' Google, Kakao OAuth2 로그인 지원',
     },
-
+    {
+      title: 'Google Gemini API를 활용한 이미지 자동 분석, 태그 추가 기능',
+      icon: 'mdi-check-circle-outline',
+      contents:
+        '이미지를 분석하고 태그제공, 클라이언트가 태그추가 가능. AI제공 등급에 따른 이미지 등급 선정 가능.',
+    },
     {
       title: 'AWS S3 이미지 업로드 기능(axios 사용).',
       icon: 'mdi-check-circle-outline',
@@ -64,6 +69,7 @@
   ];
 
   const backTechStack = [
+    'Gemini API',
     'SpringBoot',
     'SpringSecurity',
     'OAuth2',
@@ -134,6 +140,11 @@
         외부서비스를 통한 파일업로드 최적화, 새로이 Redis를 도입한 DB사용
         최적화, 여러 쿼리 조건에 따른 검색기능, kakao Oauth 추가 등 종합적인
         모던 웹페이지의 전반적인 개발 실력 향상이 가능하다고 생각했다.
+        <br /><br />
+        <strong
+          >추가로 Google Gemini AI를 활용하여 AI와의 연계 서비스를 구현할 수
+          있을 것이라고 생각했다.</strong
+        >
       </p>
 
       <v-tooltip
