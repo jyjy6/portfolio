@@ -368,6 +368,52 @@
       },
       imageRight: false,
     },
+    {
+      id: 8,
+      title: '8. AI(Google Gemini API)활용 이미지 분석, 태그 추가 기능',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzationDemon1.webp',
+          comment: '업로드에 새로이 추가된 AI분석기능 시연영상',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzationDemon2.webp',
+          comment: 'AI로 추가된 태그들도 정상적으로 태그검색이 가능하다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzation5.PNG',
+          comment:
+            '바이브 코딩의 한 장면. 여기선 간단하게 원하는기능과 문제점을 서술하고있다. 결국 물리세계에서 체험은 인간이하고 AI에게 전달해야하는 것',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIService.PNG',
+          comment:
+            '프롬프트 엔지니어링. AI가 정확한 정보를 제공할 수 있게 5살짜리도 알아들을 수 있게 "설계"를 해야한다.',
+        },
+      ],
+      description:
+        '시작 전에, 우선 기능을 구현하면서 정말 많이 도움이 된 것 같다.\n\n 1. 요즘 Hot한 바이브코딩을 사용하고 코드와 기능구현방법을 내 것으로 만드는 법 \n 2. 요즘 Hot한 프롬프트 엔지니어링의 프로덕션 가능한 서비스 수준의 내용물 체험, \n 3. 백엔드에서의 Map 자료형의 중요성과 적극적 활용방법(특히 AI, API요청 에서의) 등등.. 본인은 기초를 쌓아놓은 후엔 완성된 결과물을 보고 내 것으로 만드는게 가장 큰 특기이기때문에 이런류의 코딩방법이 상당히 맞고, 그렇기에 앞으로 AI세대에서 AI활용을 잘할 수 있으리라는 자신이 더욱 붙은 것 같다.' +
+        '\n\n\n 일단 요즘 말 많은 AI를 Google Gemini API를 활용하여 이미지 분석, 태그 추가 기능을 구현했다. 이미지를 업로드하고 AI분석 버튼을 누르면 Gemini가 해당 이미지를 분석하고 태그를 10개가량 추천, 이미지의 퀄리티에따라 등급도 매겨준다. 기능 얘기는 여기까지다 개발자로써 이런 기능이 있다~ 보단 뭘 배웠냐가 더 중요한것 같다' +
+        '\n\n 프론트에서는 우선 간단하게 Cursor AI에게 지시를 내려서 이미지 분석 하는 컴포넌트를 만들게했고 그걸 각 업로드한 이미지마다 적용했다. 하지만 기존에 createURL메서드를 사용했는데, Gemini는 이 URL을 읽을 수 없기때문에 직접 file을 백엔드로 전송했고 백엔드에서는 bytes값을 따고-> base64로 인코딩해서-> Gemini에게 전달하는 방법으로 구현했다. 누가? Cursor AI가. 나는 제미나이가 URL을 뭐 무슨 정책제약이나, 브라우저전용 URL의 한계 등의 문제로 URL을 읽을수 없다는걸 눈치채고 그에 따른 솔루션을 요청했다. \n\n 이와같이 기존에 파일을 바이트로 변환하고 base64로 인코딩하는 등의 지식은 내게 없었다. 그렇기에 문제점을 발견하고 AI의 방대한 해결방법을 내가 다시 받아먹어서 내 피와 살로 만드는게 이 바이브코딩의 핵심이라고 생각한다.' +
+        '\n\n 백엔드에서는 의존성추가+컨트롤러+서비스+DTO등의 작성은 생략해도 정말 여러가지를 배웠다.' +
+        '\n 1. 프롬프트 엔지니어링. 요새 자주보이는 외모평가, 음악찾기 등의 AI서비스가 이런식으로 만들어진다는것을 알게되었다. 결과물을 받을 DTO를 지정해놓고, 그에맞는 폼에 AI에게 요청할 글을 내가 텍스트로 길게 작성해놓고 요청받는다. 이게 큰 틀인데 그냥 이거 "해줘"가 아닌 5살짜리도 알아들 수 있고 틀에 맞춰진 정형화된 질문을 설계하는게 중요하다고 느꼈다. \n 느낀바로는 이 프롬프트 엔지니어링이라는건 사실 추후 GUI로써 클라이언트들이 직접 쓰는경우가 더 많아질 것 같기떄문에 개발자의 필수소양은 되지 않게 되더라도 마치 SQL문을 효율좋게 작성하듯이 토큰의 절약, 더 빠른응답, 상세한 결과반환 등을 기대한다면 개발자로서의 스킬로 충분히 작용할 수 있다고 생각했다.' +
+        '\n\n 2. Map자료형 적극사용. 바이브코딩으로 서비스를 확인해보니 죄다 @Data에 Map을사용하는 경우가 많았다. 생성옵션을 설정할때도 Map<String, Object> generationConfig = new HashMap<>(); 이렇게 선언해놓고 put메서드를 사용하고, objectMapper로 직렬화, 역직렬화 할 때에도 사용하고 백엔드에선 List자료형보다 더 많이 사용하는걸 새삼 깨닫게 되었고, 완전히 유연하게 사용하기위에선 더 많은 경험과 사용해야겠다는 내 스스로의 "인식"이 더 필요할 것이라고 느꼈다. ' +
+        '\n\n 이외에도 자바판 Async/Await인 Mono/Block, AI들이 제공하는 응답에 대해서 백엔드 코드를 맞춰야 한다는 것 등, 많은걸 배울 수 있었다. ',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIController.PNG',
+        ],
+        comment:
+          '백엔드 컨트롤러 코드. 사실 Swagger도 이전에 도입했는데 프로젝트에는 굳이 서술하지 않을예정이다. 사용법도 별 거 없고 그냥 AI시키면 뚝딱 뿅~ 이기에.. 문서화로 인한 개발자 혹은 클라이언트간의 소통 개선.. 도있지만 사실 백엔드 코드보면 더 복잡해지는 단점도 있는 듯 하다.',
+      },
+      imageRight: false,
+    },
     // {
     //   id: 8,
     //   title: '8. 배포 AWS EC2, Docker',

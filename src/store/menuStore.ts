@@ -14,7 +14,7 @@ export const useMenuStore = defineStore('menu', () => {
     { title: 'Vue3+Spring Project', icon: 'mdi-leaf', route: '/vuepring' },
     { title: 'NUXT3 Project', icon: 'mdi-nuxt', route: '/nuxt3' },
     {
-      title: 'ImageBell(Vue3+SpringBoot)',
+      title: 'ImageBell(Vue3+SpringBoot + Gemini API)',
       icon: 'mdi-image-filter-none',
       route: '/imgbell',
     },
