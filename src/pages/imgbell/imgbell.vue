@@ -12,6 +12,13 @@
         '이미지를 분석하고 태그제공, 클라이언트가 태그추가 가능. AI제공 등급에 따른 이미지 등급 선정 가능.',
     },
     {
+      title:
+        'Google Gemini API를 활용한 만화/애니메이션 캐릭터가 분석해주는 이미지!',
+      icon: 'mdi-check-circle-outline',
+      contents:
+        '원피스의 캐릭터 마샬 D. 티치(검은수염이) 어떤 이미지인지 분석해줍니다!',
+    },
+    {
       title: 'AWS S3 이미지 업로드 기능(axios 사용).',
       icon: 'mdi-check-circle-outline',
       contents: ' AWS S3를 이용한 파일업로드.',
