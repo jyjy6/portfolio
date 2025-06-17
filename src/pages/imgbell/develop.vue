@@ -414,6 +414,48 @@
       },
       imageRight: false,
     },
+    {
+      id: 8.1,
+      title:
+        '8-1. AI(Google Gemini API)활용한 검은수염 마샬 D.티치(40세, 현역 사황)의 이미지 분석',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo2.webp',
+          comment:
+            '검은수염 마샬 D.티치의 이미지 분석 시연. 이미지 파일 혹은 이미지 URL을 입력하면 원피스의 캐릭터 마샬 D.티치(검은수염)가 이미지를 분석해준다. 본인 사진이 맘에드는건지 안드는건지 모르겠다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo.webp',
+          comment:
+            '검은수염 마샬 D.티치의 이미지 분석 시연2. 최대의 라이벌 붉은머리 샹크스에 대한 말. 뭔가 헛소리하시는 것 같기도 하고 40세 답지 않은 중학생스러움이 매력적이다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharController.PNG',
+          comment:
+            '컨트롤러에 새로 추가된 코드(상세 GITHUB 백엔드 ImageController참조) 기존에 쓰던 이미지 분석 컨트롤러에서 함수만 살짝 바꿨다 이런식으로 Gemini등 프롬프트활용 API는 약간의 수정으로도 여러 컨텐츠를 만들어낼 수 있다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDTO.PNG',
+          comment:
+            'DTO도 기존의 것을 내가 원하는 데이터로 수정해서 Gemini에게 전달하고 전달 받는다. 서비스 역시 동일.',
+        },
+      ],
+      description:
+        'Google Gemini API를 응용한 두번째 기능. 프롬프트 엔지니어링을 더 응용할 수 있을거같아 뚝딱 만들어봤다. 물론 이번엔 AI의 도움이 없이 내 손으로 기존 백엔드 코드를 수정해서 구현했다. 안그러면 이해는 하지않고 진짜 복붙만하는 허수아비가 될 뿐이다.' +
+        '\n\n 뭘 할 수 있을까 생각해본결과 예전에 유튜브에서본 싸가지없는 채팅봇 같은게 떠올랐다. 그래서 난 이번엔 만화캐릭터가 이미지를 분석해주면 재밌지 않을까? 라는생각이 들어서 원피스의 가장 개성있는 캐릭터 검은수염 컨셉으로 Gemini에게 응답을 해달라고 프롬프트 요청을하고, 기존 코드에서 사용한 컨트롤러, 서비스, DTO를 바탕으로 내가원하는 기능에 맞게 수정해서 구현했다. ' +
+        '\n\n 이런식으로 AI 프롬프트를 활용한 기능은 정말간단하게 구현할 수 있다. 예를들어 맞춤법 교정앱, 영어 학습앱 등등.. 문제는 AI의 성능과 앞서 서술했듯 얼마나 토큰을 절약하고 효율좋은 구조를 만들어내냐가 중요한 것 같다. ',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [''],
+        comment: '',
+      },
+      imageRight: false,
+    },
     // {
     //   id: 8,
     //   title: '8. 배포 AWS EC2, Docker',
