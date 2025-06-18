@@ -108,8 +108,9 @@
     <v-card class="mb-10 pa-6">
       <h3 class="text-h5 mb-4">📌 프로젝트 시작 이유</h3>
       <p>
-        Vue3+Spring 프로젝트를 끝내고 서버사이드 렌더링 기술도 갖춰두고 싶었는데
-        React사용자가 NextJS를 쓰듯 Vue는 NuxtJS를 사용한다고 하기에 선택했다.
+        Vue3+Spring 프로젝트를 끝내고 서버사이드 렌더링(SSR) 기술과 SEO(Search
+        Engine Optimization)에 대한 이해도 갖춰두고 싶었는데 React사용자가
+        NextJS를 쓰듯 Vue는 NuxtJS를 사용한다고 하기에 선택했다.
         <br /><br />
         컨텐츠적인 측면으론 본인은 12월 시력교정수술로 인해 약 3~4개월간
         컴퓨터나 스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 외국어 청해
