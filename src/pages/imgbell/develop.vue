@@ -456,6 +456,49 @@
       },
       imageRight: false,
     },
+    {
+      id: 9,
+      title: '9. 테스트 코드',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCode.PNG',
+          comment:
+            '테스트코드 샘플. "닉네임 중복에 대한 테스트코드" when의 thenReturn값을 바꾸면 아래의 테스트 실패가 발생한다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed.PNG',
+          comment:
+            '테스트 실패1. when(memberRepository.existsByUsername("user123")).thenReturn(true); 로 실험(중복 아이디가 있어서 닉네임 검사 전에 바로 에러) 그 아래의 when코드가 실행되지 않기때문에 컴퓨터가 ??니 발동안하는 코드 있음 테스트실패 ㅅㄱ 라고 알려준다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed2.PNG',
+          comment:
+            '테스트 실패2. 이번엔 when(memberRepository.existsByDisplayName("nickname")).thenReturn(false); 로 했을 시(중복 닉네임이 없을시) 에러가 나질 않으니까 컴퓨터가 ??에러 안나는데? 너 테스트실패함 이라고 알려준다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestPassed.PNG',
+          comment:
+            '모든 단위 테스트 성공. 이렇게 테스트코드를 작성해놓으면 추후 여기서 사용했던 로직이 변경되어서 테스트가 실패되고 바로 디버깅->수정이 가능하다. 모든것이 자동화 되어 종합적으로 비용이 더 절약된다',
+        },
+      ],
+      description:
+        '개발 시작한지 얼마 되지 않았을때에 테스트코드의 존재를 알았다. 근데 한가지 의문이들었다. "테스트코드를 작성할바에 그냥 다른코드 하나 더쓰지 이게 무슨의미가있는거지? 그냥 로컬에서 코드실행 잘되면 그게 테스트 아닌가?"\n' +
+        '\n지금 생각해보면 참 단순한 아가시절 사고방식이다. 예를들어 기능A를 만들었고 작동 잘 되는거 확인했는데, 그 기능A에서 사용한 함수가 나중에 변경되어서 프로덕션 환경에서 실행이 안되면..? -> 디버깅도 힘들고 찾는데 쓰는 비용이 훨씬 더 많이 나올 것이다. 하지만 약간의 시간을 더 들여서 테스트코드를 작성한다면 테스트 실행 시 디버그도 빠르게 할 수 있고 그 비용은 훨씬 절감되는 효과를 볼 수 있다. ' +
+        '\n\n 본인은 우선 JUnit Mockito 등을 사용한 단위테스와, @DataJpaTest를 사용한 슬라이스 테스트까지가 제일 ROI가 좋다고 생각했고 그부분을 학습했다. 통합테스트(@SpringBootTest)는 SpringSecurity, 다른 외부서비스(oauth, s3등)등의 연계들이 더 복잡하게 얽혀있어서 낭비가 너무 심했고 현 시점의 AI도 코드작성을 잘 하지 못하는 모습을 보였다. 프론트에선 vitest jest등의 라이브러리를 설치해야하며 솔직히 재사용하는 컴포넌트, UI, 매우 복잡한 계산로직 이외의 코드들은 백엔드만큼의 테스트의 중요성과 ROI를 느끼지 못했기 때문에 우선 백엔드 단위+슬라이스 테스트에 집중하기로 했다.' +
+        '\n\n 우선 평소와도 같이 테스트코드도 처음 작성하는거라 AI의 힘을 많이빌렸다. 이 프로젝트에서 가장 중요한 핵심로직인 ImageService코드를 몇 개 작성시키고, 테스트코드에 작성돼있는 Assert @Mock @InjectMock verify등의 함수, 어노테이션을 학습하고 TAD(Test-After Development)방식과 given when then 규칙을 지키며 테스트코드를 작성했다.' +
+        ' 근데 하다보며 느낀게 이 단위테스트 같은거야말로 AI의 최대장점을 발휘할 수 있는 영역이 아닌가 싶다. 이미 작성되어있는 로직을 분리해서 테스트코드를 만드는, 예를 들자면 조립되어있는 레고랑 똑같은 파츠 사용해서 똑같이 조립이 되는지 맞추는.. 이거야말로 기계가 가장 잘하는 게 아닐까 싶다. 그럼에도 사람의 힘이 필요한 의도를 생각해보면 \n\n 1. 이 로직이 물리세계에서 왜 필요한지의 의도까지는 사람만이 파악할 수 있다는점 \n2. AI는 이미 만들어진 코드를 바탕으로 테스트를 작성하므로 "정상흐름"에 대한 테스트코드는 잘 작성하지만, "예외상황"에서는 소홀해질 수 있다는점 \n3.옛날버전의 JUnit mockito 를 사용해서 학습된경우가 많아서 어노테이션, 함수사용을 잘못하는점. \n등이 있다는걸 알게되었다. 즉 로직 이해와 테스트의 명확성은 언제나 사람이 보완점을 생각해야 한다고 느꼈고, 테스트코드를 자주 작성해서 몸에 배게하는것이 중요하다고 생각한다.',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        comment:
+          'TDD(Test-Driven Development)방식은 5천만번 생각하고 AI와의 대화를해봐도 너무 현실적으로 와닿지 않았다.. 전체 구조도 안잡혀있고 로직도 안쓰여있는데 테스트먼저라는게 너무 허공에 페달밟는 느낌이 들었고 현업에선 개발시간도 정해져있을텐데 테스트먼저짜고 기능을개발?.. 현재의 본인으로썬 너무 이상적이라고만 생각된다',
+      },
+      imageRight: false,
+    },
     // {
     //   id: 8,
     //   title: '8. 배포 AWS EC2, Docker',
