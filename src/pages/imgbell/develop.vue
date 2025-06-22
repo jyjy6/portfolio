@@ -470,13 +470,13 @@
           image:
             'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed.PNG',
           comment:
-            '테스트 실패1. when(memberRepository.existsByUsername("user123")).thenReturn(true); 로 실험(중복 아이디가 있어서 닉네임 검사 전에 바로 에러) 그 아래의 when코드가 실행되지 않기때문에 컴퓨터가 ??니 발동안하는 코드 있음 테스트실패 ㅅㄱ 라고 알려준다',
+            '테스트 실패1. when(memberRepository\n.existsByUsername("user123"))\n.thenReturn(true); 로 실험(중복 아이디가 있어서 닉네임 검사 전에 바로 에러) 그 아래의 when코드가 실행되지 않기때문에 컴퓨터가 ??니 발동안하는 코드 있음 테스트실패 ㅅㄱ 라고 알려준다',
         },
         {
           image:
             'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed2.PNG',
           comment:
-            '테스트 실패2. 이번엔 when(memberRepository.existsByDisplayName("nickname")).thenReturn(false); 로 했을 시(중복 닉네임이 없을시) 에러가 나질 않으니까 컴퓨터가 ??에러 안나는데? 너 테스트실패함 이라고 알려준다',
+            '테스트 실패2. 이번엔 when(memberRepository\n.existsByDisplayName("nickname"))\n.thenReturn(false); 로 했을 시(중복 닉네임이 없을시) 에러가 나질 않으니까 컴퓨터가 ??에러 안나는데? 너 테스트실패함 이라고 알려준다',
         },
         {
           image:
