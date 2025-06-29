@@ -57,6 +57,12 @@
         'JPA Specification을 활용한 이미지 검색기능(태그, 이미지명, Artist명 등 통합 검색)',
     },
     {
+      title: 'ElasticSearch를 활용한 이미지 검색기능',
+      icon: 'mdi-check-circle-outline',
+      contents:
+        'ElasticSearch를 활용한 복잡한쿼리, 자동완성, 빠른검색기능 구현',
+    },
+    {
       title: 'Docker 및 유지보수 환경 구축',
       icon: 'mdi-check-circle-outline',
       contents: 'Docker compose, 도커를 사용한 Redis',
@@ -86,6 +92,7 @@
     'AWS S3',
     'AWS EC2',
     'MySQL',
+    'Elastic Search',
     'Docker',
   ];
 </script>
