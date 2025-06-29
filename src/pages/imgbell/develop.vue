@@ -129,6 +129,57 @@
       imageRight: false,
     },
     {
+      id: 3.2,
+      title: '3-1.Elastic Search',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchTest1.webp',
+          comment:
+            '엘라스틱서치 테스트 페이지. DB에서 ES인덱스 동기화, 검색이 잘되는지 등을 시험하고있다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchTest2.webp',
+          comment:
+            '엘라스틱서치 테스트2. 인기이미지, 최신이미지, 자동완성등을 행하고있다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchMySuggestion.PNG',
+          comment:
+            'AI가 이상한 제안만해서 사람이 수정하는모습. 역시 실제 비즈니스의도를 "왜","어디에" 써야하는지까지는 AI도 모르기때문에 의도를 확실히 전달해야한다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchInAdmin.webp',
+          comment:
+            '위의 AI의 이상한 제안에서 수정한대로 작동하는 모습. 테스트 페이지와는 다르게 검색과 자동완성이 통일되었다. 이미지 디테일 컴포넌트도 깔끔하게 재사용 잘 되는 모습',
+        },
+      ],
+      description:
+        '저번 JPA Specification에서 말한대로 ElasticSearch 추가했다.\n\n' +
+        '처음엔 ELK 스택 전체를 공부하려고 전부 도커로 서버띄워서 실행도해봤는데 사용이유와 의도는 알겠지만 아직까지 내 단계에서 ELK스택 모두를 배우는건 ROI가 너무 안나오고 무엇보다 이건 DevOps의 영역이라는 느낌이 많이 들었다. 넓게파는건 좋지만 얕으면 접싯물밖에 되지않기에 ElasticSearch로 검색엔진만을 구현하기로했다 추후 Kafka를 통한 학습확장성까지 생각할 수 있기때문이다.' +
+        '\n\n 우선 엘라스틱서치에 대해 가볍게 이론으로 이해부터 하고 들어갔다 강력한 검색기능을 제공하며 DB와는 별도로 독립된 인덱스라는 테이블/컬렉션과 유사한 개념을 사용하는 외부서비스이다.' +
+        '\n\n 그렇기에 \n1. 기존 DB에 있는 데이터들을 ES 인덱스에 동기화, \n2.기존 서비스로직에서 연동하는 로직도 추가, \n3.엘라스틱서치 검색을 위한 별도의 서비스로직 추가.\n' +
+        '대항목으로 이정도가 필요했다. 우선 이 프로젝트의 핵심인 Image테이블에 ES를 도입하고자 Image디렉토리 하위에 ElasticSearch디렉토리와 Document(RDBMS의 테이블과 비슷한개념),Controller,Repository,Service 등을 생성했다.' +
+        '\n\n엘라스틱 서버는 위대한 Docker신의 힘을 빌려서 띄웠고 Volume으로 내 로컬 디렉토리를 설정하여 인덱스, 문서 등을 저장했다.(데이터 휘발 방지) ' +
+        '\n\n 처음써보는 것이라 역시 이전에 하던대로 테스트페이지를 만들고 AI에게 간단한 시험코드를 제작하게하고 사용해서 큰동작원리를 이해하고, 내 프론트 컴포넌트에 점진적으로 적용하는식으로 구현했다. ' +
+        '\n\n 간단하게 정리하자면 테스트페이지 정상작동-> 기존 프로젝트에 어떻게 활용할지 설계 -> 컴포넌트에 레고 부품 붙이듯 추가.' +
+        '\n\n 처음써보는 기능을 가장 빠르고 효율적으로 이해하는방법이라고 생각한다.' +
+        '\n\n 디테일하겐 withQuery bool should 등 처음보는 ES제공함수들이 있었기에 AI에게 주석으로 설명을 요구하고 그걸 이해하는식으로 학습했다. 이런 함수들은 무엇이든간에 외우는게아니고 동작원리와 이런게 있다 라는걸 뇌리에 각인시키면, 나머지는 반복과 경험을 통해 필요한 곳, 사용할 곳이 떠오르는 노하우가 자연스레 쌓여지게 된다.',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchSmartSearchCode.PNG',
+        ],
+        comment:
+          '엘라스틱서치 또한 Redis때와 같이 기본으로 제공하는 함수가있고 그 예제를 AI게 쓰게하거나 주석으로 설명하게 한 후 내가 코드를 읽어서 해석하고 내것으로 만드는식으로 활용했다. 마치 20년차의 개발자의 완성물을 순식간에 내것으로 만드는것과 같다',
+      },
+      imageRight: false,
+    },
+    {
       id: 4,
       title: '4. 마이페이지',
       images: [
