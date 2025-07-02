@@ -63,9 +63,10 @@
         'ElasticSearch를 활용한 복잡한쿼리, 자동완성, 빠른검색기능 구현',
     },
     {
-      title: 'Docker 및 유지보수 환경 구축',
+      title: 'Docker 및 Github Actions를활용한 CI/CD 환경 구축',
       icon: 'mdi-check-circle-outline',
-      contents: 'Docker compose, 도커를 사용한 Redis',
+      contents:
+        'Docker compose, Github Actions를 활용한 CI/CD 자동화 환경 구축',
     },
   ];
 
@@ -94,6 +95,7 @@
     'MySQL',
     'Elastic Search',
     'Docker',
+    'Github Action',
   ];
 </script>
 
@@ -110,7 +112,7 @@
         >상세개발로그</v-btn
       >
       <v-tooltip
-        text="개발 진행중"
+        text="서버비 너무 비쌈"
         location="bottom"
         style="max-width: 70%"
         open-on-hover

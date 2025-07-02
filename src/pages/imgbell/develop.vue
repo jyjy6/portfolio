@@ -552,39 +552,82 @@
       },
       imageRight: false,
     },
-    // {
-    //   id: 8,
-    //   title: '8. 배포 AWS EC2, Docker',
-    //   images: [
-    //     {
-    //       image: '/images/deploy/docker-file.PNG',
-    //       comment: '프론트 도커 파일예시',
-    //     },
-    //     {
-    //       image: '/images/deploy/docker-compose.PNG',
-    //       comment: 'docker-compose.yml',
-    //     },
-    //     {
-    //       image: '/images/deploy/EC2-4files.PNG',
-    //       comment: 'https를 위한 pem파일, 도커파일 등',
-    //     },
-    //     { image: '/images/deploy/EC2-2.PNG', comment: 'EC2인스턴스에 연결' },
-    //     {
-    //       image: '/images/deploy/EC2-3Docker.PNG',
-    //       comment: 'git clone으로 생성된 폴더목록과 docker-compose실행.',
-    //     },
-    //   ],
-    //   description:
-    //     '내 집 컴퓨터를 24시간 켜놔도 좋겠지만 편리하게 AWS EC2 프리티어를 사용해서 배포하자. \n',
-    //   isSpecial: true,
-    //   specialStyle: {},
-    //   spDescription: {
-    //     image: [],
-    //     comment:
-    //       '사실 지금보고계신 이 웹페이지가 Github Action+EC2 조합으로 배포됨.',
-    //   },
-    //   imageRight: false,
-    // },
+    {
+      id: 10,
+      title: '10. 배포 AWS EC2, Docker, Github Actions (CI/CD 자동화)',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-RedisError.PNG',
+          comment:
+            '배포 전 도커환경 테스트에서의 Redis 서버 구동 오류. Production으로 바뀌었을때 포트설정 등의 오류가 있었다. 개발 초창기의 배포시 보다는 적극적으로 application-prod 파일 등을 적극적으로 써서 그나마 덜했으나 가끔 이런류의 예기치 못한 상황도 나오곤 한다. 이런 예기치 못한 오류가 있기 때문에 바이브코딩 등으론 한계가있다고 생각한다. 내가 찾아내기 전까지 AI는 다른거 고치라고 조잘 조잘..',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.DeployDocker.PNG',
+          comment: '로컬에서 확인한 도커환경 구동화면. 모드 정상작동한다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-totalModified.PNG',
+          comment:
+            '내가 배포할 방법을 설명하고 yml파일 작성을 요구하고있다. 하지만..',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-ymlTrue.jpg',
+          comment:
+            'AI는 내가 docker compose를 사용하리라곤 생각 못했는지 tar파일을 만들고 도커이미지 직접 생성하고 포트지정까지 하고있었다 그걸 본 내가 수정을 요구하는 모습. 이렇게 YML작성법, 문법을 내가 외울 이유는없다 이게 왜 틀렸는지 무슨코드인지 흐름을 알면 "단순기억"은 AI가 압도적으로 잘하기 때문에 쉽게 고칠 수 있다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-DockerComposeUp.PNG',
+          comment:
+            'ubuntu환경의 EC2 인스턴스 실행중 ls nano cd 등등.. 여러가지 리눅스 명령어를 사용했다. 이 배포과정에서 상당히 익숙해졌지만 배포란게 자주있는게 아니기에 필연적으로 머리론 까먹는다. 하지만 몸이 기억하고있다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-Overbuild.PNG',
+          comment:
+            't2.micro 프리티어 메모리부족으로 빌드타임 오버. Github Actions도 똑같이 리소스부족으로 빌드타임 오버 현상이 일어났다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-On.PNG',
+          comment:
+            '돈만이 모든것을 능가한다!! t3.medium으로 배포성공. 요금 얼마나 먹을지 벌벌떨어가면서 몇 시간동안 테스트했다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.DeploySite.PNG',
+          comment:
+            '정상적으로 웹페이지가 접속된 모습. https 인증, 도메인 구매는 생략한다..',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-last.png',
+          comment:
+            'GitHub Actions도 정상적으로 동작하는 모습. 아래 alert는 git push가 정상적으로 됐는지 확인하기위해 넣었다. 잘된다.',
+        },
+      ],
+      description:
+        '내 집 컴퓨터를 24시간 켜놔도 좋겠지만 편리하게 AWS EC2를 사용해서 배포하자. 우선 계획을수립했다. \n' +
+        '\n 1. 코드를 Git Hub에 Push\n 2. EC2인스턴스를 만들고 환경설정, Git Clone으로 프로젝트파일과 dev파일 등 환경변수파일 복사\n3. Github Actions의 secret변수 등록 \n 4. 프론트, 백엔드에 deploy.yml파일작성 및 도커파일, 도커 컴포즈 파일 작성\n 5. git push로 CI/CD자동화 완성 확인' +
+        '\n\n 큰 흐름은 이정도다. 우선 배포전에 도커환경에서 프론트,백엔드,엘라스틱서치,Redis 서버를 구동시키고 테스트해봤다. 이 와중에서 여러가지 오류, 버그를 발견할 수 있었고 배포전에 해결했다. 도커는 정말 고마우신 툴이다.' +
+        '\n 어느정도 배포할 각이 나왔다 싶어서 EC2 프리티어 t2.micro를 사용했다. 하지만 이 때 난 몰랐다. 돈만이 모든것을 능가하리라곤..' +
+        '\n \n우선 그 전에 배포할 방법을 설명하고 yml파일을 AI에게 작성시켰는데 docker compose파일을 사용한다는걸 폴더구조를 보고도 몰랐는지 tar파일을 만들고 난리가났다. 바로 수정을 요구했고 docker compose를 사용한 yml파일을 작성해주었다. AI 이전시대에는 on은뭐고 push는뭐고 jobs는뭐고 deploy는뭐고 runs-on은 뭐고 이런 하나하나 귀찮은 yml파일 문법을 하나하나 찾아서 끼워맞추고 했었겠지만 지금은 상황이 많이좋아졌다. 비유를하자면 AI가 집짓고 큰틀을 지어주고 인테리어까지 해주면 난 안에서 가구배치만 살짝 바꾸라고 턱으로 명령하면 된다. 전에도 언급했지만 비즈니스 의도를 확실히 하는건 인간이다. ' +
+        '\n\n 아무튼 정상적으로 yml파일도 만들어놨고 CI/CD 파이프라인을 연결하기전에 EC2환경에서 배포가 잘 되는지 확인해보려고 정말 여러번 시도를해봤다. 하지만 배포던 CI/CD구축이던 t2.micro t2.small 따위론 리소스 부족현상을 몇번이고 경험했다. ' +
+        '물론 이전에 Spring Boot프로젝트를 배포할때 처럼 이미 빌드된파일을 EC2인스턴스에 전송하고 뭐 그런 방법도 사용할 수 있겠지만 이번엔 사정이다르다. 내가 하고싶은건 GitHub Actions를 사용한 CI/CD자동화이기 때문에 인스턴스를 t3.medium으로 증설하고 실행했다. 정말 빨랐다.. 1000초 넘던 빌드타임이 100~200초 언저리에서 끝났다.' +
+        'Github Actions도 정상적으로 동작했다.' +
+        '\n\n물론 그 과정에서 서버 껐다켰다 하면서 EC2인스턴스의 아이피 주소도 변경되고(Elastic IP가 아니기에) 그걸 다시 백엔드 CORS설정에 쑤셔넣고 등등 많은 시행착오가 있었으나 이번에야말로 완벽하게 Github Actions를 통한 CI/CD 자동화 구축에 성공했다. 하지만 앞으로도 테스트 자동화등의 과제가 남았기때문에 점점 더 정진하고자 한다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [],
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID

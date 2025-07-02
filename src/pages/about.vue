@@ -48,17 +48,17 @@
         },
         {
           label: 'AWS EC2',
-          description:
-            '가상 서버 서비스. Git Action과의 연계도 가능하지만 EC2의 메모리 한계로 빌드된 프로젝트의 Docker파일을 옮겨서 EC2인스턴스 에서 직접 실행하거나 git clone하는 방식을 주로 사용했음. 이 프로젝트는 Github Action으로 CI/CD를 구현했음.',
+          description: '가상 서버 서비스. Git Action과의 연계도 가능하다.',
         },
         {
           label: 'Github Action',
           description:
-            'CI/CD 자동화 플랫폼. 지금 보고계신 이 페이지가 Github Action+EC2 조합으로 배포됨.',
+            'CI/CD 자동화 플랫폼. t2.medium 이상에서 사용하기 좋다 그 이하는 메모리부족으로 빌드타임 오버.',
         },
         {
           label: 'OAuth',
-          description: 'SNS 로그인 인증 프로토콜. Google 서비스를 주로 사용',
+          description:
+            'SNS 로그인 인증 프로토콜. Google, Kakao 서비스를 주로 사용',
         },
         {
           label: 'nginx',
@@ -119,9 +119,9 @@
     },
     { label: 'Git', description: 'Trunk-based 사용합니다.' },
     {
-      label: 'Git Action',
+      label: 'Github Action',
       description:
-        'CI/CD 자동화 플랫폼..인데 Ec2 프리티어의경우 메모리부족으로 적극적인 사용이 불가능했음. 개념, 사용법이해는 완료',
+        'CI/CD 자동화 플랫폼. t2.medium 이상에서 사용하기 좋다 그 이하는 메모리부족으로 빌드타임 오버',
     },
     {
       label: 'JLPT N1',
