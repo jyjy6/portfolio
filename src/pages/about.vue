@@ -17,7 +17,7 @@
     {
       label: 'TypeScript',
       description:
-        '정적 타입을 지원하는 JavaScript. 최초엔 코드량만늘고 왜 쓰나 싶었지만 발전해가면서 큰 프로젝트일수록 타입스크립트 없이는 유지보수가 불가능 할거란 느낌을 많이 받음. 데이터 주고 받을때 특히.',
+        '정적 타입을 지원하는 JavaScript. 최초엔 코드량만늘고 왜 쓰나 싶었지만 발전해가면서 큰 프로젝트일수록 타입스크립트 없이는 유지보수가 불가능 할거란 느낌을 많이 받음. 데이터 주고 받을때 특히',
     },
     { label: 'Axios', description: 'Promise 기반 HTTP 클라이언트.' },
     { label: 'Pinia', description: 'Vue 공식 상태 관리 라이브러리' },

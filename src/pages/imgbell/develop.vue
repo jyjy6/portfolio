@@ -628,6 +628,53 @@
       },
       imageRight: false,
     },
+    {
+      id: 11,
+      title: '11. 에러 핸들링 GlobalException',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingAdminException.jpg',
+          comment:
+            '최초 AI가 제시해준 클래스별 에러 코드. Admin이라는 디렉토리(기능)에 에러클래스들을 하나의 자바파일안에 여러개의 클래스로 작성해놨다.. 흠.. 이게 맞나 싶었다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingGlobalEH.jpg',
+          comment:
+            '전역 에러 처리 핸들러 코드. 간단하게 GlobalException 하나로 에러처리기를 통일하고 서비스 계층에서 파라미터값을 메세지, 에러코드를 유동적으로 할당하여 편리성, 재사용성, 가독성 UP',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingGemini.jpg',
+          comment:
+            '이런식으로 서비스계층에서 GlobalException을 유동적으로 사용. 프론트에서도 직관적인 에러코드, HttpsStatus를 받아서 확인, 처리하기 편하다. 또한 RuntimeException을 남용하여 개발자도구에서 노출되었던 API구조 등도 숨길 수 있어서 보안도UP',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingDemo.webp',
+          comment:
+            '프론트에서 받고있는 새로운 에러 메세지. 프론트의 에러처리 util함수도 추가했다 GitHub참조',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingMemberController.jpg',
+          comment:
+            '이런 쓸데없이 컨트롤러에서 try catch 쓰는 코드도 사라졌다. 서비스 계층에서 모든 에러를 처리하여 일관성 확보',
+        },
+      ],
+      description:
+        '이제 어느정도 프로젝트의 기능도 갖춰졌겠다 코드품질을 신경쓰기 시작했다 우선 에러핸들링. 이건 예전부터 생각하긴했으나 우선 코드를 뱉어내는게 중요하다고 판단해서 미뤄뒀으나 지금와서 생각해보니 에러핸들링을 먼저 작성해놓는게 훨씬 더 빠르고 질좋은 코드작성이 가능하다는걸 깨달았다.' +
+        '\n\n 먼저 AI에게 Admin기능에 먼저 적용하고자 전역 에러핸들러를 요청했는데 정말로 Admin에만 해당하는 코드를 짜왔다.. 코드를 보고 이거 각 서비스마다 이렇게 핸들러 클래스를 하나하나 만드는건 말이 안되리라 생각하니 전역처리기 하나로 처리하는방법을 제시했다. 물론 파라미터값을 사용해서 서비스레이어에 각각 적용하는건 내 머리속에서 나왔다.. 아직까진 AI는 곧이 곧대로 뱉어내는 코드가 많다고 생각했다.\n' +
+        '\n 우선 이 전역핸들러로 RuntimeExeception을 남용하지 않아도 되고 어디 서비스에서 무슨에러가 났는지 프론트에서도 직관적으로 알아보기 편하고 try catch를 남발하지 않고 가독성이 정말 좋아졌다. ' +
+        '\n\n 아직 부족하다고 생각하는점은 에러핸들링을 굳이 사용하지 않아도 되는 단순 조회, 정적 데이터반환에서도 특수한상황이 일어날수있지 않을까? 하는 생각이 들기도했는데 아직까진 그런 상황에 직면하지 못했기에 추상적인 상상으로만 머릿속에 자리잡고있다는 것이다. 이것도 개발을 쌓아가며 경험으로 얻어야할 문제인 것 같다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
