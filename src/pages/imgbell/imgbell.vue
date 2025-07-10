@@ -68,6 +68,11 @@
       contents:
         'Docker compose, Github Actions를 활용한 CI/CD 자동화 환경 구축',
     },
+    {
+      title: 'Prometheus + Grafana를 활용한 모니터링 기능',
+      icon: 'mdi-check-circle-outline',
+      contents: 'Prometheus + Grafana를 활용한 기초 모니터링 기능 구현',
+    },
   ];
 
   const frontTechStack = [
