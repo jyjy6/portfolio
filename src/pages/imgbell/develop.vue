@@ -12,8 +12,13 @@
       images: [
         {
           image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/0000ImgBellHomePage.webp',
+          comment: '메인페이지 시연영상 엘라스틱 자동완성, UI개선판',
+        },
+        {
+          image:
             'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mainpage1.webp',
-          comment: '메인페이지 시연영상',
+          comment: '메인페이지 시연영상(프로토타입)',
         },
         {
           image:
@@ -58,7 +63,8 @@
         '기존 스프링 프로젝트에 비해 개선된 점이있다. 우선 accessToken, refreshToken의 발급과 저장방식은 똑같지만, JWT Filter에서 Authentication객체를 생성하는 부분이 바뀌었다.' +
         '\n\n 기존에는 loadUserByUsername함수를 통해 사용자 정보를 로드해서 Authentication 객체를 생성했었는데, 이 loadUserByUsername함수가 Spring Security내부에서 DB를 조회한다는 사실을 우연히 알게되었다. DB조회한다는건 JWT최대의 장점인 Stateless를 내다 버리는거고 그러면 세션이랑 별 다를게 없지않는가.. 라는생각으로 LLM모델이랑 상의해본 결과 같은 답변을 얻었고, 기존 JWT의 userInfo를 사용하여 CustomUserDetail으로 Authentication 객체를 만들어서 완전한 Stateless를 구현했다. 그 과정에서 Authentication 객체에 getId, getDisplayname 등의 추후 백엔드 API에서 사용할 유저정보도 뽑아낼 수 있게 구현하여 확장성 또한 고려했다.' +
         '\n\n OAuth 로그인은 이전 프로젝트랑 거의 다를게없다 그냥 라이브러리를 복붙해서 가져다 쓸 뿐. Kakao를 추가하면서 리다이렉트 페이지라던가 더 추가가 될까? 생각해봤으나 하나로 통일해서 토큰발급하는것도 가능했다. 결국 코딩에있어서 중요한건 언제나 큰그림, 작동방식을 이해하는거라고 생각한다 라이브러리 저런거 외워서 뭐하나 5초에 한번씩 바뀌는데...' +
-        '\n\n 또 큰건 아니지만 이전과는다르게 Role을 여러개 가질 수 있게 Set을 활용했다(ROLE_ADMIN, ROLE_SUPERADMIN, ROLE_MEMBER) 이것으로 좀 더 유연하고 확장성 있는 회원역할 기능의 분리가 가능했다',
+        '\n\n 또 큰건 아니지만 이전과는다르게 Role을 여러개 가질 수 있게 Set을 활용했다(ROLE_ADMIN, ROLE_SUPERADMIN, ROLE_MEMBER) 이것으로 좀 더 유연하고 확장성 있는 회원역할 기능의 분리가 가능했다\n\n' +
+        '메인 페이지는 Vuetify를 활용한 현대 모던웹페이지 디자인, 엘라스틱서치를 활용한 자동완성기능, 검색을 구현했다. 검색시 이미지 그리드로 자동 스크롤.',
       isSpecial: false,
       specialStyle: {},
       spDescription: {
