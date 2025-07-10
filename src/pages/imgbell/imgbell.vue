@@ -101,6 +101,8 @@
     'Elastic Search',
     'Docker',
     'Github Action',
+    'Prometheus',
+    'Grafana',
   ];
 </script>
 
