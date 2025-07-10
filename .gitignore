@@ -28,3 +28,6 @@ dist-ssr
 
 .rootkey.csv
 portfolio.pem
+
+.gemini
+.gemini/*

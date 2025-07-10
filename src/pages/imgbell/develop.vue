@@ -675,6 +675,50 @@
       },
       imageRight: false,
     },
+    {
+      id: 12,
+      title: '12. 모니터링 기초 - Prometheus + Grafana',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-MetricNameChange.jpg',
+          comment:
+            'Metrics Config의 커스텀 메트릭. 저 builder()의 파라미터값 지정이 곧 그라파나에서 보여지는 Query명이 되는데, 기존에 AI가 그라파나에서 사용하는 _가 아닌 .으로 지정해놔서 수정하고 있는모습. ( 수정 전의 이름으로해도 그라파나 내부에서 알아서 변환해주긴 한데 일관성, 직관성이 떨어져서 바꿨다. )',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-Docker.jpg',
+          comment:
+            '역시 도커신의 힘을 빌렸다.. 근데 프로젝트 하나에 이렇게 덕지덕지 붙어있는걸 보면 뭔가.. 익숙하지 않다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-Prometheus.jpg',
+          comment: '프로메테우스화면. 대체 이게 뭐가 뭔지..',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-GrafanaDashBoard-2.jpg',
+          comment:
+            '그라파나의 Dashboard 화면.  이미지 업로드, 포스트 업로드를 실제 행해서 적용되는지 확인해보고 각 패널이름도 변경해봤다. ',
+        },
+      ],
+      description:
+        '백엔드 모니터링으로 프로메테우스+그라파나를 적용해봤다. ELK스택을 미뤄두고 엘라스틱서치를 학습한 것 처럼 모니터링도 추후 필수가 될 것 이라 생각해서 기반정도는 쌓아놔야겠다고 생각했다.\n\n' +
+        '우선 프로메테우스, 그라파나가 뭐냐? 비유하자면 프로메테우스는 CCTV, 그라파나는 통제실 화면 같은것 이다. 프로메테우스가 주기적으로 메트릭 (숫자로 측정 가능한 모든 데이터)를 수집하면 그걸 연결해서 시각화 해주는 것이 그라파나. \n\n' +
+        '이 메트릭이라는게 중요한이유는 메모리 사용량, CPU사용률, 웹사이트 방문자수 등 이런 수치. 딱봐도 중요해보인다. 이걸보고 사이트가 왜 느린지 어디서 문제가 발생했는지 어떤 것이 인기있는지 등등 문제파악이 용이하고 수치화가 가능하단것이다.' +
+        '\n\n 우선 스프링부트 프로젝트의 메트릭수집 단계는 Spring Boot Actuator -> Micrometer -> Prometheus 를 거쳐서 일종의 번역(변환)된다. \n\n' +
+        '구현과정으로썬 1. build.gradle과 application.properties의 설정 \n 2. Dokcer Compose 설정 \n 3. 내 프로젝트에 필요한 커스텀 메트릭 구현\n' +
+        '크게 3가지로 나뉘었다.\n\n 1번은 뭐 뻔하다 그냥 매번복붙하는 그것 맞다.. \n2. 도커 컴포즈역시 AI의 제공 템플릿을 따랐다. 하지만 컴포즈파일을 읽어보던중 그라파나의 포트번호가 3000번 = NUXT와 같기에 추후 중복되지 않게 초기 학습단계에서부터 3001번으로 포트지정하는게 좋을 것 같아 수정했다. \n3. 커스텀 메트릭도 상당히 간단했따. Counter클래스의 imageUploadCounter forumPostCounter라던가 내가 원하는대로 Bean이름과 그라파나에서 보이는 쿼리명 같은걸 지정하고 내 서비스로직에서 사용해주면 끝. 편리하다. \n\n' +
+        '사실 말이 편리하지 프로메테우스랑 그라파나 화면들.. 처음에 이게 대체 뭔가싶고 이것저것 만져봐도 도통 뭐가 뭔지 몰랐다. 이럴때 도움되는게 AI다 요샌 캡쳐인식도 잘돼있는지 UI설명도 잘해주더라 덕분에 여러시행착오를 겪어가면서 PromQL의 존재와 활용, 그라파나에서 대쉬보드를 만들고 모니터링까지 할 수 있었다. \n\n이렇게 처음보는 툴 들도 빠른기간안에 본인의 AI활용 역량에 따라 빠른 학습이 가능하단걸 느꼈다. ' +
+        '\n우선 모니터링 기초이기때문에 "이런게있고 이렇게 쓰는구나" 정도의 학습이었지만 추후 실제 서비스에서는 Prometheus로 이메일이나 슬랙등의 알림구현(예를들어 CPU초과, 메모리 부족, 에러율 폭증 등)이나 로그 집계로 고객성향, 이탈or재방문률들의 시각화와 분석 등 여러가지 방면에서 활용가능할 것 같다고 느꼈다. ELK스택과 함께활용하면 더 증대된다고 하니 프론트, 백엔드의 스택역량이 더 만족스럽게 다듬어진다면 이 DevOps의 영역에서 다시 활용해봐야겠다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID

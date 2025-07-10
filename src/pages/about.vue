@@ -100,6 +100,11 @@
           description:
             '검색 엔진. 복잡한 쿼리, 자동완성, 빠른검색기능 구현에 사용했다. 최근 프로젝트에서 운영자페이지 이미지 검색기능에 구현했다.',
         },
+        {
+          label: 'Prometheus + Grafana',
+          description:
+            '모니터링 툴. Metrics에 대한 이해, Spring Boot Actuator와 MetricsConfig를 통한 커스텀 메트릭정의 및 그라파나의 툴 사용 등의 기초단계까지만 학습해놨다. ',
+        },
       ],
     },
     {
