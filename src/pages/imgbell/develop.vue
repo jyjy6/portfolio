@@ -393,6 +393,48 @@
       imageRight: false,
     },
     {
+      id: 6.1,
+      title:
+        '6-1. 레디스 활용 심화 -> 분산락(Distributed Lock)을 활용한 좋아요 중복방지, 기존코드 Forum서비스 까지의 확장',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-NewTopRanking.jpg',
+          comment:
+            'GetTopImages 메서드 리팩토링 스크린샷. String table 파라미터를 추가했고 이후 Image Forum이외에도 랭킹이 필요한 곳에 더 편리하게 사용할 수 있게 확장하였다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-ForumRankingDemo.webp',
+          comment:
+            'Forum 랭킹 시연영상. 조회는 1점 좋아요는 3점으로 Image때와 같이 TTL설정도 잘 되어있다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-DistributedMethod.jpg',
+          comment:
+            '분산락 편의 메서드. executeWithLock이 오버로딩되어 두개있는데 하나는 return값이 없는 것, 하나는 리턴값이 있을때 어떤 타입이 들어올지 모를때 사용하는 제네릭 문법을 이용한 코드. Github참조.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-DistributedLockDemo.webp',
+          comment:
+            '좋아요 중복 시연영상. 테스트라 5초의 텀을 지정해놓고 시험해보니 중복좋아요 방지가 잘 기능하고있다. GlobalException으로 프론트에서도 무슨에러인지 잘 확인가능.',
+        },
+      ],
+      description:
+        '우선 레디스 확장성을 시험해보기위에 기존에있던 RankingService의 코드를 재활용했다. \n기존에 getTopImages메서드로 일간, 주간 "이미지" 상위랭킹을 실시간으로 구현했는데, 똑같이 "포럼(게시판)"에도 적용할 수 있을 것 같았고, 기존의 메서드에 String table 이라는 파라미터를 추가해서 Image에서 활용하는 것 인지, Forum에서 활용하는 것 인지 구분 후 추가로직을 설계했고 의도대로 잘 구현되었다.\n\n' +
+        '두번재는 분산락을 활용한 중복 좋아요 방지를 구현했다.-> 즉 데이터 일관성, 동시성 문제 해결을 했다. Redis의 SETNX(Redis의 키가 없을때만 설정하는 연산), Lua 스크립트 등 처음써보는 Redis의 기능들이 있어서 신선했다. ' +
+        '레디스를 조금 더 깊게 팜에 있어서 opsForValue, opsForZSet 등 다양한 레디스 제공함수들이 있다는걸 더욱 깊게 알게되었고 이를 모두 외울수는 없지만 이 역시 어떻게 활용하는지 파악하는게 중요하고 반복된 실전을 통해 몸에 각인시키는게 포인트라고 생각됐다. \n\n 이제 레디스는 Pub/Sub(이 프로젝트에선 실시간 알림을 WebSocket으로 구현)을 통한 실시간알림, Cluster를활용한 샤딩, API레이트 리미팅 등의 여러가지 활용 방법이 있는데 이 또한 개발을 진행하면서 더욱 깊게 학습할 예정이다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [],
+        comment: '' + '',
+      },
+      imageRight: false,
+    },
+    {
       id: 7,
       title: '7. 어드민 페이지 관리기능',
       images: [
