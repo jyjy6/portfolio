@@ -426,11 +426,14 @@
         '우선 레디스 확장성을 시험해보기위에 기존에있던 RankingService의 코드를 재활용했다. \n기존에 getTopImages메서드로 일간, 주간 "이미지" 상위랭킹을 실시간으로 구현했는데, 똑같이 "포럼(게시판)"에도 적용할 수 있을 것 같았고, 기존의 메서드에 String table 이라는 파라미터를 추가해서 Image에서 활용하는 것 인지, Forum에서 활용하는 것 인지 구분 후 추가로직을 설계했고 의도대로 잘 구현되었다.\n\n' +
         '두번재는 분산락을 활용한 중복 좋아요 방지를 구현했다.-> 즉 데이터 일관성, 동시성 문제 해결을 했다. Redis의 SETNX(Redis의 키가 없을때만 설정하는 연산), Lua 스크립트 등 처음써보는 Redis의 기능들이 있어서 신선했다. ' +
         '레디스를 조금 더 깊게 팜에 있어서 opsForValue, opsForZSet 등 다양한 레디스 제공함수들이 있다는걸 더욱 깊게 알게되었고 이를 모두 외울수는 없지만 이 역시 어떻게 활용하는지 파악하는게 중요하고 반복된 실전을 통해 몸에 각인시키는게 포인트라고 생각됐다. \n\n 이제 레디스는 Pub/Sub(이 프로젝트에선 실시간 알림을 WebSocket으로 구현)을 통한 실시간알림, Cluster를활용한 샤딩, API레이트 리미팅 등의 여러가지 활용 방법이 있는데 이 또한 개발을 진행하면서 더욱 깊게 학습할 예정이다.',
-      isSpecial: false,
+      isSpecial: true,
       specialStyle: {},
       spDescription: {
-        image: [],
-        comment: '' + '',
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-RateLimiting.jpg',
+        ],
+        comment:
+          'API RateLimiting도 구현했다. ......사실 nginx만으로도 충분할 것 같은 느낌이 들어서 별도로 항목을 개설하진 않았지만 커스텀 어노테이션, 3가지의 RateLimiting 방식, 인터셉터 등록 등 단계별 설정과 상황별 방식사용등 구조와 기능 흐름자체를 이해하는데에 큰 공부가 되었다. 코드는 AI가 짜고 기능까지 만들었지만 결국 "흐름"을 이해해야하는게 개발자인 것 같고 요새 개발자는 코더가아닌 설계자가 되어가는 느낌이 강한 것 같다..',
       },
       imageRight: false,
     },
