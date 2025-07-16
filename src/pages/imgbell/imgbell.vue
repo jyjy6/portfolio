@@ -73,6 +73,11 @@
       icon: 'mdi-check-circle-outline',
       contents: 'Prometheus + Grafana를 활용한 기초 모니터링 기능 구현',
     },
+    {
+      title: 'Kafka를 활용한 선택적 로직 비동기 처리',
+      icon: 'mdi-check-circle-outline',
+      contents: 'Kafka를 활용한 기존로직 비동기 처리',
+    },
   ];
 
   const frontTechStack = [
@@ -103,6 +108,7 @@
     'Github Action',
     'Prometheus',
     'Grafana',
+    'Kafka',
   ];
 </script>
 

@@ -105,6 +105,11 @@
           description:
             '모니터링 툴. Metrics에 대한 이해, Spring Boot Actuator와 MetricsConfig를 통한 커스텀 메트릭정의 및 그라파나의 툴 사용 등의 기초단계까지만 학습해놨다. ',
         },
+        {
+          label: 'Kafka',
+          description:
+            '메시징 플랫폼. 비동기 처리, 메시지 브로커 역할을 하며 메시지 큐 기능을 제공한다. ImgBellProject에서 회원가입 후 이메일, 댓글작성 후 알림, ElasticSearch 인덱스 동기화 등에 사용했다.',
+        },
       ],
     },
     {

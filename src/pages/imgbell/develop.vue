@@ -770,6 +770,63 @@
       },
       imageRight: false,
     },
+    {
+      id: 13,
+      title: '13. 비동기 처리 Kafka - 회원가입 후 이메일 발송',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka.png',
+          comment: '카프카 클러스터 구조도',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-1.jpg',
+          comment: '카프카의 구성요소 간단정리',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-EmailOK.jpg',
+          comment: '결과부터 확인 : 이메일 발송, 수신완료!',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-AIMiss.jpg',
+          comment:
+            'AI와의 문답1. 설명을 너무 못한다. 카프카의 "필수요소 즉시응답"을 말하고 싶은 듯 했으나 내 이미지 분석로직을 잘못분석해서 필수요소를 선택적요소라고 파악하고 Kafka에 맡겨버리는 생각을 한 듯하다.. 이렇듯 이상한소리하는 AI에 채찍질 하는 사람이 되야겠다',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-Answer.jpg',
+          comment:
+            'AI와의 문답2. 뭔가 요즘 AI는 죄다 아이고 내새끼 잘했어!! 다 니가맞아!! 하는경향이 있는 것 같아서 틀리면 틀렸다고 말하라 해야하는 것 같다. 뭘 자꾸 핵심을 찌르는 질문이란건지..',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-LOWROI.jpg',
+          comment:
+            'AI와의 문답3. 카프카를 이해하고 사용하고자 했으나 AI는 역시 기능A를 모든곳에 사용하려고 하는듯하다.. 아직까지 비즈니스 로직 사용은 인간이 판단해야하는 것 같다',
+        },
+        // {
+        //   image: '',
+        //   comment: '',
+        // },
+      ],
+      description:
+        '우선 카프카가 뭐고 왜쓰냐? -> 결과먼저 말하면 그냥 내 함수에서 부가적인작업, 내 웹페이지 이용하는 사람에게 큰 상관 없는 서버작업 등을 비동기적으로 처리하려고 쓰는 외부서비스다. \n\n' +
+        '예를 들어서 회원가입 후 이메일발송. 회원이 내 사이트에 가입하면 회원가입 후 이메일을 발송받는다. 그 회원가입을 시도하는 유저가 동시에 8천억명이 몰리면? -> 서버부하 심하고 회원가입이 됐다는 메세지조차 받기가 힘들 것이다. 그래서 회원가입이라는 필수적인 요소만 동기적으로 처리해서 유저들에게 회원가입 ㅊㅋㅊㅋ라고 빠르게 메세지를 주고, 회원가입 환영메일은 백그라운드(카프카)로 돌려서 설렁설렁 보내준다 이말이다.\n\n' +
+        '이렇게 설명하면 정말 간단한데 AI는 뭔가 "유저놈은 이미 카프카를 알고있다"는 가정하의 설명을 뱉어내는 경향이 있어서 초기학습시 이해에 어려움이 있었다. 내 로직자체를 이해하지않기도 했고.. \n\n' +
+        '작동원리는 간단했다. 우선 필수 구성요소 Producer, Consumer, Event, Topic, Partition을 이해하고 필요한 로직 작성-> 내 기존에 사용하던 서비스 로직에서 Producer로직사용-> Kafka의 해당하는 Topic에 전달 -> Consumer전달해서 로직사용. 간단한데 코드간의 흐름을 정확하게 이해하는게 중요하다.\n\n' +
+        '아무튼 기초 Kafka의 사용이유와 작동원리를 이해하고 바로 비즈니스 로직 제안을 해서 뱉어내게했다. 가장 간단하고 유용할 것 같은 회원가입 후 환영 이메일 발송로직이다.\n' +
+        '초기 AI제공 함수에선 내부 함수호출이 많기에 꼼꼼히 읽어야하는게 많았고, topic, partition, replicas, offset 등 카프카 클러스터와 설계원리를 이해하는데에 시간을 들였다.' +
+        '이러한 원리를 이해하고 Docker를 켜서 실제 시험해보니 정상적으로 비동기 메일발송을 받을 수 있었다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
