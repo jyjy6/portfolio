@@ -820,10 +820,14 @@
         '아무튼 기초 Kafka의 사용이유와 작동원리를 이해하고 바로 비즈니스 로직 제안을 해서 뱉어내게했다. 가장 간단하고 유용할 것 같은 회원가입 후 환영 이메일 발송로직이다.\n' +
         '초기 AI제공 함수에선 내부 함수호출이 많기에 꼼꼼히 읽어야하는게 많았고, topic, partition, replicas, offset 등 카프카 클러스터와 설계원리를 이해하는데에 시간을 들였다.' +
         '이러한 원리를 이해하고 Docker를 켜서 실제 시험해보니 정상적으로 비동기 메일발송을 받을 수 있었다.',
-      isSpecial: false,
+      isSpecial: true,
       specialStyle: {},
       spDescription: {
-        comment: '',
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-ElasticSearchComplete.jpg',
+        ],
+        comment:
+          '카프카 엘라스틱서치 동기화 구현에 성공한 로그. 자세한 코드는 ImgBell백엔드 깃허브 Kafka디렉토리에서 확인가능하다',
       },
       imageRight: false,
     },
