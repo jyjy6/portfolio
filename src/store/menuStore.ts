@@ -18,6 +18,11 @@ export const useMenuStore = defineStore('menu', () => {
       icon: 'mdi-image-filter-none',
       route: '/imgbell',
     },
+    {
+      title: 'MusicBell (MSA + SSO)',
+      icon: 'mdi-music',
+      route: '/musicbell',
+    },
     { title: 'CONTACT', icon: 'mdi-email', route: '/contact' },
   ];
 

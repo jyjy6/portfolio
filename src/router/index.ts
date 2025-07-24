@@ -57,6 +57,22 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "imgbell" */ '../pages/imgbell/imgbell.vue'),
   },
   {
+    path: '/musicbell',
+    name: 'Musicbell',
+    component: () =>
+      import(
+        /* webpackChunkName: "musicbell" */ '../pages/musicbell/musicbell.vue'
+      ),
+  },
+  {
+    path: '/musicbell/develop',
+    name: 'MusicbellDevelop',
+    component: () =>
+      import(
+        /* webpackChunkName: "musicbelldevelop" */ '../pages/musicbell/develop.vue'
+      ),
+  },
+  {
     path: '/imgbell/develop',
     name: 'ImgbellDevelop',
     component: () =>
