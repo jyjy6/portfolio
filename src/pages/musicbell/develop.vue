@@ -180,9 +180,8 @@
 <template>
   <v-container class="pa-10">
     <h1 class="text-center mb-10">
-      <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
-      <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
-      ImgBell Project DevelopmentLog
+      <v-icon icon="mdi-music" class="mr-2" size="x-large"></v-icon>
+      MusicBell (MSA + SSO)
     </h1>
 
     <!-- 나무위키 스타일의 섹션 목록 -->
