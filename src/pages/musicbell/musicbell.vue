@@ -77,9 +77,8 @@
 <template>
   <v-container class="pa-10">
     <h1 class="text-center mb-10">
-      <v-icon icon="mdi-vuejs" class="mr-2" size="x-large"></v-icon>
-      <v-icon icon="mdi-leaf" class="mr-2" size="x-large"></v-icon>
-      ImageBell (Vue3+SpringBoot)
+      <v-icon icon="mdi-music" class="mr-2" size="x-large"></v-icon>
+      MusicBell (MSA + SSO)
     </h1>
 
     <v-card class="mb-10 pa-6">
