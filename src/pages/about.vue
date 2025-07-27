@@ -33,6 +33,16 @@
       section: '공통',
       chips: [
         {
+          label: 'MSA',
+          description:
+            'Micro Service Architecture. 각 서비스가 독립적으로 동작하며 서로 통신하는 아키텍쳐 기술.',
+        },
+        {
+          label: 'SSO',
+          description:
+            'Single Sign On. 하나의 로그인으로 여러 서비스에 접근 가능하게 하는 기술.',
+        },
+        {
           label: 'JWT',
           description:
             '토큰 기반 인증 방식. refreshToken, accessToken을 이용한 Stateless 로그인 구현 가능',
