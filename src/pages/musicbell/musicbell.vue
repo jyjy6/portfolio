@@ -106,17 +106,24 @@
 
       <v-btn
         class="ma-2"
-        href="https://github.com/jyjy6/"
+        href="https://github.com/jyjy6/musicbellfront"
         target="_blank"
         color="success"
         >프론트 Github</v-btn
       >
       <v-btn
-        href="https://github.com/jyjy6/"
+        href="https://github.com/jyjy6/musicbellback"
         target="_blank"
         color="success"
         class="ma-2"
         >백엔드 Github</v-btn
+      >
+      <v-btn
+        href="https://github.com/jyjy6/authbell"
+        target="_blank"
+        color="success"
+        class="ma-2"
+        >AuthBell Github</v-btn
       >
     </v-card>
 
