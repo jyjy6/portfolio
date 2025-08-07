@@ -4,7 +4,8 @@ import { defineStore } from 'pinia';
 interface MenuItem {
   title: string;
   icon: string;
-  route: string;
+  route?: string;
+  link?: string;
 }
 
 export const useMenuStore = defineStore('menu', () => {
@@ -22,6 +23,11 @@ export const useMenuStore = defineStore('menu', () => {
       title: 'MusicBell (MSA + SSO)',
       icon: 'mdi-music',
       route: '/musicbell',
+    },
+    {
+      title: 'AI 개발자맞춤형 커리어 챗봇API',
+      icon: 'mdi-robot',
+      link: 'https://github.com/jyjy6/jkaitest',
     },
     { title: 'CONTACT', icon: 'mdi-email', route: '/contact' },
   ];

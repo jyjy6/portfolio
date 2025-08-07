@@ -8,9 +8,15 @@
   const router = useRouter();
 
   const navigateTo = (route: string) => {
+    if (route.startsWith('https')) {
+      window.open(route, '_blank');
+      return;
+    }
     router.push(route);
     window.scrollTo(0, 0);
-  }
+  };
+
+
 </script>
 
 <template>
@@ -18,7 +24,13 @@
     <v-app-bar color="black" class="text-white">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" temporary color="black" class="text-white" width="120">
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      color="black"
+      class="text-white"
+      width="120"
+    >
       <v-list dense>
         <v-list-item class="d-flex justify-center">
           <v-avatar size="88" class="mx-auto my-4">
@@ -31,8 +43,28 @@
 
         <v-divider color="white" class="mb-4"></v-divider>
 
-        <v-list-item v-for="item in menuStore.menuItems" :key="item.title" class="text-center">
-          <v-btn icon class="text-white" @click="navigateTo(item.route)" variant="text">
+        <v-list-item
+          v-for="item in menuStore.menuItems"
+          :key="item.title"
+          class="text-center"
+        >
+          <v-btn
+            v-if="item.route"
+            icon
+            class="text-white"
+            @click="navigateTo(item.route!)"
+            variant="text"
+          >
+            <v-icon size="28">{{ item.icon }}</v-icon>
+          </v-btn>
+          <v-btn
+            v-else
+            icon
+            class="text-white"
+            :href="item.link"
+            target="_blank"
+            variant="text"
+          >
             <v-icon size="28">{{ item.icon }}</v-icon>
           </v-btn>
           <div style="font-size: 12px">{{ item.title }}</div>
