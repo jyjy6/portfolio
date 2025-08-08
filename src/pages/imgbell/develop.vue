@@ -525,6 +525,12 @@
       images: [
         {
           image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/Power_of_Gemini2.5.jpg',
+          comment:
+            '검은수염 마샬 D.티치의 이미지 분석 시연(Gemini 2.5 Flash 버전). 상당히 정밀한 분석을 해주고있다. 아래의 Flash-1.5버전과는 다른 정교함. 루피가 날아가는모습, 한자로 써있는 "뇌명팔괘"도 번역하고 원피스 세계관과 잘 연결되어서 대답하고있는 모습이다. ',
+        },
+        {
+          image:
             'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo2.webp',
           comment:
             '검은수염 마샬 D.티치의 이미지 분석 시연. 이미지 파일 혹은 이미지 URL을 입력하면 원피스의 캐릭터 마샬 D.티치(검은수염)가 이미지를 분석해준다. 본인 사진이 맘에드는건지 안드는건지 모르겠다',
