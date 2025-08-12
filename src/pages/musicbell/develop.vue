@@ -50,12 +50,12 @@
         '기본적으로 인증을 담당하는 AuthBell백엔드를 하나 더 추가하고 RSA비대칭 키를 활용한 JWT발급을 채택했다. 큰 흐름으로는\n' +
         '1. 사용자 → 운영되고있는 아무 MSA서비스에서 -> AuthBell에 로그인 요청.\n' +
         '2. AuthBell: Private Key로 JWT 서명 후 발행\n' +
-        '3. 사용자 → ImgBell: JWT와 함께 요청\n' +
-        '4. ImgBell: Public Key로 JWT 검증\n' +
-        '이거와는 별개로' +
-        '5. 사용자 → MusicBell: 같은 JWT로 요청\n' +
-        '6. MusicBell: Public Key로 JWT 검증' +
-        '이렇게 각 서비스의 JWTFilter를 거쳐서 검증하는 방식이 되시겠다. 쿠키공유는 domain을 알맞게(여기선 localhost, 실제서비스면 내 프론트도메인 -> nginx로 프록시)지정하여 accessToken refreshToken을 공유하는 방식이다.' +
+        '3. 사용자(ImgBell이용중) JWT와 함께 요청\n' +
+        '4. ImgBell서버는 Public Key로 JWT 검증\n' +
+        '이거와는 별개로\n' +
+        '5. 사용자(이번엔 MusicBell이용중) 같은 JWT로 요청\n' +
+        '6. MusicBell서버 또한 Public Key로 JWT 검증\n' +
+        '이렇게 각 서비스의 JWTFilter를 거쳐서 검증하는 방식이 되시겠다. 쿠키공유는 domain을 알맞게(여기선 localhost, 실제서비스면 최상위도메인(예: .naver.com 같은)을 지정하여 accessToken refreshToken을 공유하는 방식이다.' +
         '\n\n글로는 정말 간단하게 구현한것 처럼 보이는데 난 애초에 "이런게 있다" 라는 지식이 없는상태로 0부터 기술을 파내는 작업이었기에 AI를 끊임없이 의심해야했다. 그 과정에서 docker compose 포트설정을 이상하게 하질 않나, 프론트의 axios interceptor를 이상하게 등록해서 무한반복이 일어나질않나 내 코드를 삭제하질 않나 정말 고생했다. 심지어 유료 Cursor Pro는 요금제 오버가 돼서 사용하지 못한 상태로. \n\n' +
         '하지만 이런 과정들을 더 겪고 2~3년 전만 해도 생각하기 힘들었을, 실질 경력 1년 언저리의 개발자가 MSA SSO구현을 1~2일 만에 스스로 해냈다는데에 달성감을 느낄 수 있었다. 이렇듯 AI활용을 통해 지식을 흡수해가면 더욱 나은 개발자가 될 수 있다는 자신감을 얻을 수 있었다.' +
         '\n\n 자랑그만하고 이제 구현하면서 의심, 생각해본건 우선 accessToken이 쿠키로 옮겨짐으로써 csrf보안에 취약해지지 않았을까? 하는 생각과, AuthBell을 추가함으로써 회원정보테이블을 하나 더 만들어야 한다는 현실. 개인적으론 이게 효율적일까? 최선일까? 하는 생각이 자꾸들었다. \n만약 이렇게 회원정보테이블이 하나 더 필요하다면 회원가입 -> ImgBell의 DB에 유저정보 저장 -> Kafka등을 활용하여 AuthBell에 이벤트 알림을 하여 AuthBellDB에 비동기적으로 유저정보 저장을 해야겠다는 생각도 들었다. 그리고 테스트코드.. 에러핸들러 등등.. 함수 하나하나에도 정말 공을들여야 하는 것 같다\n\n' +
