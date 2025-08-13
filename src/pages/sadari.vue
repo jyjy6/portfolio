@@ -487,7 +487,7 @@
             <v-col cols="12" class="text-subtitle-2">상단 라벨</v-col>
             <v-col
               v-for="(label, i) in topLabels"
-              :key="`t-${i}`"
+              :key="`t-${i}` + label"
               cols="6"
               sm="4"
               md="3"
@@ -503,7 +503,7 @@
             <v-col cols="12" class="mt-2 text-subtitle-2">하단 라벨</v-col>
             <v-col
               v-for="(label, i) in bottomLabels"
-              :key="`b-${i}`"
+              :key="`b-${i}` + label"
               cols="6"
               sm="4"
               md="3"
