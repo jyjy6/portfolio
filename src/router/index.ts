@@ -86,6 +86,12 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "timer" */ '../pages/timer.vue'),
   },
+  {
+    path: '/sadari',
+    name: 'Sadari',
+    component: () =>
+      import(/* webpackChunkName: "sadari" */ '../pages/sadari.vue'),
+  },
 ];
 
 const router = createRouter({
