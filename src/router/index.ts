@@ -80,6 +80,12 @@ const routes: Array<RouteRecordRaw> = [
         /* webpackChunkName: "imgbelldevelop" */ '../pages/imgbell/develop.vue'
       ),
   },
+  {
+    path: '/timer',
+    name: 'Timer',
+    component: () =>
+      import(/* webpackChunkName: "timer" */ '../pages/timer.vue'),
+  },
 ];
 
 const router = createRouter({
