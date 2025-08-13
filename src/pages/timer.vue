@@ -228,6 +228,7 @@
     currentIntervalIndex.value = 0;
     intervals.value[0] = userInputTime.value; // 리셋 시 사용자 입력 값으로 재설정
     totalSeconds.value = intervals.value[currentIntervalIndex.value];
+    counter.value = 1;
   };
 </script>
 
