@@ -2,7 +2,7 @@
   <v-container class="fill-height">
     <v-responsive class="align-center text-center fill-height">
       <v-card max-width="400" class="mx-auto pa-5" elevation="8">
-        <v-card-title class="text-h4">반복 타이머</v-card-title>
+        <v-card-title class="text-h4">운동 타이머</v-card-title>
         <v-divider class="my-4"></v-divider>
         <v-text-field
           label="시간 설정 (초)"
@@ -24,7 +24,7 @@
         <v-chip :color="currentIntervalChipColor" class="mb-5">
           {{ currentIntervalName }}
         </v-chip>
-        <v-chip color="red" class="mb-5"> 현재 횟수 {{ counter }} </v-chip>
+        <v-chip color="red" class="mb-5"> 현재 {{ counter }}라운드 </v-chip>
         <v-card-actions class="justify-space-around">
           <v-btn
             @click="startTimer"

@@ -419,6 +419,18 @@
   <v-container class="pa-2" fluid>
     <v-row class="mb-2" align="center" justify="space-between">
       <v-col cols="12" md="6">
+        <v-card variant="outlined" class="pa-3 mb-2">
+          <v-row align="center">
+            <v-col cols="12" class="d-flex justify-center">
+              <h2>사다리게임</h2>
+            </v-col>
+          </v-row>
+          <v-row align="center" class="mt-2">
+            <v-col class="d-flex justify-center">
+              <h5>사다리 라벨을 누르면 하나씩 내려갈 수 있음</h5>
+            </v-col>
+          </v-row>
+        </v-card>
         <v-card variant="outlined" class="pa-3">
           <v-row align="center">
             <v-col cols="12" sm="8">
@@ -454,7 +466,7 @@
           <v-row class="mt-2" dense>
             <v-col cols="12" class="d-flex flex-wrap ga-2">
               <v-btn color="primary" @click="addRandomRung"
-                >가로줄 1개 추가</v-btn
+                >랜덤 가로줄 1개 추가</v-btn
               >
               <v-btn color="secondary" @click="generateFullLadder"
                 >모든 사다리 자동 연결</v-btn
@@ -482,7 +494,7 @@
             >
               <v-text-field
                 v-model="topLabels[i]"
-                :label="label"
+                :label="i + 1 + '번 라벨'"
                 density="compact"
                 hide-details
                 placeholder="상단 라벨"
@@ -498,7 +510,7 @@
             >
               <v-text-field
                 v-model="bottomLabels[i]"
-                :label="label"
+                :label="i + 1 + '번 결과'"
                 density="compact"
                 hide-details
                 placeholder="하단 라벨"

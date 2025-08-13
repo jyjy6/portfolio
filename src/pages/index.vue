@@ -93,7 +93,18 @@
         </v-list-item>
       </div>
     </div>
-
+    <v-container class="d-flex justify-end">
+      <v-list-item>
+        <v-btn href="/sadari">
+          <v-icon>mdi-ladder</v-icon>
+          <div class="menu-title">사다리게임</div>
+        </v-btn>
+        <v-btn href="/timer">
+          <v-icon>mdi-timer</v-icon>
+          <div class="menu-title">타이머</div>
+        </v-btn>
+      </v-list-item>
+    </v-container>
     <img src="" style="max-width: 100%; margin: 0 auto" />
   </v-main>
 </template>
