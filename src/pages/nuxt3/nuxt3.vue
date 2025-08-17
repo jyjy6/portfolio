@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  import TranslationComponent from '../../components/TranslationComponent.vue';
+  import { translationConfig } from '../../utils/translationStore';
+
   const features = [
     {
       title: '회원 관리 및 인증 JWT',
@@ -75,7 +78,7 @@
     </h1>
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/nuxt3/develop'" class="ma-2" color="red"
-        >상세개발로그</v-btn
+        >Detail Development Log</v-btn
       >
       <v-tooltip
         text="(현재 접속가능 -> EC2에서 Vercel로 배포 플랫폼 변경)"
@@ -107,17 +110,19 @@
 
     <v-card class="mb-10 pa-6">
       <h3 class="text-h5 mb-4">📌 프로젝트 시작 이유</h3>
-      <p>
-        Vue3+Spring 프로젝트를 끝내고 서버사이드 렌더링(SSR) 기술과 SEO(Search
-        Engine Optimization)에 대한 이해도 갖춰두고 싶었는데 React사용자가
-        NextJS를 쓰듯 Vue는 NuxtJS를 사용한다고 하기에 선택했다.
-        <br /><br />
-        컨텐츠적인 측면으론 본인은 12월 시력교정수술로 인해 약 3~4개월간
-        컴퓨터나 스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 외국어 청해
-        능력이라도 강화하고자 일본 웹 라디오(onsen.com)를 자주 듣게 되었고 그 웹
-        페이지와 비슷한 페이지를 만들면 역량강화에 도움이 되겠다고 생각하여
-        시작했다.
-      </p>
+      <TranslationComponent :api-key="translationConfig.apiKey">
+        <p>
+          Vue3+Spring 프로젝트를 끝내고 서버사이드 렌더링(SSR) 기술과 SEO(Search
+          Engine Optimization)에 대한 이해도 갖춰두고 싶었는데 React사용자가
+          NextJS를 쓰듯 Vue는 NuxtJS를 사용한다고 하기에 선택했다.
+          <br /><br />
+          컨텐츠적인 측면으론 본인은 12월 시력교정수술로 인해 약 3~4개월간
+          컴퓨터나 스마트폰 등의 화면을 거의 못보는 상태였는데 그 동안 외국어
+          청해 능력이라도 강화하고자 일본 웹 라디오(onsen.com)를 자주 듣게
+          되었고 그 웹 페이지와 비슷한 페이지를 만들면 역량강화에 도움이
+          되겠다고 생각하여 시작했다.
+        </p>
+      </TranslationComponent>
 
       <v-tooltip
         text="물론 express+mongoDB의 기초개발경험도 있고 고민도 많이 했지만 NUXT3가 훨씬 더 편한 설정, 정해진 구조(유지보수 하기 좋은)로 설계돼있는 프레임워크여서 선택했다."

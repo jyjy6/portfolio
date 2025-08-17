@@ -15,8 +15,6 @@
     router.push(route);
     window.scrollTo(0, 0);
   };
-
-
 </script>
 
 <template>
@@ -48,25 +46,28 @@
           :key="item.title"
           class="text-center"
         >
-          <v-btn
-            v-if="item.route"
-            icon
-            class="text-white"
-            @click="navigateTo(item.route!)"
-            variant="text"
-          >
-            <v-icon size="28">{{ item.icon }}</v-icon>
-          </v-btn>
-          <v-btn
-            v-else
-            icon
-            class="text-white"
-            :href="item.link"
-            target="_blank"
-            variant="text"
-          >
-            <v-icon size="28">{{ item.icon }}</v-icon>
-          </v-btn>
+          <div class="badge-wrapper">
+            <v-btn
+              v-if="item.route"
+              icon
+              class="text-white"
+              @click="navigateTo(item.route!)"
+              variant="text"
+            >
+              <v-icon size="28">{{ item.icon }}</v-icon>
+            </v-btn>
+            <v-btn
+              v-else
+              icon
+              class="text-white"
+              :href="item.link"
+              target="_blank"
+              variant="text"
+            >
+              <v-icon size="28">{{ item.icon }}</v-icon>
+            </v-btn>
+            <span v-if="item.recommended" class="menu-badge">NEW</span>
+          </div>
           <div style="font-size: 12px">{{ item.title }}</div>
         </v-list-item>
       </v-list>
@@ -97,5 +98,25 @@
 
   .v-main {
     background-color: black !important;
+  }
+
+  .badge-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .menu-badge {
+    position: absolute;
+    top: 3px;
+    right: -6px;
+    background: linear-gradient(45deg, #ff5f6d, #ffc371);
+    color: #000;
+    font-weight: 700;
+    font-size: 9px;
+    padding: 2px 4px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transform: rotate(10deg);
+    letter-spacing: 0.5px;
   }
 </style>

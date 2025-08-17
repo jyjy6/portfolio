@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  import TranslationComponent from '../../components/TranslationComponent.vue';
+  import { translationConfig } from '../../utils/translationStore';
+
   const features = [
     {
       title: '회원 관리 및 인증 JWT',
@@ -73,7 +76,7 @@
 
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/vuepring/develop'" class="ma-2" color="red"
-        >상세개발로그</v-btn
+        >Detail Development Log</v-btn
       >
       <v-tooltip
         text="현재 인스턴스 꺼져있음..->EC2 요금이슈"
@@ -112,19 +115,21 @@
 
     <v-card class="mb-10 pa-6">
       <h3 class="text-h5 mb-4">📌 프로젝트 시작 이유</h3>
-      <p>
-        Vue3+Spring을 막 배운참에 대한민국에선 마이너한 스포츠인 복싱관련
-        홈페이지를 만들어보고싶었다.<br />
-        <br />
-        기본적으론 프론트엔드+백엔드를 분리된 웹개발을 목표로<br />
-        ADMIN페이지와 유저에게 보여지는 로직, AWS S3를 이용한 외부서비스를 통한
-        파일업로드 학습,
-        <br />
-        상점(전자상거래)기능, 실시간 상담기능 등 종합적인 모던 웹페이지 설계
-        공부를 할 수 있다고 판단하였기에 시작했다.<br /><br />
-        더 나아가 코드 전체의 리팩토링, Docker등의 도입등으로 유지,보수에관한
-        실력도 늘릴 수 있었다.
-      </p>
+      <TranslationComponent :api-key="translationConfig.apiKey">
+        <p>
+          Vue3+Spring을 막 배운참에 대한민국에선 마이너한 스포츠인 복싱관련
+          홈페이지를 만들어보고싶었다.<br />
+          <br />
+          기본적으론 프론트엔드+백엔드를 분리된 웹개발을 목표로<br />
+          ADMIN페이지와 유저에게 보여지는 로직, AWS S3를 이용한 외부서비스를
+          통한 파일업로드 학습,
+          <br />
+          상점(전자상거래)기능, 실시간 상담기능 등 종합적인 모던 웹페이지 설계
+          공부를 할 수 있다고 판단하였기에 시작했다.<br /><br />
+          더 나아가 코드 전체의 리팩토링, Docker등의 도입등으로 유지,보수에관한
+          실력도 늘릴 수 있었다.
+        </p>
+      </TranslationComponent>
 
       <v-tooltip
         text="React는 선점효과로인한 개발시장의 고용률이 높다는 것과 넓은 생태계로 얻을 수 있는 지식(구글링) 이외의 큰 장점을 못얻었음.

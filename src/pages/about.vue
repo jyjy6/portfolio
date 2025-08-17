@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import TranslationComponent from '../components/TranslationComponent.vue';
+  import { translationConfig } from '../utils/translationStore';
 
   const panels = ref<string[]>(['intro']);
 
@@ -254,12 +256,16 @@
           >간략소개, 목표</v-expansion-panel-title
         >
         <v-expansion-panel-text>
-          AI 시대이기 때문에 개발자의 밥그릇이 위험하다. 라는 말이 많이 나오지만
-          산업혁명 마다 그 말 나오지 않았을까..?<br /><br />
-          사회 변화에 적응하려하지 않는 사람이 도태된다고 생각하고<br /><br />부족한
-          인간의 지능, 기억력을 AI가 메꿔준다면 <br /><br />
-          그걸 활용하는 센스를 발휘하는게 인간이 AI시대에 맞춰 해야할 일이라고
-          생각합니다🚀
+          <TranslationComponent :api-key="translationConfig.apiKey">
+            <div>
+              AI 시대이기 때문에 개발자의 밥그릇이 위험하다. 라는 말이 많이
+              나오지만 산업혁명 마다 그 말 나오지 않았을까..?<br /><br />
+              사회 변화에 적응하려하지 않는 사람이 도태된다고 생각하고<br /><br />부족한
+              인간의 지능, 기억력을 AI가 메꿔준다면 <br /><br />
+              그걸 활용하는 센스를 발휘하는게 인간이 AI시대에 맞춰 해야할
+              일이라고 생각합니다🚀
+            </div>
+          </TranslationComponent>
           <br />
           <br />
         </v-expansion-panel-text>

@@ -33,3 +33,6 @@ portfolio.pem
 .gemini/*
 
 *.py
+
+.env
+.env.*

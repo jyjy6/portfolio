@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  import TranslationComponent from '../../components/TranslationComponent.vue';
+  import { translationConfig } from '../../utils/translationStore';
+
   const features = [
     {
       title: '모놀리식 -> MSA로 확장, SSO구현',
@@ -83,7 +86,7 @@
 
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/musicbell/develop'" class="ma-2" color="red"
-        >상세개발로그</v-btn
+        >Detail Development Log</v-btn
       >
       <v-tooltip
         text="서버비 너무 비쌈"
@@ -129,23 +132,25 @@
 
     <v-card class="mb-10 pa-6">
       <h3 class="text-h5 mb-4">📌 프로젝트 시작 이유, 구현</h3>
-      <p>
-        ImgBell 프로젝트가 ES, Kafka등 백엔드에 필요한 대부분의 기능, 스택들을
-        사용했다고 생각 될 즈음.. 이 이상 뭘 할 수 있을까? 라고 생각해봤는데
-        요즘 백엔드 밥줄이라고 하는 MSA를 구현해보고자 시작했다. <br />사실 내
-        개발연차를 생각했을때 빨라도 너무 빠른게 아닐까? 싶기도 했지만 이 MSA를
-        구현하는데 까지가 미드개발자의 끝과 같은 영역이라고 AI도 조언을 줘서
-        자신감 있게 도전해봤다.
-        <br />
-        SSO도 구현해봤다 처음엔 이 SSO라는 용어가 내 머리속엔 없었고
-        네이버같은데 활용하다보면 웹툰페이지 쇼핑페이지 치지직 이런데 다 하나의
-        네이버 아이디로 활용할 수 있지 않은가? 하는 생각으로 구현에 도전해봤는데
-        이걸 SSO라고 부르는듯 하다.
-        <br />
-        이렇듯 개발용어를 상세하게 몰라도 지금까지의 인터넷, 컴퓨터 경험으로
-        어떤 기능을 접했을때 "관련된 다른 기능도 구현할 수 있겠다" 라고
-        생각하는게 중요한 아키텍쳐링 능력인 것 같다.
-      </p>
+      <TranslationComponent :api-key="translationConfig.apiKey">
+        <p>
+          ImgBell 프로젝트가 ES, Kafka등 백엔드에 필요한 대부분의 기능, 스택들을
+          사용했다고 생각 될 즈음.. 이 이상 뭘 할 수 있을까? 라고 생각해봤는데
+          요즘 백엔드 밥줄이라고 하는 MSA를 구현해보고자 시작했다. <br />사실 내
+          개발연차를 생각했을때 빨라도 너무 빠른게 아닐까? 싶기도 했지만 이
+          MSA를 구현하는데 까지가 미드개발자의 끝과 같은 영역이라고 AI도 조언을
+          줘서 자신감 있게 도전해봤다.
+          <br />
+          SSO도 구현해봤다 처음엔 이 SSO라는 용어가 내 머리속엔 없었고
+          네이버같은데 활용하다보면 웹툰페이지 쇼핑페이지 치지직 이런데 다
+          하나의 네이버 아이디로 활용할 수 있지 않은가? 하는 생각으로 구현에
+          도전해봤는데 이걸 SSO라고 부르는듯 하다.
+          <br />
+          이렇듯 개발용어를 상세하게 몰라도 지금까지의 인터넷, 컴퓨터 경험으로
+          어떤 기능을 접했을때 "관련된 다른 기능도 구현할 수 있겠다" 라고
+          생각하는게 중요한 아키텍쳐링 능력인 것 같다.
+        </p>
+      </TranslationComponent>
 
       <v-tooltip
         text="Cursor의 PRO요금제가 끝나버린것이다! Gemini, ChatGPT, Claude 등을 웹에서 활용하고 몸비틀어가면서 열심히 구현했고 결국엔 답을 찾아냈다."

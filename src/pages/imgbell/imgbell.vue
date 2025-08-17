@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  import TranslationComponent from '../../components/TranslationComponent.vue';
+  import { translationConfig } from '../../utils/translationStore';
+
   const features = [
     {
       title: '회원 관리 및 인증 JWT',
@@ -122,7 +125,7 @@
 
     <v-card class="mb-10 pa-6">
       <v-btn :to="'/imgbell/develop'" class="ma-2" color="red"
-        >상세개발로그</v-btn
+        >Detail Development Log</v-btn
       >
       <v-tooltip
         text="서버비 너무 비쌈"
@@ -161,20 +164,22 @@
 
     <v-card class="mb-10 pa-6">
       <h3 class="text-h5 mb-4">📌 프로젝트 시작 이유</h3>
-      <p>
-        Vue3+Spring을 더 심화시키고싶어서 시작했다. <br />
-        <br />
-        이전 프로젝트에서 더 발전의 여지가 있었던 JWT 완전한 Stateless 발급,
-        OneToMany ManyToOne 등의 어노테이션을 활용한 테이블간의 조인,
-        외부서비스를 통한 파일업로드 최적화, 새로이 Redis를 도입한 DB사용
-        최적화, 여러 쿼리 조건에 따른 검색기능, kakao Oauth 추가 등 종합적인
-        모던 웹페이지의 전반적인 개발 실력 향상이 가능하다고 생각했다.
-        <br /><br />
-        <strong
-          >추가로 Google Gemini AI를 활용하여 AI와의 연계 서비스를 구현할 수
-          있을 것이라고 생각했다.</strong
-        >
-      </p>
+      <TranslationComponent :api-key="translationConfig.apiKey">
+        <p>
+          Vue3+Spring을 더 심화시키고싶어서 시작했다. <br />
+          <br />
+          이전 프로젝트에서 더 발전의 여지가 있었던 JWT 완전한 Stateless 발급,
+          OneToMany ManyToOne 등의 어노테이션을 활용한 테이블간의 조인,
+          외부서비스를 통한 파일업로드 최적화, 새로이 Redis를 도입한 DB사용
+          최적화, 여러 쿼리 조건에 따른 검색기능, kakao Oauth 추가 등 종합적인
+          모던 웹페이지의 전반적인 개발 실력 향상이 가능하다고 생각했다.
+          <br /><br />
+          <strong
+            >추가로 Google Gemini AI를 활용하여 AI와의 연계 서비스를 구현할 수
+            있을 것이라고 생각했다.</strong
+          >
+        </p>
+      </TranslationComponent>
 
       <v-tooltip
         text="그냥 별 이유는 없고 스프링부트에 종 모양이 있어서.. 따왔다.."

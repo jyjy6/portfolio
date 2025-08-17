@@ -4,6 +4,8 @@
   import { ref } from 'vue';
   import { nextTick } from 'vue';
   import { onMounted } from 'vue';
+  import TranslationComponent from '../../components/TranslationComponent.vue';
+  import { translationConfig } from '../../utils/translationStore';
 
   const sections = [
     {
@@ -446,7 +448,13 @@
               :alt="`image-${section.id}`"
               style="max-width: 100%; max-height: 450px; object-fit: contain"
             />
-            <p style="margin-bottom: 20px">{{ image.comment }}</p>
+            <TranslationComponent
+              :key="`image-comment-${section.id}-${i}`"
+              :api-key="translationConfig.apiKey"
+              style="margin-bottom: 30px"
+            >
+              <p style="margin-bottom: 20px">{{ image.comment }}</p>
+            </TranslationComponent>
           </div>
         </v-col>
 
@@ -457,7 +465,12 @@
             :class="section.isSpecial ? 'special-card' : ''"
             style="position: sticky; top: 150px"
           >
-            {{ section.description }}
+            <TranslationComponent
+              :key="`translation-${section.id}`"
+              :api-key="translationConfig.apiKey"
+            >
+              <div>{{ section.description }}</div>
+            </TranslationComponent>
           </v-card>
         </v-col>
       </template>
@@ -470,7 +483,12 @@
             :class="section.isSpecial ? 'special-card' : ''"
             style="position: sticky; top: 150px"
           >
-            {{ section.description }}
+            <TranslationComponent
+              :key="`translation-${section.id}`"
+              :api-key="translationConfig.apiKey"
+            >
+              <div>{{ section.description }}</div>
+            </TranslationComponent>
           </v-card>
         </v-col>
 
@@ -488,7 +506,12 @@
               :alt="`image-${section.id}`"
               style="max-width: 100%; height: 550px; object-fit: contain"
             />
-            <p>{{ image.comment }}</p>
+            <TranslationComponent
+              :key="`image-comment-right-${section.id}-${i}`"
+              :api-key="translationConfig.apiKey"
+            >
+              <p>{{ image.comment }}</p>
+            </TranslationComponent>
           </div>
         </v-col>
       </template>
