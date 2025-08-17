@@ -107,7 +107,7 @@ ${text}`;
 
     try {
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${props.apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${props.apiKey}`,
         {
           method: 'POST',
           headers: {
@@ -130,6 +130,14 @@ ${text}`;
       if (!response.ok) {
         const errorText = await response.text();
         console.error('API 응답 오류:', errorText);
+
+        // 429 에러 (Too Many Requests) 처리
+        if (response.status === 429) {
+          throw new Error(
+            'Gemini 번역 일일 사용량이 초과되었습니다. 내일 다시 시도해주세요.'
+          );
+        }
+
         throw new Error(`번역 API 오류: ${response.status} - ${errorText}`);
       }
 
