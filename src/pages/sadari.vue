@@ -485,7 +485,7 @@
           <v-row dense>
             <v-col cols="12" class="text-subtitle-2">상단 라벨</v-col>
             <v-col
-              v-for="(label, i) in topLabels"
+              v-for="(_, i) in topLabels"
               :key="`t-${i}`"
               cols="6"
               sm="4"
@@ -502,7 +502,7 @@
             </v-col>
             <v-col cols="12" class="mt-2 text-subtitle-2">하단 라벨</v-col>
             <v-col
-              v-for="(label, i) in bottomLabels"
+              v-for="(_, i) in bottomLabels"
               :key="`b-${i}`"
               cols="6"
               sm="4"
