@@ -449,7 +449,6 @@
                 type="number"
                 density="compact"
                 label="열"
-                :min="minColumns"
                 :max="sliderMax"
               />
             </v-col>
@@ -487,7 +486,7 @@
             <v-col cols="12" class="text-subtitle-2">상단 라벨</v-col>
             <v-col
               v-for="(label, i) in topLabels"
-              :key="`t-${i}` + label"
+              :key="`t-${i}`"
               cols="6"
               sm="4"
               md="3"
@@ -498,12 +497,13 @@
                 density="compact"
                 hide-details
                 placeholder="상단 라벨"
+                @update:model-value="(value) => (topLabels[i] = value)"
               />
             </v-col>
             <v-col cols="12" class="mt-2 text-subtitle-2">하단 라벨</v-col>
             <v-col
               v-for="(label, i) in bottomLabels"
-              :key="`b-${i}` + label"
+              :key="`b-${i}`"
               cols="6"
               sm="4"
               md="3"
@@ -514,6 +514,7 @@
                 density="compact"
                 hide-details
                 placeholder="하단 라벨"
+                @update:model-value="(value) => (bottomLabels[i] = value)"
               />
             </v-col>
           </v-row>
