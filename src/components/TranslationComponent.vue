@@ -47,7 +47,7 @@
 
   const props = withDefaults(defineProps<Props>(), {
     autoDetect: true,
-    targetLanguage: 'ko', // 기본값: 한국어로 번역
+    targetLanguage: 'ja', // 기본값: 일본어로 번역
   });
 
   const isTranslated = ref(false);
@@ -102,8 +102,7 @@
     }
 
     const prompt = `다음 텍스트를 ${from}에서 ${to}로 자연스럽게 번역해주세요. 번역된 결과만 출력하고 다른 설명은 하지 마세요:
-
-${text}`;
+    ${text}`;
 
     try {
       const response = await fetch(
@@ -185,6 +184,10 @@ ${text}`;
 
       targetLanguage.value = getLanguageName(targetLang);
 
+      if (translatedText.value != '') {
+        isTranslated.value = true;
+        return;
+      }
       const translated = await translateWithGemini(
         originalText.value,
         getLanguageName(sourceLanguage),
