@@ -11,7 +11,7 @@
     {
       id: 1,
       title:
-        '1. ImgBell 모놀리식 -> AuthBell+MusicBell 추가 MSA로 확장, SSO구현',
+        '1. ImgBell 모놀리식 -> AuthBell+MusicBell 추가 MSA로 확장, SSO구현, 메인페이지',
       images: [
         {
           image:
@@ -44,10 +44,16 @@
           comment:
             'MSA의 도커환경. 정말.. 초대형 웹서비스는 어떻게 돌아가고 있을지 감도 안온다',
         },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/1.MainPage.webp',
+          comment:
+            '메인페이지. 여느 음악사이트와 같은 고정 하단플레이어, 재생목록, 최근들은목록을 구현했다.',
+        },
       ],
       description:
         '꽤나 고생한거같다 사실 시간이야1~2일만에 MSA구축을 완료했지만 AI한계를 느껴서 정신적인 데미지를 받은 듯 한 느낌이다\n\n' +
-        '우선 개발 흐름. MSA가 네이버쇼핑, 네이버웹툰 뭐 이런 것 처럼 각 서비스가 독립적으로 -이하생략- 라는 서비스는 알고있었다. 그래서 나도 MusicBell프로젝트를 추가하고 AI제공 Vuetify코드와 적절한 지시, 수정으로 프론트를 완성했다. 이제 봉착한 문제는 로그인이다. 어떻게 A서비스에서 로그인해야 B서비스도 그 로그인(유저)정보를 공유할 수 있는가에 봉착했고 AI에 솔루션을 요청했다.\n' +
+        '우선 개발 흐름. MSA가 네이버쇼핑, 네이버웹툰 뭐 이런 것 처럼 각 서비스가 독립적으로 운용되는 서비스는 알고있었다. 그래서 나도 MusicBell프로젝트를 추가하고 AI제공 Vuetify코드와 적절한 지시, 수정으로 프론트를 완성했다. 이제 봉착한 문제는 로그인이다. 어떻게 A서비스에서 로그인해야 B서비스도 그 로그인(유저)정보를 공유할 수 있는가에 봉착했고 AI에 솔루션을 요청했다.\n' +
         '하지만.. app.cookie.domain=.localhost <- 이와같이 뭔 이상한 로컬호스트 도메인설정을 생판 처음보는 식으로 하라고 하질 않나, \n 서비스A에서 로그인 한걸 서비스B로 쿠키 복사를 하라고 하질 않나 정말.. 많은 일이 있었다..\n' +
         '기본적으로 인증을 담당하는 AuthBell백엔드를 하나 더 추가하고 RSA비대칭 키를 활용한 JWT발급을 채택했다. 큰 흐름으로는\n' +
         '1. 사용자 → 운영되고있는 아무 MSA서비스에서 -> AuthBell에 로그인 요청.\n' +
@@ -61,7 +67,8 @@
         '\n\n글로는 정말 간단하게 구현한것 처럼 보이는데 난 애초에 "이런게 있다" 라는 지식이 없는상태로 0부터 기술을 파내는 작업이었기에 AI를 끊임없이 의심해야했다. 그 과정에서 docker compose 포트설정을 이상하게 하질 않나, 프론트의 axios interceptor를 이상하게 등록해서 무한반복이 일어나질않나 내 코드를 삭제하질 않나 정말 고생했다. 심지어 유료 Cursor Pro는 요금제 오버가 돼서 사용하지 못한 상태로. \n\n' +
         '하지만 이런 과정들을 더 겪고 2~3년 전만 해도 생각하기 힘들었을, 실질 경력 1년 언저리의 개발자가 MSA SSO구현을 1~2일 만에 스스로 해냈다는데에 달성감을 느낄 수 있었다. 이렇듯 AI활용을 통해 지식을 흡수해가면 더욱 나은 개발자가 될 수 있다는 자신감을 얻을 수 있었다.' +
         '\n\n 자랑그만하고 이제 구현하면서 의심, 생각해본건 우선 accessToken이 쿠키로 옮겨짐으로써 csrf보안에 취약해지지 않았을까? 하는 생각과, AuthBell을 추가함으로써 회원정보테이블을 하나 더 만들어야 한다는 현실. 개인적으론 이게 효율적일까? 최선일까? 하는 생각이 자꾸들었다. \n만약 이렇게 회원정보테이블이 하나 더 필요하다면 회원가입 -> ImgBell의 DB에 유저정보 저장 -> Kafka등을 활용하여 AuthBell에 이벤트 알림을 하여 AuthBellDB에 비동기적으로 유저정보 저장을 해야겠다는 생각도 들었다. 그리고 테스트코드.. 에러핸들러 등등.. 함수 하나하나에도 정말 공을들여야 하는 것 같다\n\n' +
-        '하지만 가장 뼈저리게 느낀 의구심은 모두들 MSA를 막상 시작하지말고 모놀리식부터 시작하라고한다. 뭐 물론 맞는말인것 같긴 하지만 적어도 이 프로젝트의 AuthBell처럼 회원정보나 인증을 담당하는 백엔드를 처음부터 만들면 마이그레이션이나 코드 리팩토링등의 비용을 더 줄일 수 있지 않을까? 하는 생각도 들었다. 물론 모놀리식에서 끝나게 된다면 비용낭비가 될 수 있겠지만 웹서비스를 시작함에 있어서 언젠간 고려해볼 사항이라고 생각했다.',
+        '하지만 가장 뼈저리게 느낀 의구심은 모두들 MSA를 막상 시작하지말고 모놀리식부터 시작하라고한다. 뭐 물론 맞는말인것 같긴 하지만 적어도 이 프로젝트의 AuthBell처럼 회원정보나 인증을 담당하는 백엔드를 처음부터 만들면 마이그레이션이나 코드 리팩토링등의 비용을 더 줄일 수 있지 않을까? 하는 생각도 들었다. 물론 모놀리식에서 끝나게 된다면 비용낭비가 될 수 있겠지만 웹서비스를 시작함에 있어서 언젠간 고려해볼 사항이라고 생각했다. \n\n' +
+        '메인페이지 디자인은 Vuetify로 구현했고 음악재생리스트, 최근플레이음악은 Redis도입으로 구현했다. 개발 초기부터 Redis ES Kafka 등을 사용할까 많이 고민했는데.. Redis정도는 우선 써도 될거라고 생각했다.',
       isSpecial: true,
       specialStyle: {},
       spDescription: {
@@ -73,36 +80,44 @@
       },
       imageRight: false,
     },
-    // {
-    //   id: 2,
-    //   title: '2. 로그인, 로그아웃, JWT검증, 회원기능',
-    //   images: [
-    //     {
-    //       image:
-    //         'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/login1.webp',
-    //       comment: '통상 회원가입 로그인',
-    //     },
-    //     {
-    //       image:
-    //         'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/login2oauth.webp',
-    //       comment: 'Google, Kakao Oauth 로그인',
-    //     },
-    //     {
-    //       image:
-    //         'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/NewJWTFilter.PNG',
-    //       comment:
-    //         '새로워진 JWTFilter 코드. JWT토큰에서 유저정보추출, CustomUserDetail로 인증객체를 생성하고있다. 매 필터마다 DB조회 할 필요X',
-    //     },
-    //   ],
-    //   description: '',
-    //   isSpecial: false,
-    //   specialStyle: {},
-    //   spDescription: {
-    //     image: [''],
-    //     comment: '',
-    //   },
-    //   imageRight: false,
-    // },
+    {
+      id: 2,
+      title: '2. 음악+아티스트 업로드 - AWS S3, DB설계, 마이그레이션 등 ',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/2.Upload-ArtistUpload.jpg',
+          comment:
+            '아티스트 업로드 페이지. 최초엔 Artist테이블은 추가하지 않으려 했다가 추후 여러 통계등에 사용할 것 같아서 추가했다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/2.Upload-MusicUpload.webp',
+          comment:
+            '음악 업로드 페이지. 파일 업로드 시 기본적으로 재생시간, 아티스트명, 음악명 이 자동으로 기록된다. 아티스트의 경우 기존에 등록해놓은 아티스트에서 선택하는 방식이다. 기존 등록해놓지 않은 신인 아티스트라면 그냥 텍스트 입력으로도 임시OK',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/2.Upload-Migration.jpg',
+          comment:
+            '백엔드 마이그레이션 코드. AtomicInteger라는것도 처음보는 개념도 있었다.',
+        },
+      ],
+      description:
+        'ImgBell에서 보인 AWS S3와 사용법은 거의 비슷하므로 생략하겠다. 차이점이있다면 음악파일+앨범커버이미지 두개의 파일을 업로드 해야했기 때문에 AWS S3역시 폼 한번에 두번 사용했다. 처음하는 거지만 프론트 S3컴포넌트 작성에도 적응되었고 AI의 힘도 있기때문에 별다른 어려움은 없었다. \n\n' +
+        '우선 DB설계는 AI에게 대형 음악사이트의 테이블 컬럼들을 추천받았고 어느정도 생각한 항목들이 있었기에 짜잘한 수정만이 있었다. 하지만 Music테이블에 Artist를 "테이블"로 둬서 @ManyToOne을 붙일지, 아니면 단순하게 String artist 로 간단하게 만들지 고민했는데, 최초엔 후자로 해서 간단하게 구현했으나 역시 여러모로 Artist 항목은 필요할 것 같아서 백엔드 마이그레이션을 진행하는 등 여러가지를 시도해봤다.' +
+        '사실 처음부터 잘하면 되는거 맞다. 근데 사람이란 만사가 의도된대로 흘러가는게 아니기에 일부러 이런 트러블을 내서 문제대처능력을 키우는게 학습에 더 도움되리라 생각하고 나 스스로가 문제를 만들고 해결해 봤다. \n\n' +
+        '마이그레이션도 사실 프론트랑 연계해서 Form으로 Artist항목 수정하게 하면 되긴한데 데이터가 5만개있으면 어떻게할것인가? 라는 마인드로 백엔드 코드를 구현하기로했다. \n' +
+        '라곤해도 큰그림을 AI에게 쥐어줘서 뱉어낸 코드를 내가 이해하고 수정하는 방식이었다. 완성된 코드결과를 보니 AtomicInteger라는 멀티스레드 환경에서 안전한 정수카운터, 배치작업 등등을 행했는데 사실 싱글 스레드이기에 AtomicInteger는 그닥 필요가 없었으나 프로그래밍에 있어서 인간은 "이런게 있구나"라는걸 뇌내에 각인시켜놓는게 중요하기에 단순 AI코드 복붙만이 아닌 이해하는 과정에서 공부가 되었다고 생각한다.' +
+        '지금 생각해보면 이 마이그레이션 코드도 최소 5년차 이상의 결과물인데 설계만 잘한다면 1년차인 나도 활용할 수 있다는게 이 AI시대에서의 최대 장점인것 같다. 전부 내것으로 만들기 위해 적극 활용해야겠다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [''],
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
