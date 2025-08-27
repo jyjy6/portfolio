@@ -32,6 +32,12 @@ export const useMenuStore = defineStore('menu', () => {
       recommended: true,
     },
     {
+      title: 'nano-banana AI Image Service',
+      icon: 'mdi-brain',
+      route: '/nano-banana',
+      recommended: true,
+    },
+    {
       title: 'AI 개발자맞춤형 커리어 챗봇API',
       icon: 'mdi-robot',
       link: 'https://github.com/jyjy6/jkaitest',

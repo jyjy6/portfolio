@@ -92,6 +92,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "sadari" */ '../pages/sadari.vue'),
   },
+  {
+    path: '/nano-banana',
+    name: 'NanoBanana',
+    component: () =>
+      import(
+        /* webpackChunkName: "nanobanana" */ '../pages/nano-banana/develop.vue'
+      ),
+  },
 ];
 
 const router = createRouter({
