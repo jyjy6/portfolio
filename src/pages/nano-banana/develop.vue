@@ -277,14 +277,19 @@
           :alt="`image-${section.id}`"
           style="max-width: 100%; height: auto; object-fit: contain"
         />
-        <v-alert
-          type="info"
-          variant="tonal"
-          style="white-space: pre-line !important"
-          v-if="section.spDescription?.comment"
+        <TranslationComponent
+          :key="`section-special-comment-${section.id}`"
+          :api-key="translationConfig.apiKey"
         >
-          {{ section.spDescription?.comment }}
-        </v-alert>
+          <v-alert
+            type="info"
+            variant="tonal"
+            style="white-space: pre-line !important"
+            v-if="section.spDescription?.comment"
+          >
+            {{ section.spDescription?.comment }}
+          </v-alert>
+        </TranslationComponent>
       </v-col>
       <hr style="width: 100%; margin: 16px auto; border: 1px solid white" />
     </v-row>
