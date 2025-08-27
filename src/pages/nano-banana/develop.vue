@@ -49,8 +49,11 @@
       isSpecial: true,
       specialStyle: {},
       spDescription: {
-        image: [''],
-        comment: '완성된 도널드 트럼프 결과물. 관세 낮춰줘',
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/02.requestToAI.jpg',
+        ],
+        comment:
+          '이런식으로 AI에게 서비스의 큰그림을 요구하면 코드를 뱉어내준다 이를테면 Gemini API사용법 같은 외울필요도 없고 복붙해야할 만한것과, 디자인 별로 안되어있는 기초직인틀.. 그걸 세세하게 수정해서 1시간만에 서비스개발을 완료했다.',
       },
       imageRight: false,
     },
