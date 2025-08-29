@@ -118,6 +118,56 @@
       },
       imageRight: false,
     },
+    {
+      id: 3,
+      title:
+        '3. Redis, 성능최적화 - 최근 재생목록, 플레이리스트, 일간,월간 주간랭킹 + BATCH를 활용한 최적화와 FrontEnd 캐시 사용 최적화',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/3.Redis-addPlayList.jpg',
+          comment:
+            '백엔드 Redis 플레이리스트에 음악정보를 추가하는코드. ImgBell의 코드를 재활용+리팩토링했고 동작원리, 큰그림을 이해하고 AI, 인터넷에 있는 정보들을 "지력"으로써 활용하면 간단하다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/3.Redis-ChartSlow.webp',
+          comment:
+            '시간이라도 멈춘듯이 너무느리다. 일간, 주간, 월간 차트들을 로드하는데 20초? 유저들 다 빠져나가겠다!',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/3.Redis-BatchCodeFront.jpg',
+          comment:
+            '최초엔 Redis 캐시를 사용하는 최적화를 생각했으나, for문으로 데이터를 하나하나 불러오는게 문제같다고 최적화 솔루션 제공을 요청해봤더니 AI가 BATCH로 API를 사용하는 방식도 같이 추천해줬다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/3.Redis-ChartFast.webp',
+          comment:
+            '시간이라도 멈춘듯이 너무 빠르다!. BATCH를 활용하니 1초만에 뿅! 여기에 FrontEnd의 Cache까지 활용하면 API요청 비용도 절약할 수 있다. 이렇게 성능구현->최적화를 항상 염두해 두는 자세가 중요하다 AI는 이런 구조를 짜지 못하기에.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/3.FrontCacheCode.jpg',
+          comment:
+            '프론트 Cache코드. 프론트에서 캐시를 사용하는건 처음이었다. 백엔드까지 가지도않고 상당히 효율적인 방식을 AI가 추천해줬고 최적화 작업 할때 프론트선에서 Cut할 수 있는 방법도 내 무기로써 추가됐다.',
+        },
+      ],
+      description:
+        'ImgBell에서도 사용했던 Redis 이번에도 성능 최적화를 위해 도입했다. 여태껏 만든 기능을 쭉 둘러 보니 랭킹시스템, 최근들은음악, 플레이리스트 를 MySQL DB대신 Redis를 사용해서 간편하고 빠르게 구현할 수 있다고 생각했고 평소와 같이 구현에 성공했다. \n\n' +
+        '하지만... 구현완료 후 브라우저를 확인해보니 너무 느린것이었다! 약 20초동안 데이터를 로딩하고있었고 브라우저의 네트워크탭을 확인해보니 음악데이터를 하나하나 API요청해서 불러오는게 문제였다. 처음엔 Redis를 사용하여 최초데이터를 캐싱해서 첫 로딩 이후엔 빠른 데이터제공을 하는방식으로 처리할까 생각했었는데 그 "첫 로딩"이 문제라고 생각했기에 다른 솔루션을 AI와 함께 상담했다. \n그래서 나온것이 BATCH방식을 활용한 API개선. ' +
+        'Redis에서 랭킹목록을 List로 담아서 -> batch 음악정보를 한번에 뽑아내는방식이다. \n\n' +
+        '실행해보니 정말 빠른결과를 얻어낼 수 있었고, 추가사항으로 AI가 프론트엔드에서 Cache를 활용하여 API요청 절약하는 방법까지 추천해줘서 한번 더 최적화하는데에 성공했다.' +
+        ' 이렇게 "무언가를 해야한다"라는 구조를 그리면 수십년차 개발자의 빅데이터나 다름없는 AI가 방법을 추천해주는데, 그걸 본인의 재량으로 효율적으로 활용하면 개발 연차가 짧아도 수십년차 개발자와 같은 수준의 코드를 뽑아낼 수 있다는게 요즘 개발의 중요한 메타인 것 같다고 느꼈다.',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [''],
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
@@ -218,16 +268,27 @@
       <v-card-text class="py-2">
         <ul class="toc-list">
           <li v-for="section in sections" :key="section.id" class="toc-item">
-            <a
-              href="#"
-              @click.prevent="scrollToSection(section.id)"
-              :class="{ 'active-section': activeSection === section.id }"
-            >
-              <v-icon small class="mr-2" color="#64B5F6"
-                >mdi-chevron-right</v-icon
+            <div class="toc-item-content">
+              <a
+                href="#"
+                @click.prevent="scrollToSection(section.id)"
+                :class="{ 'active-section': activeSection === section.id }"
+                class="toc-link"
               >
-              {{ section.title }}
-            </a>
+                <v-icon
+                  small
+                  class="mr-2"
+                  color="#64B5F6"
+                  icon="mdi-chevron-right"
+                />
+                <TranslationComponent
+                  :api-key="translationConfig.apiKey"
+                  class="inline-translation"
+                >
+                  {{ section.title }}
+                </TranslationComponent>
+              </a>
+            </div>
           </li>
         </ul>
       </v-card-text>

@@ -1,5 +1,5 @@
 <template>
-  <div class="translation-wrapper" :id="componentId">
+  <div class="translation-wrapper" :id="componentId" :class="$attrs.class">
     <!-- 원본 텍스트 -->
     <div v-if="!isTranslated" class="original-text">
       <slot></slot>
@@ -24,7 +24,7 @@
       size="large"
       variant="outlined"
       :loading="isTranslating"
-      @click="toggleTranslation"
+      @click.stop="toggleTranslation"
       class="translation-btn"
     >
       <v-icon left size="16">
@@ -219,6 +219,17 @@
 <style scoped>
   .translation-wrapper {
     position: relative;
+  }
+
+  .translation-wrapper.inline-translation {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .translation-wrapper.inline-translation .translation-btn {
+    margin-top: 0;
+    margin-left: 8px;
   }
 
   .translated-text {

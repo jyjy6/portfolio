@@ -157,16 +157,27 @@
       <v-card-text class="py-2">
         <ul class="toc-list">
           <li v-for="section in sections" :key="section.id" class="toc-item">
-            <a
-              href="#"
-              @click.prevent="scrollToSection(section.id)"
-              :class="{ 'active-section': activeSection === section.id }"
-            >
-              <v-icon small class="mr-2" color="#64B5F6"
-                >mdi-chevron-right</v-icon
+            <div class="toc-item-content">
+              <a
+                href="#"
+                @click.prevent="scrollToSection(section.id)"
+                :class="{ 'active-section': activeSection === section.id }"
+                class="toc-link"
               >
-              {{ section.title }}
-            </a>
+                <v-icon
+                  small
+                  class="mr-2"
+                  color="#64B5F6"
+                  icon="mdi-chevron-right"
+                />
+                <TranslationComponent
+                  :api-key="translationConfig.apiKey"
+                  class="inline-translation"
+                >
+                  {{ section.title }}
+                </TranslationComponent>
+              </a>
+            </div>
           </li>
         </ul>
       </v-card-text>
