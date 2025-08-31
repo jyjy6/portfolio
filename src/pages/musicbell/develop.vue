@@ -175,7 +175,7 @@
       images: [
         {
           image:
-            'hhttps://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-MainPage.webp',
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-MainPage.webp',
           comment:
             '아티스트 메인페이지. 추천 아티스트 3명과 그 아래에 아티스목록 및 검색이있다. 더 보기를 클릭하면 서버로 9개의 아티스트 데이터를 추가요청 한다.',
         },
