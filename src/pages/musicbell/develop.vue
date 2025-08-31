@@ -168,6 +168,57 @@
       },
       imageRight: false,
     },
+    {
+      id: 4,
+      title:
+        '4. Elastic Search - 검색, DB->ES인덱스 동기화, Artist페이지+디테일 페이지',
+      images: [
+        {
+          image:
+            'hhttps://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-MainPage.webp',
+          comment:
+            '아티스트 메인페이지. 추천 아티스트 3명과 그 아래에 아티스목록 및 검색이있다. 더 보기를 클릭하면 서버로 9개의 아티스트 데이터를 추가요청 한다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-DetailPage.webp',
+          comment:
+            '아티스트 디테일 페이지. 아티스트 업로드시에 받은 정보들(외부링크 등)과 해당 아티스트의 음악 감상이 가능하다. 추가적으로 뭐 Music테이블에 Album항목을 추가하여 앨범별로 음악들을 묶는다던지, 관련 아티스트등을 표시할 수도 있을 것 같다. 결국 이런 "무슨 기능을 어떻게 구현하나"를 생각하는게 중요한 것 같다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-ESearch.webp',
+          comment:
+            '엘라스틱 서치 활용. 그냥 보기에는 "Like 검색이랑 뭔차이여"일진 모르겠지만 데이터가 많아질수록 UX의 질은 차원이 다를 것이다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-uploadESearch.webp',
+          comment:
+            'Artist Upload기능에서도 ES를 사용했다. autocomplete 기능으로 해당하는 아티스트를 바인딩 하고있다.',
+        },
+      ],
+      description:
+        '우선 Artist메인 페이지 디자인은 대형 음악스트리밍 사이트와 SNS등을 많이 참고했다. 간단하게 추천 아티스트 3명을 메인에, 아래엔 아티스트 검색 및 리스트를 나열해놓고 클릭 시 아티스트 상세페이지로 이동.\n\n' +
+        '무한스크롤 기능역시 추가했다. 최초 9명의 아티스트를 띄워놓고 더보기 클릭시 서버에 요청을해서 추가로 9명의 데이터를 불러오는 성능또한 고려했다. \n\n' +
+        'Elastic Search역시 도입했다. Artist에 적용을할까, Music에 적용을 할까 생각해봤는데, Music의 스탯이 변경될때마다 Artist또한 변경되어야 하고 ES에도 동기화 되어야 하기때문에 더 치밀하게 아키텍쳐를 생각해야하는 Artist에 ES도입하기로 결정했다. \n\n' +
+        // '우선 복습할 겸 엘라스틱 서치의 사용이유, 동작원리를 간단하게 서술하자면, Index라는 DB와는 별도로 저장되는 ES전용 저장소를 활용하기때문에(DB보다 약 5배이상의 크기) 신중하게 사용결정을 내려야하며, 크게 DB에서 Index로 동기화하는 서비스레이어 + 실제 검색을담당하는 서비스레이어 두개를 운용하며 베이스가 되는 DB의 서비스와도 밀접하게 연관되어야 함을 명심해야한다.' +
+        // '또한 Kafka까지 도입된다면 구조는 더욱 복잡해진다. \n하지만 이런 복잡한 구조의 리스크에 따른 리턴도 크다. DB서치와는 비교와도 안되는 검색속도와 인기검색, 오타검색, 자동완성 등 ES에서 제공하는 강력한 기능들로 인한 UX향상은 유저들로 하여금 다시 접속하고싶고자 하는 사이트를 만들어 낼 수 있다.'+
+        '사용이유와 동작원리는 ImgBell의 상세 개발로그에(혹은 이 포트폴리오 GITHUB의 주석)도 설명되어있기에 생략한다.' +
+        'ImgBell과 같이 DB->Index 동기화를 담당하는 서비스로직, 검색을 담당하는 서비스로직을 추가했고 Kafka를 아직 도입하지 않은상태였기때문에 주석으로 추후 Kafka도입 필요함을 명시해놓고 이후 추가개발시의 편리함도 생각했다.' +
+        '이젠 ES는 처음 써본게 아니기때문에 뭐.. 딱히 개발하는데에 어려움이랄건 없었다. 하지만 이런 외부서비스, 라이브러리같은 경우에 "읽는방법, 유지보수 하는 방법"정도는 반드시 숙지하려는 자세를 갖춰야 한다.' +
+        '',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/4.Artist-ESUpdateArtistCode.jpg',
+        ],
+        comment:
+          'Artist를 업데이트 하는코드. ES에 동기화하는 코드를 맨아래에 빼놓고 주석으로 추후 Kafka추가할 것 임을 남겨두면 나중에 편하다.',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
