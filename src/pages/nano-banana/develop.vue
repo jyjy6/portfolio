@@ -74,6 +74,11 @@
     }
   };
 
+  // 이미지를 새창에서 여는 함수
+  const openImageInNewTab = (imageUrl: string) => {
+    window.open(imageUrl, '_blank');
+  };
+
   // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ인터섹션옵저버ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
   type DOMElement = Element | ComponentPublicInstance | null;
 
@@ -210,7 +215,13 @@
             <img
               :src="image.image"
               :alt="`image-${section.id}`"
-              style="max-width: 100%; max-height: 450px; object-fit: contain"
+              style="
+                max-width: 100%;
+                max-height: 450px;
+                object-fit: contain;
+                cursor: pointer;
+              "
+              @click="openImageInNewTab(image.image)"
             />
             <TranslationComponent
               :key="`image-comment-${section.id}-${i}`"
@@ -268,7 +279,13 @@
             <img
               :src="image.image"
               :alt="`image-${section.id}`"
-              style="max-width: 100%; height: 550px; object-fit: contain"
+              style="
+                max-width: 100%;
+                height: 550px;
+                object-fit: contain;
+                cursor: pointer;
+              "
+              @click="openImageInNewTab(image.image)"
             />
             <TranslationComponent
               :key="`image-comment-right-${section.id}-${i}`"
@@ -286,7 +303,13 @@
           v-for="spImg in section.spDescription?.image"
           :src="spImg"
           :alt="`image-${section.id}`"
-          style="max-width: 100%; height: auto; object-fit: contain"
+          style="
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            cursor: pointer;
+          "
+          @click="openImageInNewTab(spImg)"
         />
         <TranslationComponent
           :key="`section-special-comment-${section.id}`"

@@ -219,6 +219,42 @@
       },
       imageRight: false,
     },
+    {
+      id: 5,
+      title: '5. Kafka - ElasticSearch Sync, Delete 비동기처리',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/5.Kafka+Logic.jpg',
+          comment:
+            '4. 엘라스틱 서치때에 설명 했다시피 미리 Kafka를 사용할 법한 장소에 이렇게 주석으로 마킹해두면 나중에 할일이 편해진다. 뭘 말하고싶냐?-> 백엔드에 있어서 미리미리 구조를 설계해놓으면 여러모로 편하다 라는것. 물론 인간이 하나하나 치밀하게 다 할 수 없는 노릇이지만, 그런 자세를 항상 염두해두자 라는 의식이 중요하다. ',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/5.Kafka+EsEvent.jpg',
+          comment:
+            'Artist를 Upload하면서 백엔드에 기록된 로직. 새아티스트를 DB에 저장하고있고 -> ElasticSearch Event를 전송하여 Kafka로 비동기 처리로직도 실행하고있다. DB에서의 쿼리문이 발동되어 저장이 된 후에 Kafka에서 아티스트 ES 인덱스 동기화가 완료되고 있는 모습이다. 즉 서비스로직 -> 즉시응답 -> Kafka비동기처리 실행. 이라는 순서가 잘 지켜지고 있다는 것.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/5.KafkaChico.jpg',
+          comment:
+            'Artist Upload 및 ES 인덱스 동기화가 가 끝난 후 아티스트 목록에 새로 데이터가 추가된 모습.',
+        },
+      ],
+      description:
+        '이번에도 Kafka역시 도입하였다. 뭐 대용량 트래픽이 들어오지 않기때문에 당연히 이것도 ES처럼 사용하는데 신중을 가해야 겠지만. 복습+기존 카프카를 도입하지 않은 환경에서의 추가 등의 시뮬레이션이기에 모던 웹개발 실력에 있어서 도움이 된다.\n\n' +
+        '상세설명도 ImgBell에 구성요소와 클러스터 구조도를 이미 설명해 놨기때문에 생략하겠지만. 뭐 이번 프로젝트에있어서 간단하게 설명하면 컨슈머, 이벤트, 프로듀서를 설계하고 이전에 Kafka도입하면 좋겠다 라고 싶은곳에 리팩토링을 가했을 뿐이다. 참고로 이 프로젝트에서 Kafka 도입에 있어서 AI는 일절 사용하지 않았다. 뭐 도입해서 리팩토링하면 훨씬 더 쉬웠겠지만 굳이 사용할 필요도 없을 것 같다고생각했다. \n' +
+        '기존에 ImgBell에서 사용하던 코드들을 재활용해서 MusicBell에 맞는 토픽명, 그룹아이디, application.properties설정등을 가해주고 서비스로직에 추가했을뿐이다. 솔직히 말은 쉽게하는데 이것도 어느정도 센스가 필요한 영역이라고 생각한다. \n\n' +
+        '아무튼 어느정도 기능을 완성하고 여기에서 더 깊게 학습한건, acknowledgment.acknowledge()의 이유(수동커밋, 자동커밋)와, Kafka 설정 최적화, Dead Letter Queue의 개념 등이 있겠다.\n 아직 이 영역은 내 수준에서는 오버엔지니어링이기 때문에 개념정도만 알아두고 현업에서 필요할때 사용을 고려하는 것이 타당하다고 생각하지만 DLQ정도는 언제 한번 짚고 넘어가야겠다는 생각이 들었다. ',
+      isSpecial: false,
+      specialStyle: {},
+      spDescription: {
+        image: [''],
+        comment: '',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
@@ -234,6 +270,11 @@
       domElement.scrollIntoView({ behavior: 'smooth' });
       activeSection.value = sectionId;
     }
+  };
+
+  // 이미지를 새창에서 여는 함수
+  const openImageInNewTab = (imageUrl: string) => {
+    window.open(imageUrl, '_blank');
   };
 
   // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ인터섹션옵저버ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -372,7 +413,13 @@
             <img
               :src="image.image"
               :alt="`image-${section.id}`"
-              style="max-width: 100%; max-height: 450px; object-fit: contain"
+              style="
+                max-width: 100%;
+                max-height: 450px;
+                object-fit: contain;
+                cursor: pointer;
+              "
+              @click="openImageInNewTab(image.image)"
             />
             <TranslationComponent
               :key="`image-comment-${section.id}-${i}`"
@@ -430,7 +477,13 @@
             <img
               :src="image.image"
               :alt="`image-${section.id}`"
-              style="max-width: 100%; height: 550px; object-fit: contain"
+              style="
+                max-width: 100%;
+                height: 550px;
+                object-fit: contain;
+                cursor: pointer;
+              "
+              @click="openImageInNewTab(image.image)"
             />
             <TranslationComponent
               :key="`image-comment-right-${section.id}-${i}`"
@@ -448,7 +501,13 @@
           v-for="spImg in section.spDescription?.image"
           :src="spImg"
           :alt="`image-${section.id}`"
-          style="max-width: 100%; height: auto; object-fit: contain"
+          style="
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            cursor: pointer;
+          "
+          @click="openImageInNewTab(spImg)"
         />
         <TranslationComponent
           :key="`sp-translation-${section.id}`"
