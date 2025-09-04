@@ -255,6 +255,73 @@
       },
       imageRight: false,
     },
+
+    {
+      id: 6,
+      title: '6. OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.+GeminiLyrics+-+2Error.jpg',
+          comment:
+            '우선 Gemini Text To Speech API도 시도해봤으나 AI가 저 문제의 루프를 해결하지 못하고 헛돌기만했다. 수작업과 지시로 어떻게든 고쳤으나 API가 제공하는 데이터의 질이 너무 떨어져서 OpenAI로 변경하기로 마음먹었다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.GeminiLyrics-Service1.jpg',
+          comment:
+            'AI Agent가 비즈니스 의도를 이해하지 못하고 뭔 가사 창조를 하고있다. 이게 인간과 AI의 가장 큰 차이인 물리세계에 존재하지 않음으로써 일어나는 격차라고 생각한다. "대체 왜 가사를 니멋대로 창조해?"',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.+OpenAILyrics.jpg',
+          comment:
+            '이 작업도 여러실패를 거쳤다. 위 스크린샷은 일단은 Whisper에게서 가사를 받아오는데에 성공한 스텝1 클리어 스크린샷. 하지만 라인 파싱에 실패하고있다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.+OpenAILyricsDetailOrder.jpg',
+          comment:
+            '새로운 지시. 그냥 가사 자체를 통째로 받아오고 라인 파싱 및 가사 수정은 상세하게 수작업으로 할 수 있게 지시했다. 몇 번이나 중요하다고 느끼는 인간이 해야할 구조, 설계 작업이다.. 근데 이 작업은 우연이 겹쳐서 놀라운 부분이 있었다(최하단)',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.SGWannabe+MyLove.webp',
+          comment:
+            '가사추출 성공1. 상세히 들여다보면 뭐 다른점도 있기에 사람이 상세하게 수정한 후 DB에 업로드해야할 것이다. 가사 한줄한줄 프론트에 바인딩도 성공한 모습.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.+OpenAILyrics-SuccessNote.webp',
+          comment:
+            '가사추출 성공2. 일본어로도 정상적으로 가사를 생성 및 바인딩하고있다. 시작과 끝시간은 밀리초단위에서 초단위로 변경->MusicEntity의 duration과 일관성을 확보함으로써 음악 스트리밍과 동시에 음악+가사 스트리밍도 편하게 바인딩 할 수 있었다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.OpenAILyricsComplete.webp',
+          comment:
+            '가사 컴포넌트를 끼워넣고 의도한대로 실시간 가사또한 작동하는모습. 심심하면 뭐 폰트색깔이나 디자인을 바꿔도 좋을 것 같다.',
+        },
+      ],
+      description:
+        'AI API를 활용한 서비스도 익숙해지기 시작했고 음악스트리밍을 하는김에 가사도 자동으로 생성해보면 어떨까? 하는 생각이 들어서 바로 실행했다\n\n' +
+        '항상하듯 큰그림. 구조설계 -> AI에게 API사용법 및 최초코드 요청 -> 로직 이해, 상세 수정 및 지시 -> 최종코드 완성 및 복습.\n\n' +
+        '언제나처럼 진행했다. 사실 최초에는 AI가 추천한 Gemini, Google Speech To Text등의 질이 너무 떨어졌고 AI또한 가사를 창조하는 등 이상한 실수들을 많이 해서 버리는 코드들이 너무 많았다.' +
+        '\n\n 데이터의 질이 그렇게 좋지 않아서 OpenAI Whisper를 채택했는데 상당히 좋은결과물이 나왔길래 크레딧 결제 후 바로 적용에 들어갔다. Gemini에 익숙해졌기에 OpenAI 의 사용법은 좀 달랐기에 코드이해에 조금 더 많은 시간을 투자하고자했다. \n' +
+        '아무튼 큰 그림에서 하나씩 기능을 완성시켜갔다. \n\n 1. 가사를 통째로 바인딩해보자 2. 바인딩 된 가사를 잘게 짤라볼까? 3. 프론트에 바인딩해볼까? 4. 음~ 상세수정이 필요하겠네 폼을 만들어서 상세수정한걸 유저가 수동으로 다시 전송시켜 볼까?' +
+        '대충 이런느낌이다. \n\n' +
+        '이번에도 역시 막히는 부분 차근차근 문제해결 해서 원하는 대로 기능을 완성시켰다. 완성시키고보니 내가 최근에 사용하고있는 AI 번역 툴인 Vrew와 비슷한 기능을 수행할 수 있을거라 생각이 들었다. 가사뿐만 아니라 대사를 추출한 번역툴, 청각장애인을 위한 앱 등등 새로운 가능성들도 보였다. 이런 기능 완성후 Add On으로 뭘 더 할 수 있을지 생각하는것도 중요한 자세이자 재산이 될 것 같다고 느꼈다.',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/6.OpenAIWhisperVerbose.jpg',
+        ],
+        comment:
+          '놀랍게도 내가 서비스로직 설계할때 지시한 부분과 OpenAI Whisper의 verbose json이 뱉어내는 형식이 상당히 유사했다. 그래서 처음 AI가 제공한 코드를 보고 대체 내가 지시한 부분이 어디있지 싶었다... 뭐 API를 처음 사용함에 있음과 데이터 구조의 엄청난 유사성이 겹친 운에의한 결과였다.. 나쁜건지 좋은건지 우선 OpenAI Whisper의 작동원리는 확실하게 이해했다.',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID

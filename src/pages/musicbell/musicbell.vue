@@ -47,6 +47,11 @@
       icon: 'mdi-check-circle-outline',
       contents: 'Kafka를 활용한 기존로직 비동기 처리',
     },
+    {
+      title: 'OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍',
+      icon: 'mdi-check-circle-outline',
+      contents: 'OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍',
+    },
   ];
 
   const frontTechStack = [
