@@ -38,7 +38,7 @@ export const useMenuStore = defineStore('menu', () => {
       recommended: true,
     },
     {
-      title: 'AI 개발자맞춤형 커리어 챗봇API',
+      title: '개발자맞춤형 커리어 AI챗봇 API',
       icon: 'mdi-robot',
       link: 'https://github.com/jyjy6/jkaitest',
       recommended: true,

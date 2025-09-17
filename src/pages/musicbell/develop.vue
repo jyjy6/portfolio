@@ -322,6 +322,44 @@
       },
       imageRight: false,
     },
+
+    {
+      id: 6,
+      title: '7. JWT보안 - RefreshToken Rotation',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/7.RTR-RefreshTokenRotation.webp',
+          comment:
+            'RefreshToken Rotation이 구현돼있는모습. accessToken갱신 후 확인해보면 기존의 RefreshToken의 값이 변경되어있다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/7.RTR-DockerLog.jpg',
+          comment:
+            'Docker컨테이너 로그에도 잘 기록되어있는 모습. 근데 난 이 Redis나 DB에 JWT를 저장하는게 너무 회의적이다.. 물론 보안이 중요한곳에는 필요하겠지만 JWT최대의 장점이자 철학인 Stateless를 포기하기하는게 뭔가 찜찜해 죽겠다.. "굳이???... 굳이?!?!?!!?"라는 생각이 자꾸 머리속에 맴돈다.',
+        },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/7.RTR.jpg',
+          comment: 'RefeshToken Rotation 동작흐름.',
+        },
+      ],
+      description:
+        'RefreshToken Rotation이 뭐냐면 refreshToken 탈취당하면 어쩔껀데? 그거 30일짜리인데? "해커 : 엌ㅋㅋㅋ 30일동안 서비스이용 개꿀ㅋㅋ" 이라는 상황을 방지하기위해 accessToken갱신 시에 RefreshToken도 새로 발급, 저장하는 작업이다. \n\n' +
+        ' 뭐 한마디로 토큰 블랙리스트의 응용? 인 것 같다.\n 이런 작업이야말로 RDBMS보다 100배빠른 Redis를 활용할 때라고 생각했다. TTL설정시간, 기존 RefreshToken검증, 등록 등 거대한 구조만 설계해두면 AI가 코드로 번역해주기때문에 손쉬운 작업이었다. 이전에도 말 한것 같지만 마치 AI는 고급 번역기와도 같다.. \n\n' +
+        '근데 매번 느끼는게 너무 찜찜하다 JWT를!! 왜!! 굳이DB에!! 저장해야하나!! 이럼 세션로그인이랑 다를게 없지않나!!(실제론 다르긴하다) 라는 생각을 많이 하게되지만 뭐 어쩔 수 있나 클라이언트의 요구사항이 있을 수도 있고 해본적있는 것과 안해본것의 차이는 언제나 크게 다가온다.\n 자기 자신만의 개발 철학은 중요하나 결코 절대적이지 않다 다른사람들의 철학도 존중해야 원만한 협력관계가 유지 될 수 있다고 생각한다.',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [
+          'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/7.RTR-Order.jpg',
+        ],
+        comment:
+          'AI에 요구사항을 프롬프팅하고있는모습. 설계짜놓고 그냥 내가 Redis부터 수작업으로 코드 짜볼까..? 했는데 굳이 그럴필요가 없다고 생각했다. 어짜피 레디스 함수들 지금쓴들 까먹을께 뻔하고 시간도 오래걸리고 그냥 아키텍쳐설계만 잘 하고 AI코드 검수하는게 훨씬 생산성이 높은 것 같다.. 수작업으로 했으면 3시간은 걸릴거 같다.\n\n 여담으로 Cursor Rules를 추가했는데 더 빠른 결과를 내놓는 것 같다.',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
