@@ -325,7 +325,7 @@
 
     {
       id: 6,
-      title: '7. JWT보안 - RefreshToken Rotation',
+      title: '7. JWT보안 - RefreshToken Rotation, CSRF공격 대책책',
       images: [
         {
           image:
@@ -344,11 +344,19 @@
             'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/7.RTR.jpg',
           comment: 'RefeshToken Rotation 동작흐름.',
         },
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/musicbell/7.RTR-JWT.webp',
+          comment:
+            '쿠키에서 기존 AccessToken을 삭제하고 Authorization Header에서 관리하고있다. XSRF토큰은..CSRF토큰 구현중의 잔재 무시하자.',
+        },
       ],
       description:
         'RefreshToken Rotation이 뭐냐면 refreshToken 탈취당하면 어쩔껀데? 그거 30일짜리인데? "해커 : 엌ㅋㅋㅋ 30일동안 서비스이용 개꿀ㅋㅋ" 이라는 상황을 방지하기위해 accessToken갱신 시에 RefreshToken도 새로 발급, 저장하는 작업이다. \n\n' +
         ' 뭐 한마디로 토큰 블랙리스트의 응용? 인 것 같다. 아니 이건 화이트리스트라고 보면 되겠다. \n 이런 작업이야말로 RDBMS보다 100배빠른 Redis를 활용할 때라고 생각했다. TTL설정시간, 기존 RefreshToken검증, 등록 등 거대한 구조만 설계해두면 AI가 코드로 번역해주기때문에 손쉬운 작업이었다. 이전에도 말 한것 같지만 마치 AI는 고급 번역기와도 같다.. \n\n' +
-        '근데 매번 느끼는게 너무 찜찜하다 JWT를!! 왜!! 굳이DB에!! 저장해야하나!! 이럼 세션로그인이랑 다를게 없지않나!!(실제론 다르긴하다) 라는 생각을 많이 하게되지만 뭐 어쩔 수 있나 클라이언트의 요구사항이 있을 수도 있고 해본적있는 것과 안해본것의 차이는 언제나 크게 다가온다.\n 자기 자신만의 개발 철학은 중요하나 결코 절대적이지 않다 다른사람들의 철학도 존중해야 원만한 협력관계가 유지 될 수 있다고 생각한다.',
+        '근데 매번 느끼는게 너무 찜찜하다 JWT를!! 왜!! 굳이DB에!! 저장해야하나!! 이럼 세션로그인이랑 다를게 없지않나!!(실제론 다르긴하다) 라는 생각을 많이 하게되지만 뭐 어쩔 수 있나 클라이언트의 요구사항이 있을 수도 있고 해본적있는 것과 안해본것의 차이는 언제나 크게 다가온다.\n 자기 자신만의 개발 철학은 중요하나 결코 절대적이지 않다 다른사람들의 철학도 존중해야 원만한 협력관계가 유지 될 수 있다고 생각한다.\n\n' +
+        '이제 CSRF로 넘어가보자 이전 Vue+Spring 복싱 웹 페이지 프로젝트에선 CSRF토큰을 구현했는데 이번에도 그럴까 싶었으나 다른방식을 모색했다. "그냥 AccessToken을 Authorization Header로 발급, 검증 하면 CSRF로는 껄떡대지 못하는거아님?" 이란생각이 들었고, 맞았다.\n' +
+        'refreshToken Rotation + XSS는 Vue의 이스케이프 문자지원 + csrf는 accessToken의 Authorization Header사용. 이 세가지가 현재 최선의 보안 구조인 것 같다.',
       isSpecial: true,
       specialStyle: {},
       spDescription: {
