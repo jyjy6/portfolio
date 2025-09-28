@@ -57,6 +57,29 @@
       },
       imageRight: false,
     },
+    {
+      id: 2,
+      title: '2. 무료 Nano Banana 이용 플랫폼 - Bano Nanana 배포',
+      images: [
+        {
+          image:
+            'https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/banonanademo.webp',
+          comment:
+            '서비스 시연영상. 한국어, 일본어, 영어 3개의 언어를 지원한다. 두 복서를 원피스풍의 캐릭터로 변경요청해봤다. ',
+        },
+      ],
+      description:
+        '실제로 서비스를 만들었다. 프론트는 Nuxt4기반의 SSR, 구글 검색어 노출을 위한 SEO설정 및 구글 애드센스+구글 서치봇 등록 등의 작업을 했고 도메인 구매 후 Vercel로 배포 및 CI/CD를 구현했다. \n 백엔드는 Spring Boot 기반으로 Redis, MongoDB와 연동, Redis의 API Limiting 기능으로 API요청수 제한, JWT로그인으로 어드민 페이지->API리셋 등의 기능이 있다.' +
+        '\n\n 원피스, 지브리, 피규어화, 넨도로이드화 등 각 카테고리를 설정하여 편리한 UX를 구현했으며 EC2로 배포 + Github Actions를 도입하여 초기설정 후 git push만으로 간편하게 CI/CD를 구축했다.' +
+        '실제 유저가 있는 서비스인만큼 X-Forwarded-For, X-Real-IP 헤더 등으로 IP를 추출하여 MongoDB 에 기록으로도 남겨봤다.',
+      isSpecial: true,
+      specialStyle: {},
+      spDescription: {
+        image: [''],
+        comment: 'https://banonana.shop/',
+      },
+      imageRight: false,
+    },
   ];
 
   // 현재 활성화된 섹션 ID
