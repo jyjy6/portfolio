@@ -75,7 +75,6 @@
       isSpecial: true,
       specialStyle: {},
       spDescription: {
-        image: [''],
         comment: 'https://banonana.shop/',
       },
       imageRight: false,
