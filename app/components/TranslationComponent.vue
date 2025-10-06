@@ -56,9 +56,7 @@ const translatedText = ref("");
 const detectedLanguage = ref("");
 const targetLanguage = ref(props.targetLanguage);
 const originalText = ref("");
-const componentId = ref(
-  `translation-wrapper-${Math.random().toString(36).substring(2)}`
-);
+const componentId = useId();
 
 // 텍스트가 있는지 확인
 const hasText = computed(() => {
@@ -68,9 +66,7 @@ const hasText = computed(() => {
 // 슬롯에서 텍스트 추출
 onMounted(() => {
   // 슬롯의 텍스트 내용을 추출 (고유 ID 사용)
-  const slotElement = document.querySelector(
-    `#${componentId.value} .original-text`
-  );
+  const slotElement = document.querySelector(`#${componentId} .original-text`);
   if (slotElement) {
     originalText.value = slotElement.textContent || props.text || "";
   } else {
