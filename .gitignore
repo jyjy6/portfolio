@@ -38,3 +38,6 @@ settings.json
 .nuxt
 .nuxt/*
 .nuxt/dev
+
+.output
+.output/*

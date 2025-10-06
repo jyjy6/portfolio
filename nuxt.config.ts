@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     // 참고: 서버 측에서만 사용할 변수는 여기에 바로 정의합니다.
     // apiSecret: process.env.NUXT_API_SECRET,
   },
-  modules: ["@pinia/nuxt", "vuetify-nuxt-module"],
+  modules: ["@pinia/nuxt", "vuetify-nuxt-module", "@nuxtjs/sitemap"],
   vuetify: {
     vuetifyOptions: {
       theme: {
