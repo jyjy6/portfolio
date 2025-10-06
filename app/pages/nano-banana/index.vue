@@ -218,7 +218,7 @@ onBeforeUnmount(() => {
       style="text-align: center"
       :class="{ visible: visibleSections.includes(section.id) }"
       :ref="
-        (el) => {
+        (el:any) => {
           if (el) sectionRefs[section.id] = el;
         }
       "
