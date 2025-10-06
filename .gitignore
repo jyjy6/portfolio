@@ -23,16 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
 .env.*
+.env
 
-.rootkey.csv
-portfolio.pem
+*.conf
+nginx.conf
 
-.gemini
+vercel.json
+.gemini/settings.json
+.gemini/
 .gemini/*
-
-*.py
-
-.env
-.env.*
+settings.json
