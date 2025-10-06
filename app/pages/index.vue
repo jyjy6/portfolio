@@ -2,6 +2,7 @@
 import { useRouter } from "vue-router";
 import { useMenuStore } from "../store/menuStore";
 import { onMounted } from "vue";
+import { useRuntimeConfig } from "#app";
 
 const menuStore = useMenuStore();
 

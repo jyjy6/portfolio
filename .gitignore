@@ -36,6 +36,5 @@ vercel.json
 settings.json
 
 .nuxt
-
+.nuxt/*
 .nuxt/dev
-
