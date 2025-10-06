@@ -1,69 +1,69 @@
 <script setup lang="ts">
-  import TranslationComponent from '../../components/TranslationComponent.vue';
-  import { translationConfig } from '../../utils/translationStore';
+import TranslationComponent from "../../components/TranslationComponent.vue";
+import { translationConfig } from "../../utils/translationUtil";
 
-  const features = [
-    {
-      title: '회원 관리 및 인증 JWT',
-      icon: 'mdi-check-circle-outline',
-      contents: ' Google OAuth2 로그인 지원',
-    },
-    {
-      title: '게시판(글작성) 기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'TipTap 기반  WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부',
-    },
-    {
-      title: 'AWS S3 이미지 업로드 기능(axios 사용).',
-      icon: 'mdi-check-circle-outline',
-      contents: ' AWS S3를 이용한 파일업로드.',
-    },
-    {
-      title: '반응형 웹, 모달, 페이지네이션, 검색 기능 구현',
-      icon: 'mdi-check-circle-outline',
-      contents: '반응형 웹, 모달, 페이지네이션, 검색 기능 구현',
-    },
-    {
-      title: '상점(전자상거래)기능',
-      icon: 'mdi-check-circle-outline',
-      contents: '상품 등록 및 조회 (Shop 기능)',
-    },
-    {
-      title: '상담기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'WebSocket을 활용한 유저와의 실시간 채팅상담기능. 백엔드와 연계로 해당유저의 이전상담내용 DB저장,',
-    },
-    {
-      title: 'Docker 및 유지보수 환경 구축',
-      icon: 'mdi-check-circle-outline',
-      contents: 'Docker compose, nginx',
-    },
-  ];
+const features = [
+  {
+    title: "회원 관리 및 인증 JWT",
+    icon: "mdi-check-circle-outline",
+    contents: " Google OAuth2 로그인 지원",
+  },
+  {
+    title: "게시판(글작성) 기능",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "TipTap 기반  WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부",
+  },
+  {
+    title: "AWS S3 이미지 업로드 기능(axios 사용).",
+    icon: "mdi-check-circle-outline",
+    contents: " AWS S3를 이용한 파일업로드.",
+  },
+  {
+    title: "반응형 웹, 모달, 페이지네이션, 검색 기능 구현",
+    icon: "mdi-check-circle-outline",
+    contents: "반응형 웹, 모달, 페이지네이션, 검색 기능 구현",
+  },
+  {
+    title: "상점(전자상거래)기능",
+    icon: "mdi-check-circle-outline",
+    contents: "상품 등록 및 조회 (Shop 기능)",
+  },
+  {
+    title: "상담기능",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "WebSocket을 활용한 유저와의 실시간 채팅상담기능. 백엔드와 연계로 해당유저의 이전상담내용 DB저장,",
+  },
+  {
+    title: "Docker 및 유지보수 환경 구축",
+    icon: "mdi-check-circle-outline",
+    contents: "Docker compose, nginx",
+  },
+];
 
-  const frontTechStack = [
-    'Vue3',
-    'Vuetify',
-    'TypeScript',
-    'Vite',
-    'Axios',
-    'TipTap',
-    'Pinia',
-    'AWS S3',
-    'Docker',
-  ];
+const frontTechStack = [
+  "Vue3",
+  "Vuetify",
+  "TypeScript",
+  "Vite",
+  "Axios",
+  "TipTap",
+  "Pinia",
+  "AWS S3",
+  "Docker",
+];
 
-  const backTechStack = [
-    'SpringBoot',
-    'SpringSecurity',
-    'OAuth2',
-    'AWS S3',
-    'AWS EC2',
-    'MySQL',
-    'nginx',
-    'Docker',
-  ];
+const backTechStack = [
+  "SpringBoot",
+  "SpringSecurity",
+  "OAuth2",
+  "AWS S3",
+  "AWS EC2",
+  "MySQL",
+  "nginx",
+  "Docker",
+];
 </script>
 
 <template>

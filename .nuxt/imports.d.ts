@@ -30,7 +30,7 @@ export { requestIdleCallback, cancelIdleCallback } from '#app/compat/idle-callba
 export { setInterval } from '#app/compat/interval';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
-export { translationConfig, setApiKey, setDefaultTargetLanguage } from '../app/utils/translationStore';
+export { translationConfig, setApiKey, setDefaultTargetLanguage } from '../app/utils/translationUtil';
 export { defineStore, acceptHMRUpdate, usePinia, storeToRefs } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
 export { useDate, useLocale, useDefaults, useDisplay, useLayout, useRtl, useTheme, useGoTo } from 'vuetify';
 export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';

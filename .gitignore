@@ -34,3 +34,8 @@ vercel.json
 .gemini/
 .gemini/*
 settings.json
+
+.nuxt
+
+.nuxt/dev
+

@@ -1,73 +1,72 @@
 <script setup lang="ts">
-  import TranslationComponent from '../../components/TranslationComponent.vue';
-  import { translationConfig } from '../../utils/translationStore';
+import TranslationComponent from "../../components/TranslationComponent.vue";
+import { translationConfig } from "../../utils/translationUtil";
 
-  const features = [
-    {
-      title: '회원 관리 및 인증 JWT',
-      icon: 'mdi-check-circle-outline',
-      contents: ' Google OAuth2 로그인 지원, 로그인 횟수제한',
-    },
-    {
-      title: '글작성 기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'TipTap 기반 WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부',
-    },
-    {
-      title: '페이지 관리기능',
-      icon: 'mdi-check-circle-outline',
-      contents: 'ADMIN페이지의 회원목록 관리기능, 공지 및 배너 관리기능',
-    },
-    {
-      title: '동영상, 오디오 제공',
-      icon: 'mdi-check-circle-outline',
-      contents: '라디오 웹사이트의 플레이목록, 스트리밍',
-    },
-    {
-      title: 'AWS S3 영상, 이미지 업로드 기능(axios 사용).',
-      icon: 'mdi-check-circle-outline',
-      contents: ' AWS S3를 이용한 파일업로드.',
-    },
-    {
-      title: '반응형 웹, 모달, 페이지네이션, 검색 기능 구현',
-      icon: 'mdi-check-circle-outline',
-      contents: '반응형 웹, 모달, 페이지네이션, 검색 기능 구현',
-    },
-    {
-      title: '미들웨어를 사용한 jwt,csrf인증 ip출력',
-      icon: 'mdi-check-circle-outline',
-      contents: '미들웨어를 사용한 jwt csrf ip출력',
-    },
-    {
-      title: 'Docker 및 유지보수 환경 구축',
-      icon: 'mdi-check-circle-outline',
-      contents: 'Docker compose, nginx',
-    },
-  ];
+const features = [
+  {
+    title: "회원 관리 및 인증 JWT",
+    icon: "mdi-check-circle-outline",
+    contents: " Google OAuth2 로그인 지원, 로그인 횟수제한",
+  },
+  {
+    title: "글작성 기능",
+    icon: "mdi-check-circle-outline",
+    contents: "TipTap 기반 WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부",
+  },
+  {
+    title: "페이지 관리기능",
+    icon: "mdi-check-circle-outline",
+    contents: "ADMIN페이지의 회원목록 관리기능, 공지 및 배너 관리기능",
+  },
+  {
+    title: "동영상, 오디오 제공",
+    icon: "mdi-check-circle-outline",
+    contents: "라디오 웹사이트의 플레이목록, 스트리밍",
+  },
+  {
+    title: "AWS S3 영상, 이미지 업로드 기능(axios 사용).",
+    icon: "mdi-check-circle-outline",
+    contents: " AWS S3를 이용한 파일업로드.",
+  },
+  {
+    title: "반응형 웹, 모달, 페이지네이션, 검색 기능 구현",
+    icon: "mdi-check-circle-outline",
+    contents: "반응형 웹, 모달, 페이지네이션, 검색 기능 구현",
+  },
+  {
+    title: "미들웨어를 사용한 jwt,csrf인증 ip출력",
+    icon: "mdi-check-circle-outline",
+    contents: "미들웨어를 사용한 jwt csrf ip출력",
+  },
+  {
+    title: "Docker 및 유지보수 환경 구축",
+    icon: "mdi-check-circle-outline",
+    contents: "Docker compose, nginx",
+  },
+];
 
-  const frontTechStack = [
-    'Vue3',
-    'Vuetify',
-    'TypeScript',
-    'Vite',
-    'Axios',
-    'TipTap',
-    'Pinia',
-    'AWS S3',
-    'Docker',
-  ];
+const frontTechStack = [
+  "Vue3",
+  "Vuetify",
+  "TypeScript",
+  "Vite",
+  "Axios",
+  "TipTap",
+  "Pinia",
+  "AWS S3",
+  "Docker",
+];
 
-  const backTechStack = [
-    'NUXT3',
-    'OAuth2',
-    'AWS S3',
-    'AWS EC2',
-    'MongoDB',
-    'Mongoose',
-    'nginx',
-    'Docker',
-  ];
+const backTechStack = [
+  "NUXT3",
+  "OAuth2",
+  "AWS S3",
+  "AWS EC2",
+  "MongoDB",
+  "Mongoose",
+  "nginx",
+  "Docker",
+];
 </script>
 
 <template>

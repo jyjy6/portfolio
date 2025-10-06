@@ -127,30 +127,30 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import TranslationComponent from '../components/TranslationComponent.vue';
-  import { setApiKey } from '../utils/translationStore';
+import { ref } from "vue";
+import TranslationComponent from "../components/TranslationComponent.vue";
+import { setApiKey } from "../utils/translationUtil";
 
-  const apiKey = ref('');
-  const customText = ref('');
+const apiKey = ref("");
+const customText = ref("");
 
-  const updateApiKey = () => {
-    setApiKey(apiKey.value);
-  };
+const updateApiKey = () => {
+  setApiKey(apiKey.value);
+};
 </script>
 
 <style scoped>
-  .translation-demo {
-    min-height: 100vh;
-    background-color: black;
-    padding: 20px 0;
-  }
+.translation-demo {
+  min-height: 100vh;
+  background-color: black;
+  padding: 20px 0;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
+}
 </style>

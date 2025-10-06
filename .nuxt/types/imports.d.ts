@@ -82,8 +82,8 @@ declare global {
   const reloadNuxtApp: typeof import('../../node_modules/nuxt/dist/app/composables/chunk')['reloadNuxtApp']
   const requestIdleCallback: typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback')['requestIdleCallback']
   const resolveComponent: typeof import('vue')['resolveComponent']
-  const setApiKey: typeof import('../../app/utils/translationStore')['setApiKey']
-  const setDefaultTargetLanguage: typeof import('../../app/utils/translationStore')['setDefaultTargetLanguage']
+  const setApiKey: typeof import('../../app/utils/translationUtil')['setApiKey']
+  const setDefaultTargetLanguage: typeof import('../../app/utils/translationUtil')['setDefaultTargetLanguage']
   const setInterval: typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']
   const setResponseStatus: typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['setResponseStatus']
@@ -96,7 +96,7 @@ declare global {
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
   const toValue: typeof import('vue')['toValue']
-  const translationConfig: typeof import('../../app/utils/translationStore')['translationConfig']
+  const translationConfig: typeof import('../../app/utils/translationUtil')['translationConfig']
   const triggerRef: typeof import('vue')['triggerRef']
   const tryUseNuxtApp: typeof import('../../node_modules/nuxt/dist/app/nuxt')['tryUseNuxtApp']
   const unref: typeof import('vue')['unref']
@@ -280,8 +280,8 @@ declare module 'vue' {
     readonly reloadNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/chunk')['reloadNuxtApp']>
     readonly requestIdleCallback: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback')['requestIdleCallback']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
-    readonly setApiKey: UnwrapRef<typeof import('../../app/utils/translationStore')['setApiKey']>
-    readonly setDefaultTargetLanguage: UnwrapRef<typeof import('../../app/utils/translationStore')['setDefaultTargetLanguage']>
+    readonly setApiKey: UnwrapRef<typeof import('../../app/utils/translationUtil')['setApiKey']>
+    readonly setDefaultTargetLanguage: UnwrapRef<typeof import('../../app/utils/translationUtil')['setDefaultTargetLanguage']>
     readonly setInterval: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']>
     readonly setResponseStatus: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['setResponseStatus']>
@@ -294,7 +294,7 @@ declare module 'vue' {
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
-    readonly translationConfig: UnwrapRef<typeof import('../../app/utils/translationStore')['translationConfig']>
+    readonly translationConfig: UnwrapRef<typeof import('../../app/utils/translationUtil')['translationConfig']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly tryUseNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['tryUseNuxtApp']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>

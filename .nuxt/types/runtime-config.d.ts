@@ -10,12 +10,14 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       cdnURL: string,
    },
 
+   NUXT_API_KEY: string,
+
    nitro: {
       envPrefix: string,
    },
   }
   interface SharedPublicRuntimeConfig {
-
+   NUXT_PUBLIC_API_URL: string,
   }
 declare module '@nuxt/schema' {
   interface RuntimeConfig extends UserRuntimeConfig {}

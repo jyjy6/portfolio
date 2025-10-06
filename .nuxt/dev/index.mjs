@@ -646,7 +646,10 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {}
+  "public": {
+    "NUXT_PUBLIC_API_URL": "http://localhost:3000"
+  },
+  "NUXT_API_KEY": "AIzaSyDQEbuIR3XlUwuWT6bI_Q43WNGiKDS0pKs"
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -1019,7 +1022,7 @@ const _f7YkfCLCoYrE08RY1OJzWE4mNcpgP0sXZwPDP10DhQ = (function(nitro) {
 
 const rootDir = "C:/ImgBellProject/nuxt-portfolio";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[{"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7521928538284970","async":true,"crossorigin":"anonymous","defer":true}],"noscript":[]};
 
 const appRootTag = "div";
 
@@ -1521,10 +1524,12 @@ async function getIslandContext(event) {
   return ctx;
 }
 
+const _lazy_eoXfdx = () => Promise.resolve().then(function () { return translate_post$1; });
 const _lazy_gcSP7k = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: _EDeAmf, lazy: false, middleware: true, method: undefined },
+  { route: '/api/translate', handler: _lazy_eoXfdx, lazy: true, middleware: false, method: "post" },
   { route: '/__nuxt_error', handler: _lazy_gcSP7k, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_gcSP7k, lazy: true, middleware: false, method: undefined }
@@ -1856,6 +1861,67 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const translate_post = defineEventHandler(async (event) => {
+  const config = useRuntimeConfig(event);
+  const { text, from, to } = await readBody(event);
+  const prompt = `\uB2E4\uC74C \uD14D\uC2A4\uD2B8\uB97C ${from}\uC5D0\uC11C ${to}\uB85C \uC790\uC5F0\uC2A4\uB7FD\uAC8C \uBC88\uC5ED\uD574\uC8FC\uC138\uC694. \uBC88\uC5ED\uB41C \uACB0\uACFC\uB9CC \uCD9C\uB825\uD558\uACE0 \uB2E4\uB978 \uC124\uBA85\uC740 \uD558\uC9C0 \uB9C8\uC138\uC694:
+${text}`;
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${config.NUXT_API_KEY}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: prompt
+                }
+              ]
+            }
+          ]
+        })
+      }
+    );
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("API \uC751\uB2F5 \uC624\uB958:", errorText);
+      if (response.status === 429) {
+        throw createError({
+          statusCode: 429,
+          message: "Gemini \uBC88\uC5ED \uC77C\uC77C \uC0AC\uC6A9\uB7C9\uC774 \uCD08\uACFC\uB418\uC5C8\uC2B5\uB2C8\uB2E4. \uB0B4\uC77C \uB2E4\uC2DC \uC2DC\uB3C4\uD574\uC8FC\uC138\uC694."
+        });
+      }
+      throw createError({
+        statusCode: response.status,
+        message: `\uBC88\uC5ED API \uC624\uB958: ${response.status} - ${errorText}`
+      });
+    }
+    const data = await response.json();
+    if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+      throw createError({
+        statusCode: 500,
+        message: "API \uC751\uB2F5 \uD615\uC2DD\uC774 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+      });
+    }
+    return {
+      translatedText: data.candidates[0].content.parts[0].text.trim()
+    };
+  } catch (error) {
+    console.error("\uBC88\uC5ED \uC624\uB958:", error);
+    throw error;
+  }
+});
+
+const translate_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: translate_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

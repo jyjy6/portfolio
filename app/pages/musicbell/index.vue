@@ -1,85 +1,83 @@
 <script setup lang="ts">
-  import TranslationComponent from '../../components/TranslationComponent.vue';
-  import { translationConfig } from '../../utils/translationStore';
+import TranslationComponent from "../../components/TranslationComponent.vue";
+import { translationConfig } from "../../utils/translationUtil";
 
-  const features = [
-    {
-      title: '모놀리식 -> MSA로 확장, SSO구현',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'ImgBell단독 모놀리식에서 ImgBell+MusicBell 통합 인증서버 AuthBell, MusicBell이 추가된 MSA도입과 SSO 구현',
-    },
-    {
-      title: '회원 관리 및 인증 JWT',
-      icon: 'mdi-check-circle-outline',
-      contents: ' Google, Kakao OAuth2 로그인 지원',
-    },
-    {
-      title: 'AWS S3 업로드 기능(axios 사용).',
-      icon: 'mdi-check-circle-outline',
-      contents: ' AWS S3를 이용한 파일업로드.',
-    },
+const features = [
+  {
+    title: "모놀리식 -> MSA로 확장, SSO구현",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "ImgBell단독 모놀리식에서 ImgBell+MusicBell 통합 인증서버 AuthBell, MusicBell이 추가된 MSA도입과 SSO 구현",
+  },
+  {
+    title: "회원 관리 및 인증 JWT",
+    icon: "mdi-check-circle-outline",
+    contents: " Google, Kakao OAuth2 로그인 지원",
+  },
+  {
+    title: "AWS S3 업로드 기능(axios 사용).",
+    icon: "mdi-check-circle-outline",
+    contents: " AWS S3를 이용한 파일업로드.",
+  },
 
-    {
-      title: 'Redis를 활용한 일간, 주간랭킹',
-      icon: 'mdi-check-circle-outline',
-      contents: 'DB사용대신 Redis를 활용하여 빠르고 효율좋게 데이터 처리',
-    },
-    {
-      title: '페이지 관리기능',
-      icon: 'mdi-check-circle-outline',
-      contents: 'ADMIN페이지의 회원목록, 이미지 관리, 대쉬보드 기능',
-    },
-    {
-      title: 'ElasticSearch를 활용한 음악 검색기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'ElasticSearch를 활용한 복잡한쿼리, 자동완성, 빠른검색기능 구현',
-    },
-    {
-      title: 'Docker 및 Github Actions를활용한 CI/CD 환경 구축',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'Docker compose, Github Actions를 활용한 CI/CD 자동화 환경 구축',
-    },
-    {
-      title: 'Kafka를 활용한 선택적 로직 비동기 처리',
-      icon: 'mdi-check-circle-outline',
-      contents: 'Kafka를 활용한 기존로직 비동기 처리',
-    },
-    {
-      title: 'OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍',
-      icon: 'mdi-check-circle-outline',
-      contents: 'OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍',
-    },
-  ];
+  {
+    title: "Redis를 활용한 일간, 주간랭킹",
+    icon: "mdi-check-circle-outline",
+    contents: "DB사용대신 Redis를 활용하여 빠르고 효율좋게 데이터 처리",
+  },
+  {
+    title: "페이지 관리기능",
+    icon: "mdi-check-circle-outline",
+    contents: "ADMIN페이지의 회원목록, 이미지 관리, 대쉬보드 기능",
+  },
+  {
+    title: "ElasticSearch를 활용한 음악 검색기능",
+    icon: "mdi-check-circle-outline",
+    contents: "ElasticSearch를 활용한 복잡한쿼리, 자동완성, 빠른검색기능 구현",
+  },
+  {
+    title: "Docker 및 Github Actions를활용한 CI/CD 환경 구축",
+    icon: "mdi-check-circle-outline",
+    contents: "Docker compose, Github Actions를 활용한 CI/CD 자동화 환경 구축",
+  },
+  {
+    title: "Kafka를 활용한 선택적 로직 비동기 처리",
+    icon: "mdi-check-circle-outline",
+    contents: "Kafka를 활용한 기존로직 비동기 처리",
+  },
+  {
+    title: "OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍",
+    icon: "mdi-check-circle-outline",
+    contents: "OpenAI Whisper를 활용한 가사(Lyrics) 추출 및 스트리밍",
+  },
+];
 
-  const frontTechStack = [
-    'Nuxt4',
-    'Vuetify',
-    'TypeScript',
-    'Pinia',
-    'Axios',
-    'AWS S3',
-    'Docker',
-    'Kafka',
-  ];
+const frontTechStack = [
+  "Nuxt4",
+  "Vuetify",
+  "TypeScript",
+  "Pinia",
+  "Axios",
+  "AWS S3",
+  "Docker",
+  "Kafka",
+];
 
-  const backTechStack = [
-    'SpringBoot',
-    'SpringSecurity',
-    'OAuth2',
-    'Redis',
-    'AWS S3',
-    'AWS EC2',
-    'MySQL',
-    'Elastic Search',
-    'Docker',
-    'Github Action',
-    'Kafka',
-    'SSO(Single Sign-On)',
-    'MSA',
-  ];
+const backTechStack = [
+  "SpringBoot",
+  "SpringSecurity",
+  "OAuth2",
+  "Redis",
+  "AWS S3",
+  "AWS EC2",
+  "MySQL",
+  "Elastic Search",
+  "Docker",
+  "Github Action",
+  "Kafka",
+  "SSO(Single Sign-On)",
+  "MSA",
+];
 </script>
 
 <template>

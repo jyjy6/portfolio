@@ -1,118 +1,116 @@
 <script setup lang="ts">
-  import TranslationComponent from '../../components/TranslationComponent.vue';
-  import { translationConfig } from '../../utils/translationStore';
+import TranslationComponent from "../../components/TranslationComponent.vue";
+import { translationConfig } from "../../utils/translationUtil";
 
-  const features = [
-    {
-      title: '회원 관리 및 인증 JWT',
-      icon: 'mdi-check-circle-outline',
-      contents: ' Google, Kakao OAuth2 로그인 지원',
-    },
-    {
-      title: 'Google Gemini API를 활용한 이미지 자동 분석, 태그 추가 기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        '이미지를 분석하고 태그제공, 클라이언트가 태그추가 가능. AI제공 등급에 따른 이미지 등급 선정 가능.',
-    },
-    {
-      title:
-        'Google Gemini API를 활용한 만화/애니메이션 캐릭터가 분석해주는 이미지!',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        '원피스의 캐릭터 마샬 D. 티치(검은수염이) 어떤 이미지인지 분석해줍니다!',
-    },
-    {
-      title: 'AWS S3 이미지 업로드 기능(axios 사용).',
-      icon: 'mdi-check-circle-outline',
-      contents: ' AWS S3를 이용한 파일업로드.',
-    },
-    {
-      title: '이미지 커뮤니티',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        '이미지 커뮤니티 기능(이미지 당 좋아요, 댓글, 그에 따른 일간, 주간랭킹 제공 등)',
-    },
-    {
-      title: '게시판(글작성) 기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'TipTap 기반  WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부, 댓글 기능',
-    },
-    {
-      title: '댓글 알림 기능',
-      icon: 'mdi-check-circle-outline',
-      contents: 'Websocket을 활용한 댓글 실시간 스낵바 알림기능',
-    },
-    {
-      title: 'Redis를 활용한 일간, 주간랭킹, 최근 본 항목',
-      icon: 'mdi-check-circle-outline',
-      contents: 'DB사용대신 Redis를 활용하여 빠르고 효율좋게 데이터 처리',
-    },
-    {
-      title: '페이지 관리기능',
-      icon: 'mdi-check-circle-outline',
-      contents: 'ADMIN페이지의 회원목록, 이미지 관리, 대쉬보드 기능',
-    },
-    {
-      title: '이미지 검색기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'JPA Specification을 활용한 이미지 검색기능(태그, 이미지명, Artist명 등 통합 검색)',
-    },
-    {
-      title: 'ElasticSearch를 활용한 이미지 검색기능',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'ElasticSearch를 활용한 복잡한쿼리, 자동완성, 빠른검색기능 구현',
-    },
-    {
-      title: 'Docker 및 Github Actions를활용한 CI/CD 환경 구축',
-      icon: 'mdi-check-circle-outline',
-      contents:
-        'Docker compose, Github Actions를 활용한 CI/CD 자동화 환경 구축',
-    },
-    {
-      title: 'Prometheus + Grafana를 활용한 모니터링 기능',
-      icon: 'mdi-check-circle-outline',
-      contents: 'Prometheus + Grafana를 활용한 기초 모니터링 기능 구현',
-    },
-    {
-      title: 'Kafka를 활용한 선택적 로직 비동기 처리',
-      icon: 'mdi-check-circle-outline',
-      contents: 'Kafka를 활용한 기존로직 비동기 처리',
-    },
-  ];
+const features = [
+  {
+    title: "회원 관리 및 인증 JWT",
+    icon: "mdi-check-circle-outline",
+    contents: " Google, Kakao OAuth2 로그인 지원",
+  },
+  {
+    title: "Google Gemini API를 활용한 이미지 자동 분석, 태그 추가 기능",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "이미지를 분석하고 태그제공, 클라이언트가 태그추가 가능. AI제공 등급에 따른 이미지 등급 선정 가능.",
+  },
+  {
+    title:
+      "Google Gemini API를 활용한 만화/애니메이션 캐릭터가 분석해주는 이미지!",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "원피스의 캐릭터 마샬 D. 티치(검은수염이) 어떤 이미지인지 분석해줍니다!",
+  },
+  {
+    title: "AWS S3 이미지 업로드 기능(axios 사용).",
+    icon: "mdi-check-circle-outline",
+    contents: " AWS S3를 이용한 파일업로드.",
+  },
+  {
+    title: "이미지 커뮤니티",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "이미지 커뮤니티 기능(이미지 당 좋아요, 댓글, 그에 따른 일간, 주간랭킹 제공 등)",
+  },
+  {
+    title: "게시판(글작성) 기능",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "TipTap 기반  WYSIWYG 에디터를 통한 게시글 작성/수정, 이미지 첨부, 댓글 기능",
+  },
+  {
+    title: "댓글 알림 기능",
+    icon: "mdi-check-circle-outline",
+    contents: "Websocket을 활용한 댓글 실시간 스낵바 알림기능",
+  },
+  {
+    title: "Redis를 활용한 일간, 주간랭킹, 최근 본 항목",
+    icon: "mdi-check-circle-outline",
+    contents: "DB사용대신 Redis를 활용하여 빠르고 효율좋게 데이터 처리",
+  },
+  {
+    title: "페이지 관리기능",
+    icon: "mdi-check-circle-outline",
+    contents: "ADMIN페이지의 회원목록, 이미지 관리, 대쉬보드 기능",
+  },
+  {
+    title: "이미지 검색기능",
+    icon: "mdi-check-circle-outline",
+    contents:
+      "JPA Specification을 활용한 이미지 검색기능(태그, 이미지명, Artist명 등 통합 검색)",
+  },
+  {
+    title: "ElasticSearch를 활용한 이미지 검색기능",
+    icon: "mdi-check-circle-outline",
+    contents: "ElasticSearch를 활용한 복잡한쿼리, 자동완성, 빠른검색기능 구현",
+  },
+  {
+    title: "Docker 및 Github Actions를활용한 CI/CD 환경 구축",
+    icon: "mdi-check-circle-outline",
+    contents: "Docker compose, Github Actions를 활용한 CI/CD 자동화 환경 구축",
+  },
+  {
+    title: "Prometheus + Grafana를 활용한 모니터링 기능",
+    icon: "mdi-check-circle-outline",
+    contents: "Prometheus + Grafana를 활용한 기초 모니터링 기능 구현",
+  },
+  {
+    title: "Kafka를 활용한 선택적 로직 비동기 처리",
+    icon: "mdi-check-circle-outline",
+    contents: "Kafka를 활용한 기존로직 비동기 처리",
+  },
+];
 
-  const frontTechStack = [
-    'Vue3',
-    'Vuetify',
-    'TypeScript',
-    'Vite',
-    'Axios',
-    'TipTap',
-    'Pinia',
-    'AWS S3',
-    'Docker',
-  ];
+const frontTechStack = [
+  "Vue3",
+  "Vuetify",
+  "TypeScript",
+  "Vite",
+  "Axios",
+  "TipTap",
+  "Pinia",
+  "AWS S3",
+  "Docker",
+];
 
-  const backTechStack = [
-    'Gemini API',
-    'SpringBoot',
-    'SpringSecurity',
-    'OAuth2',
-    'Redis',
-    'Websocket',
-    'JPA Specification',
-    'AWS S3',
-    'AWS EC2',
-    'MySQL',
-    'Elastic Search',
-    'Docker',
-    'Github Action',
-    'Prometheus',
-    'Grafana',
-    'Kafka',
-  ];
+const backTechStack = [
+  "Gemini API",
+  "SpringBoot",
+  "SpringSecurity",
+  "OAuth2",
+  "Redis",
+  "Websocket",
+  "JPA Specification",
+  "AWS S3",
+  "AWS EC2",
+  "MySQL",
+  "Elastic Search",
+  "Docker",
+  "Github Action",
+  "Prometheus",
+  "Grafana",
+  "Kafka",
+];
 </script>
 
 <template>

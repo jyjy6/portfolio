@@ -1,56 +1,56 @@
 <script setup lang="ts">
-  import { useRouter } from 'vue-router';
-  import { useMenuStore } from '../store/menuStore';
-  import { onMounted } from 'vue';
+import { useRouter } from "vue-router";
+import { useMenuStore } from "../store/menuStore";
+import { onMounted } from "vue";
 
-  const menuStore = useMenuStore();
+const menuStore = useMenuStore();
 
-  onMounted(() => {
-    // 타이틀에 애니메이션 적용
-    const mainTitle = document.querySelector('.main-title');
-    const subTitle = document.querySelector('.sub-title');
-    const divider = document.querySelector('.divider');
-    const menuItems = document.querySelectorAll('.menu-item');
+onMounted(() => {
+  const config = useRuntimeConfig();
+  const apiKey = config.NUXT_API_KEY;
+  console.log("apikey:" + apiKey);
+  // 타이틀에 애니메이션 적용
+  const mainTitle = document.querySelector(".main-title");
+  const subTitle = document.querySelector(".sub-title");
+  const divider = document.querySelector(".divider");
+  const menuItems = document.querySelectorAll(".menu-item");
 
-    // 타이틀 애니메이션
-    if (mainTitle) {
-      mainTitle.classList.add('animate-in');
+  // 타이틀 애니메이션
+  if (mainTitle) {
+    mainTitle.classList.add("animate-in");
+  }
+
+  // 서브타이틀 애니메이션 (0.3초 후)
+  setTimeout(() => {
+    if (subTitle) {
+      subTitle.classList.add("animate-in");
     }
+  }, 300);
 
-    // 서브타이틀 애니메이션 (0.3초 후)
+  // 구분선 애니메이션 (0.6초 후)
+  setTimeout(() => {
+    if (divider) {
+      divider.classList.add("animate-in");
+    }
+  }, 600);
+
+  // 메뉴 아이템 애니메이션 (각각 0.1초 간격으로)
+  menuItems.forEach((item, index) => {
     setTimeout(() => {
-      if (subTitle) {
-        subTitle.classList.add('animate-in');
-      }
-    }, 300);
-
-    // 구분선 애니메이션 (0.6초 후)
-    setTimeout(() => {
-      if (divider) {
-        divider.classList.add('animate-in');
-      }
-    }, 600);
-
-    // 메뉴 아이템 애니메이션 (각각 0.1초 간격으로)
-    menuItems.forEach((item, index) => {
-      setTimeout(
-        () => {
-          item.classList.add('animate-in');
-        },
-        900 + index * 100
-      );
-    });
+      item.classList.add("animate-in");
+    }, 900 + index * 100);
   });
+});
 
-  const router = useRouter();
-  const navigateTo = (route: string) => {
-    if (route.startsWith('https')) {
-      window.open(route, '_blank');
-      return;
-    }
-    router.push(route);
-    window.scrollTo(0, 0);
-  };
+const router = useRouter();
+const navigateTo = (route: string) => {
+  if (route.startsWith("https")) {
+    window.open(route, "_blank");
+    return;
+  }
+  router.push(route);
+  window.scrollTo(0, 0);
+};
 </script>
 
 <template>
@@ -113,110 +113,102 @@
 </template>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
+.main-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sub-title {
+  font-family: "Poppins", sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.divider {
+  width: 80%;
+  max-width: 500px;
+  margin: 16px auto;
+  border: 1px solid white;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.menu-item {
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-title {
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+/* 버튼 호버 효과 */
+.btn-hover {
+  transition: transform 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-5px);
+}
+
+/* 메뉴 아이템 호버 효과 */
+.menu-item:hover .menu-title {
+  color: #42b883; /* Vue.js 색상 적용 */
+}
+
+/* 애니메이션 인 효과 클래스 */
+.animate-in {
+  opacity: 1;
+  transform: translateY(0) scaleX(1);
+}
+
+/* 모바일 화면에 대한 반응형 스타일 */
+@media (max-width: 600px) {
   .main-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.8s ease,
-      transform 0.8s ease;
-  }
-
-  .sub-title {
-    font-family: 'Poppins', sans-serif;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.8s ease,
-      transform 0.8s ease;
-  }
-
-  .divider {
-    width: 80%;
-    max-width: 500px;
-    margin: 16px auto;
-    border: 1px solid white;
-    opacity: 0;
-    transform: scaleX(0);
-    transition:
-      opacity 0.8s ease,
-      transform 0.8s ease;
+    font-size: 32px;
   }
 
   .menu-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 20px;
+    gap: 16px;
   }
+}
 
-  .menu-item {
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
-  }
+.badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
-  .menu-title {
-    font-size: 12px;
-    transition: color 0.3s ease;
-  }
-
-  /* 버튼 호버 효과 */
-  .btn-hover {
-    transition: transform 0.3s ease;
-  }
-
-  .btn-hover:hover {
-    transform: translateY(-5px);
-  }
-
-  /* 메뉴 아이템 호버 효과 */
-  .menu-item:hover .menu-title {
-    color: #42b883; /* Vue.js 색상 적용 */
-  }
-
-  /* 애니메이션 인 효과 클래스 */
-  .animate-in {
-    opacity: 1;
-    transform: translateY(0) scaleX(1);
-  }
-
-  /* 모바일 화면에 대한 반응형 스타일 */
-  @media (max-width: 600px) {
-    .main-title {
-      font-size: 32px;
-    }
-
-    .menu-container {
-      gap: 16px;
-    }
-  }
-
-  .badge-wrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-  .menu-badge {
-    position: absolute;
-    top: 3px;
-    right: -6px;
-    background: linear-gradient(45deg, #ff5f6d, #ffc371);
-    color: #000;
-    font-weight: 700;
-    font-size: 9px;
-    padding: 2px 4px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    transform: rotate(10deg);
-    letter-spacing: 0.5px;
-  }
+.menu-badge {
+  position: absolute;
+  top: 3px;
+  right: -6px;
+  background: linear-gradient(45deg, #ff5f6d, #ffc371);
+  color: #000;
+  font-weight: 700;
+  font-size: 9px;
+  padding: 2px 4px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(10deg);
+  letter-spacing: 0.5px;
+}
 </style>
