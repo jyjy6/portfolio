@@ -20,8 +20,8 @@
     <!-- 번역 버튼 -->
     <v-btn
       v-if="hasText"
-      color="primary"
-      size="large"
+      color="white"
+      size="small"
       variant="outlined"
       :loading="isTranslating"
       @click.stop="toggleTranslation"
@@ -30,7 +30,7 @@
       <v-icon left size="16">
         {{ isTranslated ? "mdi-translate-off" : "mdi-translate" }}
       </v-icon>
-      {{ isTranslated ? "Original Text" : "Translate" }}
+      {{ isTranslated ? "한글" : "日本語" }}
     </v-btn>
   </div>
 </template>
