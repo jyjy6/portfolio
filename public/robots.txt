@@ -1,0 +1,11 @@
+# 모든 검색엔진에 적용
+User-agent: *
+
+# /api/ 경로 하위는 크롤링 제외 (API 호출 경로)
+Disallow: /api/
+
+# 나머지 모든 경로는 크롤링 허용
+Allow: /
+
+# 사이트맵 위치 (추후 실제 도메인으로 변경 필요)
+Sitemap: https://juneyoungjung6.shop/sitemap.xml
