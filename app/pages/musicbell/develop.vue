@@ -15,6 +15,12 @@ const sections = [
     images: [
       {
         image:
+          "https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/32133.png",
+        comment:
+          "백엔드 아키텍쳐. 틀 을그리고 GPT에 생성요청했는데 좀 빠진게 듬성듬성.. 아무튼 기본적으론 Docker Compose위에서 이러한 MSA를 이루고 있다",
+      },
+      {
+        image:
           "https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/musicbell/1.SSOLogin.webp",
         comment:
           "SSO완성 결과 1. ImgBell에 로그인해서 Cookie에 refresh, Access토큰을 저장 후 user정보도 localstorage에 저장하고있다. MSA의 한 서비스인 MusicBell도 쿠키에 저장된 모습. 새로고침 시 user정보도 역시 localstorage에 저장되고있다.",
