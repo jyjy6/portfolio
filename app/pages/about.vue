@@ -40,6 +40,16 @@ const backEndStacks = [
           "Micro Service Architecture. 각 서비스가 독립적으로 동작하며 서로 통신하는 아키텍쳐 기술.",
       },
       {
+        label: "LangChain4j",
+        description:
+          "LangChain의 Java 버전 라이브러리. Java Spring Boot를 주로 사용하는 한국, 일본에서의 프로젝트에 쉽고 강력하게 AI 기능을 추가할 수 있다.",
+      },
+      {
+        label: "RAG",
+        description:
+          "Retrieval-Augmented Generation(검색 증강 생성). 기존 검색 결과를 사용하여 추가적인 정보를 추가하는 기술. LLM의 할루시네이션을 획기적으로 줄이고 평범한AI가 학습하지 못한 정보를 추가적으로 학습하여 더 정확한 답변을 제공할 수 있다.",
+      },
+      {
         label: "SSO",
         description:
           "Single Sign On. 하나의 로그인으로 여러 서비스에 접근 가능하게 하는 기술.",
