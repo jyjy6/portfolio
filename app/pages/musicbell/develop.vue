@@ -330,7 +330,7 @@ const sections = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "7. JWT보안 - RefreshToken Rotation, CSRF공격 대책책",
     images: [
       {
