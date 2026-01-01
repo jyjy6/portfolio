@@ -81,7 +81,7 @@ const backTechStack = [
 </script>
 
 <template>
-  <v-container class="pa-10">
+  <v-container>
     <h1 class="text-center mb-10">
       <v-icon icon="mdi-music" class="mr-2" size="x-large"></v-icon>
       MusicBell (MSA + SSO)

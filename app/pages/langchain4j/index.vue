@@ -54,19 +54,33 @@ const backTechStack = [
 </script>
 
 <template>
-  <v-container class="pa-10">
+  <v-container>
     <h1 class="text-center mb-10">
       <v-icon icon="mdi-link-variant" class="mr-2" size="x-large"></v-icon>
       LangChain4j
     </h1>
 
     <v-card class="mb-10 pa-6">
-      <v-btn :to="'/'" class="ma-2" color="red" disabled
-        >LangChain4j Development Log</v-btn
+      <v-btn
+        :to="'/'"
+        class="ma-2 text-wrap py-2"
+        color="red"
+        disabled
+        height="auto"
+        min-height="36"
       >
-      <v-btn :to="'/'" class="ma-2" color="primary" disabled
-        >LangChain4j Development Log (Advanced)</v-btn
+        LangChain4j Dev Log
+      </v-btn>
+      <v-btn
+        :to="'/'"
+        class="ma-2 text-wrap py-2"
+        color="primary"
+        disabled
+        height="auto"
+        min-height="36"
       >
+        LangChain4j Dev Log (Advanced)
+      </v-btn>
       <!-- <v-tooltip
         text=""
         location="bottom"
