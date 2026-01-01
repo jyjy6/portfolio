@@ -71,7 +71,7 @@ export const useMenuStore = defineStore("menu", () => {
     {
       title: "LangChain4j 프로젝트",
       icon: "mdi-link-variant",
-      link: "",
+      route: "/langchain4j",
       recommended: true,
       level: "current",
     },
