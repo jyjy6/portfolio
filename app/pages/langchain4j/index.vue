@@ -61,26 +61,45 @@ const backTechStack = [
     </h1>
 
     <v-card class="mb-10 pa-6">
-      <v-btn
-        :to="'/'"
-        class="ma-2 text-wrap py-2"
-        color="red"
-        disabled
-        height="auto"
-        min-height="36"
+      <v-tooltip
+        text="♡♥준비중♡♥"
+        location="bottom"
+        max-width="500px"
+        open-on-hover
+        open-on-click
       >
-        LangChain4j DevLog
-      </v-btn>
-      <v-btn
-        :to="'/'"
-        class="ma-2 text-wrap py-2"
-        color="primary"
-        disabled
-        height="auto"
-        min-height="36"
+        <template #activator="{ props }" style="">
+          <v-btn
+            v-bind="props"
+            class="ma-2 text-wrap py-2"
+            color="red"
+            height="auto"
+            min-height="36"
+          >
+            LangChain4j DevLog
+          </v-btn>
+        </template>
+      </v-tooltip>
+      <v-tooltip
+        text="♡♥준비중♡♥"
+        location="bottom"
+        max-width="500px"
+        open-on-hover
+        open-on-click
       >
-        LangChain4j DevLog(Advanced)
-      </v-btn>
+        <template #activator="{ props }" style="">
+          <v-btn
+            v-bind="props"
+            class="ma-2 text-wrap py-2"
+            color="primary"
+            height="auto"
+            min-height="36"
+          >
+            LangChain4j DevLog(Advanced)
+          </v-btn>
+        </template>
+      </v-tooltip>
+
       <!-- <v-tooltip
         text=""
         location="bottom"
@@ -126,14 +145,13 @@ const backTechStack = [
         <br />
 
         <p>
-          결과부터 말하면, 뭐.. 이 페이지를 보면 알겠지만 AI서비스 개발자를
-          선택했다.
+          이 페이지의 존재자체가 그 결과지만 AI서비스 개발자를 선택했다.
           <br />
           그 이유로는 LangChain4j개발을 마이크로소프트에서 지원하고 있다는 점,
           2025년 출시되었기에 불안정하지만 기술의 선점이 가능하다는 점, 내가
           현재 가지고있는 Spring Boot기반의 Kafka Redis에 바로 LangChain4j를
           탑재하여 서비스 확장이 가능하고, <br />LangChain4j 자체의 수요가
-          부족하더라도 LLM, RAG, Embedding, VectorDB 등의 여러 AI기반 기술을
+          부족하더라도 LLM, RAG, Embedding, VectorDB 등의 여러 AI기반 신신기술을
           체험할 수 있다는 점이 매력으로 다가왔다.
         </p>
 
