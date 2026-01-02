@@ -69,7 +69,7 @@ const backTechStack = [
         height="auto"
         min-height="36"
       >
-        LangChain4j Dev Log
+        LangChain4j DevLog
       </v-btn>
       <v-btn
         :to="'/'"
@@ -79,7 +79,7 @@ const backTechStack = [
         height="auto"
         min-height="36"
       >
-        LangChain4j Dev Log (Advanced)
+        LangChain4j DevLog(Advanced)
       </v-btn>
       <!-- <v-tooltip
         text=""
