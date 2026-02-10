@@ -1,7 +1,22 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 import TranslationComponent from "../components/TranslationComponent.vue";
 import { translationConfig } from "../utils/translationUtil";
+
+const router = useRouter();
+const showDevDialog = ref(false);
+
+onMounted(() => {
+  showDevDialog.value = true;
+});
+
+const handleDevChoice = (isDev: boolean) => {
+  showDevDialog.value = false;
+  if (isDev) {
+    router.push("/about2");
+  }
+};
 
 const panels = ref<string[]>(["intro", "ai-evaluation"]);
 
@@ -346,6 +361,52 @@ const openImageInNewTab = (imageUrl: string) => {
         </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
+
+    <!-- Developer Choice Dialog -->
+    <v-dialog
+      v-model="showDevDialog"
+      max-width="520"
+      persistent
+      class="dev-dialog"
+    >
+      <v-card class="dev-dialog-card text-center pa-6" rounded="xl">
+        <v-card-text class="pa-4">
+          <v-icon size="64" color="green-accent-3" class="mb-4"
+            >mdi-code-braces</v-icon
+          >
+          <h1 class="dev-dialog-title mb-2">Are You a Developer?</h1>
+          <!-- <p class="dev-dialog-subtitle">
+            개발자라면 코드에디터 스타일로 볼 수 있습니다
+          </p> -->
+        </v-card-text>
+        <v-card-actions class="justify-center pb-4 ga-4">
+          <v-btn
+            size="x-large"
+            color="green-accent-3"
+            variant="flat"
+            rounded="lg"
+            min-width="140"
+            class="dev-btn-yes"
+            @click="handleDevChoice(true)"
+          >
+            <v-icon start>mdi-check-bold</v-icon>
+            YES
+          </v-btn>
+          <v-btn
+            size="x-large"
+            color="grey-darken-1"
+            variant="outlined"
+            rounded="lg"
+            min-width="140"
+            class="dev-btn-no"
+            @click="handleDevChoice(false)"
+          >
+            <v-icon start>mdi-close</v-icon>
+            NO
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -400,5 +461,38 @@ const openImageInNewTab = (imageUrl: string) => {
   line-height: 1.5;
   white-space: pre-line;
   color: white;
+}
+
+/* Developer Dialog */
+.dev-dialog-card {
+  background: #1e1e2e !important;
+  border: 1px solid #313244;
+}
+
+.dev-dialog-title {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #cdd6f4;
+  letter-spacing: 1px;
+}
+
+.dev-dialog-subtitle {
+  font-size: 0.95rem;
+  color: #6c7086;
+}
+
+.dev-btn-yes {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dev-btn-no {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 </style>
