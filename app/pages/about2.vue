@@ -26,6 +26,16 @@ const truncate = (str: string, maxLen: number = 40): string => {
   return str.slice(0, maxLen) + "...";
 };
 
+const toEnumName = (str: string): string => {
+  return str
+    .replace(/\(.*?\)/g, "")
+    .replace(/[^a-zA-Z0-9\s]/g, " ")
+    .trim()
+    .split(/\s+/)
+    .join("_")
+    .toUpperCase();
+};
+
 const isOpen = (value: string) => panels.value.includes(value);
 
 // ===== DATA =====
@@ -62,7 +72,7 @@ const frontEndStacks = [
 
 const backEndStacks = [
   {
-    section: "공통",
+    section: "CommonStack",
     chips: [
       {
         label: "MSA",
@@ -87,7 +97,7 @@ const backEndStacks = [
       {
         label: "JWT",
         description:
-          "토큰 기반 인증 방식. refreshToken, accessToken을 이용한 Stateless 로그인 구현 가능",
+          "토큰 기반 인증 방식. refreshToken, accessToken을 이용한 Stateless 로그인 구현, RefreshToken Rotation을 통한 보안까지",
       },
       {
         label: "socket.io",
@@ -103,7 +113,7 @@ const backEndStacks = [
         description: "가상 서버 서비스. Git Action과의 연계도 가능하다.",
       },
       {
-        label: "Github Action",
+        label: "Github Actions",
         description:
           "CI/CD 자동화 플랫폼. t2.medium 이상에서 사용하기 좋다 그 이하는 메모리부족으로 빌드타임 오버.",
       },
@@ -120,17 +130,25 @@ const backEndStacks = [
     ],
   },
   {
-    section: "SpringBoot",
+    section: "DB",
     chips: [
-      {
-        label: "Spring Security",
-        description: "Spring 기반 보안 프레임워크. 최신버전 사용.",
-      },
       { label: "Oracle", description: "오라클 데이터베이스" },
       {
         label: "MySQL",
         description:
           "오픈소스 데이터베이스. 현재 로컬컴퓨터를 MySQL DB서버로 사용중.",
+      },
+      { label: "MongoDB", description: "NoSQL 데이터베이스" },
+      { label: "Pinecone", description: "Vector DB" },
+      { label: "pgvector", description: "PostgreSQL Vector DB" },
+    ],
+  },
+  {
+    section: "SpringBoot",
+    chips: [
+      {
+        label: "Spring Security",
+        description: "Spring 기반 보안 프레임워크. 최신버전 사용.",
       },
       {
         label: "JPA(Hibernate)",
@@ -167,7 +185,7 @@ const backEndStacks = [
   {
     section: "NUXT3",
     chips: [
-      { label: "MongoDB", description: "NoSQL 데이터베이스" },
+      { label: "MongoDB Atlas", description: "NoSQL 데이터베이스" },
       { label: "Pinia", description: "NUXT에서도 사용 가능한 상태 관리" },
     ],
   },
@@ -175,7 +193,7 @@ const backEndStacks = [
 
 const aiStacks = [
   {
-    label: "LangChain4j",
+    label: "langChain4j",
     description:
       "LangChain의 Java 버전 라이브러리. Spring Boot에서 AI 기능을 쉽고 강력하게 통합",
   },
@@ -185,15 +203,15 @@ const aiStacks = [
       "Retrieval-Augmented Generation. 검색 증강 생성으로 LLM 할루시네이션 감소",
   },
   {
-    label: "Prompt Engineering",
+    label: "promptEngineering",
     description: "효과적인 AI 프롬프트 설계 및 최적화 기술",
   },
   {
-    label: "Gemini API",
+    label: "geminiAPI",
     description: "Google Gemini AI API 활용",
   },
   {
-    label: "OpenAI Whisper",
+    label: "openAIWhisper",
     description: "OpenAI Whisper API 활용. 음성을 텍스트로 변환하는 기술",
   },
   {
@@ -440,32 +458,38 @@ const openImageInNewTab = (url: string) => {
                   :key="section.section"
                 >
                   <div class="code-line i2">
-                    <span class="cm">// ──── {{ section.section }} ────</span>
+                    <span>
+                      <span class="kw">public </span>
+                      <span class="kw">enum </span>
+                      <span class="cls">{{ section.section }}</span> {
+                    </span>
                   </div>
-                  <div
-                    v-for="chip in section.chips"
-                    :key="chip.label"
-                    class="code-line i2"
-                  >
-                    <v-tooltip
-                      :text="chip.description"
-                      location="bottom"
-                      open-on-hover
-                      open-on-click
-                      max-width="420"
+                  <div class="code-line i3 enum-line-wrap">
+                    <template
+                      v-for="(chip, idx) in section.chips"
+                      :key="chip.label"
                     >
-                      <template #activator="{ props }">
-                        <span v-bind="props" class="hover-line">
-                          <span class="tp">String </span>
-                          <span class="vr">{{ chip.label }} </span>
-                          = <span class="str">"{{ chip.label }}"</span>;
-                          <span class="cm"
-                            >// {{ truncate(chip.description) }}</span
+                      <v-tooltip
+                        :text="chip.description"
+                        location="bottom"
+                        open-on-hover
+                        open-on-click
+                        max-width="420"
+                      >
+                        <template #activator="{ props }">
+                          <span v-bind="props" class="hover-line enum-const"
+                            >{{ toEnumName(chip.label) }}
+                            <span
+                              v-if="idx < section.chips.length - 1"
+                              class="enum-sep"
+                              >,
+                            </span></span
                           >
-                        </span>
-                      </template>
-                    </v-tooltip>
+                        </template>
+                      </v-tooltip>
+                    </template>
                   </div>
+                  <div class="code-line i2">}</div>
                   <div class="code-line empty-line">&nbsp;</div>
                 </template>
                 <div class="code-line i1">}</div>
@@ -511,8 +535,7 @@ const openImageInNewTab = (url: string) => {
                     <template #activator="{ props }">
                       <span v-bind="props" class="hover-line">
                         <span class="tp">String </span>
-                        <span class="vr">{{ toVarName(item.label) }}</span>
-                        = <span class="str">"{{ item.label }}"</span>;
+                        <span class="vr">{{ item.label }}; </span>
                         <span class="cm"
                           >// {{ truncate(item.description) }}</span
                         >
@@ -956,8 +979,13 @@ const openImageInNewTab = (url: string) => {
 }
 
 /* Panel Content */
-:deep(.panel-content .v-expansion-panel-text__wrapper) {
+:deep(.v-expansion-panel-text__wrapper) {
   padding: 0 !important;
+}
+
+:deep(.panel-content) {
+  margin-left: 50px !important;
+  margin-top: 10px !important;
 }
 
 /* ============================= */
@@ -1058,5 +1086,27 @@ const openImageInNewTab = (url: string) => {
 
 .editor-content::-webkit-scrollbar-thumb:hover {
   background: #585b70;
+}
+
+/* ============================= */
+/*       ENUM STYLE              */
+/* ============================= */
+.enum-line-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  white-space: normal !important;
+  font-style: italic;
+}
+
+.enum-const {
+  color: #89b4fa;
+  font-weight: 500;
+}
+
+.enum-sep {
+  color: #585b70;
+  margin-left: -5px;
 }
 </style>
