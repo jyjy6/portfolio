@@ -11,11 +11,11 @@ const menuStore = useMenuStore();
 const router = useRouter();
 
 // 아코디언 패널 상태 (기본적으로 'current' 레벨만 열림)
-const openPanels = ref<number[]>([2]); // current는 index 2
+const openPanels = ref<number[]>([0]); // current는 index 0
 
 // 레벨별로 프로젝트 그룹화
 const projectsByLevel = computed(() => {
-  const levels: ProjectLevel[] = ["beginner", "intermediate", "current"];
+  const levels: ProjectLevel[] = ["current", "intermediate", "beginner"];
 
   return levels.map((level) => ({
     level,
@@ -69,9 +69,12 @@ onMounted(() => {
   // 패널 래퍼 순차적 애니메이션
   const panelWrappers = document.querySelectorAll(".panel-wrapper");
   panelWrappers.forEach((wrapper, index) => {
-    setTimeout(() => {
-      wrapper.classList.add("panel-visible");
-    }, 900 + index * 150);
+    setTimeout(
+      () => {
+        wrapper.classList.add("panel-visible");
+      },
+      900 + index * 150,
+    );
   });
 });
 </script>
@@ -171,7 +174,7 @@ onMounted(() => {
                     rounded="lg"
                     @click="
                       hasValidRoute(project) &&
-                        navigateTo(project.route || project.link)
+                      navigateTo(project.route || project.link)
                     "
                   >
                     <v-card-text class="text-center pa-4">
@@ -247,7 +250,9 @@ onMounted(() => {
   font-weight: 700;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -260,7 +265,9 @@ onMounted(() => {
   font-weight: 400;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -271,7 +278,9 @@ onMounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.2);
   opacity: 0;
   transform: scaleX(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 /* 일반 메뉴 버튼 */
