@@ -124,7 +124,14 @@ const backTechStack = [
         target="_blank"
         color="success"
         class="ma-2"
-        >백엔드 Github</v-btn
+        >백엔드 Github 1</v-btn
+      >
+      <v-btn
+        href="https://github.com/jyjy6/jfaback/tree/refactor/AIModelChangeToStreamingModel"
+        target="_blank"
+        color="success"
+        class="ma-2"
+        >백엔드 Github 2</v-btn
       >
     </v-card>
 
