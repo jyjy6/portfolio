@@ -127,7 +127,7 @@ const backTechStack = [
         >백엔드 Github 1</v-btn
       >
       <v-btn
-        href="https://github.com/jyjy6/jfaback/tree/refactor/AIModelChangeToStreamingModel"
+        href="https://github.com/jyjy6/jfaback/tree/test/aimodelchange_chatgpt"
         target="_blank"
         color="success"
         class="ma-2"
