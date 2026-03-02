@@ -75,6 +75,13 @@ export const useMenuStore = defineStore("menu", () => {
       recommended: true,
       level: "current",
     },
+    {
+      title: "[진행중] MSA 이커머스 프로젝트(Spring Cloud Gateway+SDD)",
+      icon: "mdi-store",
+      link: "https://github.com/jyjy6/jymusic",
+      recommended: true,
+      level: "current",
+    },
     { title: "CONTACT", icon: "mdi-email", route: "/contact" },
   ];
 
