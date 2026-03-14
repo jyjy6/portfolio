@@ -15,7 +15,7 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/32133.png",
+          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/32133.png",
         comment:
           "백엔드 아키텍쳐. 틀 을그리고 GPT에 생성요청했는데 좀 빠진게 듬성듬성.. 아무튼 기본적으론 Docker Compose위에서 이러한 MSA를 이루고 있다",
       },
@@ -26,7 +26,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung2da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/musicbell/1.SSO+ResponseCookie.jpg",
+        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/musicbell/1.SSO+ResponseCookie.jpg",
       ],
       comment: "",
     },
@@ -92,7 +92,7 @@ const setupIntersectionObservers = () => {
       {
         threshold: 0.1, // 10% 이상 보이면 트리거
         rootMargin: "0px 0px -10% 0px", // 화면 하단 10% 지점에서 트리거
-      }
+      },
     );
 
     observer.observe(domElement);
@@ -312,7 +312,9 @@ onBeforeUnmount(() => {
 .fade-section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .fade-section.visible {
