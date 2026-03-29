@@ -14,17 +14,17 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/homepage1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/homepage1.webp",
         comment: "메인페이지 시연영상. 해당하는 요일만 효율적으로 GET요청",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/homepage-changevideo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/homepage-changevideo.webp",
         comment: "새로고침시 변경되는 메인영상",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/homepageSelectVideo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/homepageSelectVideo.webp",
         comment: "방송선택시 변경되는 메인영상",
       },
     ],
@@ -43,12 +43,12 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/loginCheck.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/loginCheck.webp",
         comment: "로그인 실패 시 횟수제한, 성공 후 refresh, access 토큰확인",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/loginOAuth.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/loginOAuth.webp",
         comment: "Google OAuth 로그인 시연영상",
       },
     ],
@@ -66,24 +66,24 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/broadcastlist1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/broadcastlist1.webp",
         comment:
           "방송리스트 시연영상. 모든 방송엔 각자 에피소드 추가하는기능이 있고, 수정or삭제 버튼 클릭 시 해당방송의 고유번호에 따라 데이터를 바인딩. 혹은 삭제.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/contentsaddserarch.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/contentsaddserarch.webp",
         comment: "방송(콘텐츠)추가 시연영상1. 검색기능도 구현했다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/postContent.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/postContent.webp",
         comment:
           "방송(콘텐츠)추가 시연영상2. 실제 방송을 추가하여 디테일화면에서 방송 진행자 정보도 팝업으로 확인가능하다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/contentsModifyDelete.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/contentsModifyDelete.webp",
         comment:
           "방송(콘텐츠)수정 삭제 영상. 여담으로 개발자도구 네트워크탭에 만료된 토큰 갱신하는 refresh-Token 엔드포인트도 정상적으로 작동중",
       },
@@ -95,7 +95,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/contentsAddFrontCode.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/contentsAddFrontCode.PNG",
       ],
       comment:
         "컨텐츠 추가시의 프론트 코드. apiUrl과 필요한 field를 props전송, 진행자 검색을 위한 데이터를 onMounted로 바인딩 하고있다.\n 운영자만 접근할 수 있기에 미들웨어, 레이아웃 admin을 적용한 모습도 볼 수 있다.",
@@ -108,13 +108,13 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/adminFrontMiddleware.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/adminFrontMiddleware.PNG",
         comment:
           "클라이언트(프런트엔드) 미들웨어. 단순하게 유저정보만을 확인한다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/adminServerMiddleware.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/adminServerMiddleware.PNG",
         comment:
           "서버(백엔드) 미들웨어 예시.(상세코드 GitHub참조) JWT를 확인해보고 토큰이 없거나 유효하지않으면 401, 403에러를 낸다",
       },
@@ -133,18 +133,18 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/adminChangeUserinfo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/adminChangeUserinfo.webp",
         comment:
           "운영자페이지 유저정보 변경 시연. 프리미엄/일반회원(role) 변경, 프리미엄 기간 등을 변경하면 좋을 것 같다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/adminChangeBanner.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/adminChangeBanner.webp",
         comment: "배너관리 시연",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/memberSearch.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/memberSearch.PNG",
         comment: "멤버목록 검색 코드",
       },
     ],
@@ -156,7 +156,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/memberSearchJaum.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/memberSearchJaum.PNG",
       ],
       comment:
         "서버 코드의 자음 매핑.MongoDB는 호환 유니코드로 저장하나보다 새로운 정보였다 ",
@@ -169,43 +169,43 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload1.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload1.PNG",
         comment:
           "FormComponent안에 FileUploadComponent를 자식 컴포넌트로 추가한다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload2.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload2.PNG",
         comment:
           "FileUploadComponent의 handleFileChange함수. uploadToS3함수를 발동하고, 부모컴포넌트에 발급받은 PresignedURL을 전달한다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload4.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload4.PNG",
         comment:
           "composable/userS3Upload.ts의 uploadToS3함수. file과 temp를 파라미터로 받고 파일사이즈같은것도 검증. api/upload로 API요청한다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload5.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload5.PNG",
         comment:
           "api/upload 엔드포인트의코드. S3관련 환경변수도 까보고 디코딩 등의 작업도 수행하고 presiginedURL을 요청한다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload7.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload7.PNG",
         comment:
           "다시 uploadToS3함수로 돌아와서 API요청이 성공했으면 uploadedUrl 변수에 해당 URL을 담는다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload8.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload8.PNG",
         comment:
           "FileUploadComponent의 comfirmFile함수. 여기서도 한번 더 uploadToS3함수를 실행하는데 이번엔 두번째 파라미터값(temp)이 false다 임시파일이아닌 확정적인 파일이므로.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload9.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3upload9.PNG",
         comment:
           "부모 컴포넌트인 FormComponent로 돌아와서 각 FileUploadComponent를 사용한 필드마다 파일업로드를 확정한다. 하나라도 실패하면 폼이 불안정할 수 있기때문에 Promise.all로 모두 성공했을때만 폼을 제출하게 유도.",
       },
@@ -222,7 +222,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/S3uploadfinal.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/S3uploadfinal.PNG",
       ],
       comment:
         "S3의 수명주기 규칙. temp폴더에 있는 모든 임시자료들은 S3에서 자동으로 삭제시켜준다. Vue+Spring때는 일일이 내 서버와 DB에서 임시자료들을 삭제했지만 이번엔 S3제공 서비스를 사용하여 자동으로 삭제하는 방식으로 개선했다.",
@@ -235,22 +235,22 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy1.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy1.PNG",
         comment: "GoogleKeep에 정리한 배포과정 1",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy2.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy2.PNG",
         comment: "GoogleKeep에 정리한 배포과정 2",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy3.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy3.PNG",
         comment: "GoogleKeep에 정리한 배포과정 3",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy4.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/deploy4.PNG",
         comment: "GoogleKeep에 정리한 배포과정 4",
       },
     ],
@@ -263,7 +263,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/deployGithubAction.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/deployGithubAction.PNG",
       ],
       comment:
         "Github Action의 처참한 현장.. 그래도 성공하는것도 있는걸 보면 확실히 사용하는 큰그림은 터득했다. \n 결국 지금보고계신 이 웹페이지를 Git Action+EC2로 배포하는데에 성공했다.",
@@ -276,17 +276,17 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/1.SSRUseAsyncData.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/1.SSRUseAsyncData.PNG",
         comment: "기존의 onMounted와 SSR에 맞춰진 useAsyncData 사용 코드 비교",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/1.SSRPage.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/1.SSRPage.webp",
         comment: "이전과 같이 정상적으로 렌더링 되고있다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/1.SSRSEOMeta.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/1.SSRSEOMeta.PNG",
         comment:
           "SEO에 필요한 NUXT만의 meta등록. script태그내에 정말 간편하게 등록할 수 있다.",
       },

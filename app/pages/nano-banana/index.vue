@@ -15,25 +15,25 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/01.ali_usyk_together.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/01.ali_usyk_together.webp",
         comment:
           '서비스 시연영상. 전설적인 두 프로복서 THE GOAT "무하마드 알리", 헤비급 역대 최강의 프로복서 "올렉산드르 우식"을 한 이미지에 넣어보고 싶었다. 프롬프트는 영어로.',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/01.ali_usyk_results.png",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/01.ali_usyk_results.png",
         comment:
           "완성된 결과물. 두 선수가 복서라는 말도 하지 않았음에도 불구하고 이미지의 분위기를 파악하고 링의 분위기를 상당히 일관성있고 정확하게 표현하고있다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/01.trump_request.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/01.trump_request.jpg",
         comment:
           "이번엔 1개의 이미지만으로 요청해보자. 도널드 트럼프에게 시그니쳐 모자를 씌워주자",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/01.trump_results.png",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/01.trump_results.png",
         comment:
           "완성된 도널드 트럼프 결과물. 프롬프트를 좀 상세하게 작성해야만했다 이미지 모델의 개선필요한 점 일지도..",
       },
@@ -50,7 +50,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/02.requestToAI.jpg",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/02.requestToAI.jpg",
       ],
       comment:
         "이런식으로 AI에게 서비스의 큰그림을 요구하면 코드를 뱉어내준다 이를테면 Gemini API사용법 같은 외울필요도 없고 복붙해야할 만한것과, 디자인이 안되어있는 기초적인틀.. 그걸 세세하게 수정해서 단시간에 서비스개발을 완료했다.",
@@ -63,7 +63,7 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/banonanademo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/banonanademo.webp",
         comment:
           "서비스 시연영상. 한국어, 일본어, 영어 3개의 언어를 지원한다. 두 복서를 원피스풍의 캐릭터로 변경요청해봤다. ",
       },

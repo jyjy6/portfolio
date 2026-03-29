@@ -33,7 +33,7 @@ const navigateTo = (route: string) => {
         <v-list-item class="d-flex justify-center">
           <v-avatar size="88" class="mx-auto my-4">
             <v-img
-              src="https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/images/4942.jpg"
+              src="https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/images/4942.jpg"
               alt="Profile"
             />
           </v-avatar>

@@ -14,17 +14,17 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/0000ImgBellHomePage.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/0000ImgBellHomePage.webp",
         comment: "메인페이지 시연영상 엘라스틱 자동완성, UI개선판",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mainpage1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mainpage1.webp",
         comment: "메인페이지 시연영상(프로토타입)",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/RecentViewCode.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/RecentViewCode.PNG",
         comment: "최근 본 목록 스프링코드",
       },
     ],
@@ -40,23 +40,23 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/login1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/login1.webp",
         comment: "통상 회원가입 로그인",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/login2oauth.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/login2oauth.webp",
         comment: "Google, Kakao Oauth 로그인",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/NewJWTFilter.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/NewJWTFilter.PNG",
         comment:
           "새로워진 JWTFilter 코드. JWT토큰에서 유저정보추출, CustomUserDetail로 인증객체를 생성하고있다. 매 필터마다 DB조회 할 필요X",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/MemberRoleSet.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/MemberRoleSet.PNG",
         comment:
           "Member테이블의 Role필드. 예를들어 SecurityConfig에서 admin이상의 권한인 superadmin 만 접근할 수 있게하는등.. 유연한 페이지 운영이 가능하다",
       },
@@ -81,13 +81,13 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/imageSearchMain.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/imageSearchMain.webp",
         comment:
           "이미지 검색기능1. 등급필터(일반, 성인, 특수)와 최신순, 좋아요, 인기순 검색 등 다양한 검색을 제공한다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/imageSearchByTag.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/imageSearchByTag.webp",
         comment:
           "이미지 검색기능2. 태그를 클릭(검색)시 에도 이미지를 빠르게 찾아볼 수 있다. 최근검색은 레디스를 활용할까? 생각했지만 굳이 그럴필요가 없다고 판단하여 브라우저 로컬스토리지를 활용했다. ",
       },
@@ -100,8 +100,8 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/frontLoadImageFunction.PNG",
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/backendMyImageFunction.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/frontLoadImageFunction.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/backendMyImageFunction.PNG",
       ],
       comment:
         "프론트, 백엔드의 이미지 로딩 함수. 여러 파라미터를 전송하여 해당 조건에 맞는 이미지들을 불러들인다.",
@@ -114,13 +114,13 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/3-1+JPASpecification.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/3-1+JPASpecification.PNG",
         comment:
           "ImageSpecification의 일부. root는 엔티티(여기선 Image)에 대한 참조, query는 전체 쿼리객체, cb는 CriteriaBuilder 조건을 생성하는 팩토리. WHERE AND OR같은 조건을 생성할때 사용",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/3-1+getImageListFunction.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/3-1+getImageListFunction.PNG",
         comment:
           "이미지 검색기능 함수의 일부. 마이페이지, 운영자일시의 if문, 검색타입(전체검색, 태그검색, 업로더명검색)등에 대한 case문이 보인다",
       },
@@ -142,25 +142,25 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchTest1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchTest1.webp",
         comment:
           "엘라스틱서치 테스트 페이지. DB에서 ES인덱스 동기화, 검색이 잘되는지 등을 시험하고있다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchTest2.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchTest2.webp",
         comment:
           "엘라스틱서치 테스트2. 인기이미지, 최신이미지, 자동완성등을 행하고있다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchMySuggestion.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchMySuggestion.PNG",
         comment:
           'AI가 이상한 제안만해서 사람이 수정하는모습. 역시 실제 비즈니스의도를 "왜","어디에" 써야하는지까지는 AI도 모르기때문에 의도를 확실히 전달해야한다',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchInAdmin.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchInAdmin.webp",
         comment:
           "위의 AI의 이상한 제안에서 수정한대로 작동하는 모습. 테스트 페이지와는 다르게 검색과 자동완성이 통일되었다. 이미지 디테일 컴포넌트도 깔끔하게 재사용 잘 되는 모습",
       },
@@ -182,7 +182,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchSmartSearchCode.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/12.ElasticSearchSmartSearchCode.PNG",
       ],
       comment:
         "엘라스틱서치 또한 Redis때와 같이 기본으로 제공하는 함수가있고 그 예제를 AI게 쓰게하거나 주석으로 설명하게 한 후 내가 코드를 읽어서 해석하고 내것으로 만드는식으로 활용했다. 마치 20년차의 개발자의 완성물을 순식간에 내것으로 만드는것과 같다",
@@ -195,7 +195,7 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/MyPageCheck.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/MyPageCheck.webp",
         comment: "마이페이지 시연영상",
       },
     ],
@@ -216,34 +216,34 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/useForum1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/useForum1.webp",
         comment: "게시판 글, 댓글 작성, 좋아요 기능 시연",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/forumSearch.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/forumSearch.webp",
         comment: "게시판 검색 ",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/forumComment.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/forumComment.webp",
         comment: "댓글, 대댓글 작성",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumEntity.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumEntity.PNG",
         comment:
           "Forum의 Entity OneToMany와 cascade를 사용-> 글을 삭제하면 Many로 매핑된 친구들도 같이 삭제된다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumCommentEntity.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumCommentEntity.PNG",
         comment:
           "ForumComment의 Entity. ManyToOne으로 Forum(게시글)과의 관계를 명시적으로 작성, 부모코멘트, 자식코멘트(대댓글)의 관계도 작성",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumFrontCommentCode.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumFrontCommentCode.PNG",
         comment:
           "프론트의 댓글작성 함수. 대댓글의 경우 parentId 파라미터값을 넣어주면 OneToMany <-> ManyToOne 관계로 대댓글기능의 완성.",
       },
@@ -258,7 +258,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumFolder.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/5-1+forumFolder.PNG",
       ],
       comment:
         '*폴더구조* Entity, Controller, Service, Dto 별로 폴더를 나누는 곳이 아직까지는 많은듯 한데 본인은 이 "기능별 폴더구조"가 상당히 효율적이라고 생각한다. 역할의분담, 폴더를 여러개 늘어놓지도 않아도 직관적으로 빠르게 필요한 클래스사용가능, 지금처럼 게시글, 좋아요, 댓글처럼 3개의 엔티티를 필요로 할 경우 관련된, 혹은 하위의 폴더들을 엮을 수 있기 때문이다.',
@@ -272,30 +272,30 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8.WebSocketDemonstrate.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8.WebSocketDemonstrate.webp",
         comment:
           "댓글 알림 기능 시연영상. 스마트폰으로 내 개발서버 들어와서 댓글을 달아보니 스낵바가 출력되고 클릭 시 해당 게시글 이동도 가능하다. 디자인은 다르지만 dcinside에서 보는 그거 처럼 구현.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketReady.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketReady.PNG",
         comment:
           "Websocket 시험페이지. 댓글 알림 기능을 구현하기 전에 먼저 웹소켓 연결을 위한 시험 코드를 작성하고 연결해봤다. 시작부터 100을 내려고하기보단 1~2부터 시험해보는게 이해도, 기능구현도 더 빠르다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8.WebSocketCursor.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8.WebSocketCursor.PNG",
         comment:
           "커서 사용. 기존에 시험페이지에서는 단순 String으로 알림을 받았는데, 커서를 사용해서 JSON형태로 변경 후 받은 데이터를 가공하여 해당 댓글이 달린 글목록 페이지로 이동하게 하는등 여러 기능을 구현했다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketNotion.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketNotion.PNG",
         comment: "커서MCP를 사용해서 Notion에 배운내용 정리하라고 지시",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketNotionPageview.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/8WebSocketNotionPageview.PNG",
         comment: "Notion에 정상적으로 저장됐다.",
       },
     ],
@@ -319,18 +319,18 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp1.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp1.PNG",
         comment: "Google Takeout의 데이터들을 분석중인 모습",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp4.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp4.PNG",
         comment:
           "이런 상세한거 빼먹고 자기 맘대로 날짜지정하고 이상한걸 자기 맘대로 하려고한다. 역시 사람이 지시해야한다 아직까진",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp7.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcp7.PNG",
         comment:
           "업로드성공 날짜는 역시나 지 마음대로 막 지정했지만 크게 중요하진않아서 추후 MCP로 Notion에 저장할때 날짜까지 꼭 지정하라고 지시내려야겠다.",
       },
@@ -343,7 +343,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcpgif.webp",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/mcpgif.webp",
       ],
       comment: "Cursor AI가 MCP를 활용해서 Notion으로 데이터가 채워지는 모습",
     },
@@ -355,24 +355,24 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisRecentViewDemonstrate.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisRecentViewDemonstrate.webp",
         comment: "최근 본 항목 시연영상. 최근 본 이미지는 위로",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisRankingDemostrate.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisRankingDemostrate.webp",
         comment:
           "랭킹기능 시연영상. 디파일러가 좋아요 점수 3점을 획득함으로써 일간, 주간랭킹 1위로 치고 올라왔다 👏👏👏",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisRecentView.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisRecentView.PNG",
         comment:
           "최근 본 항목 구현 코드. incrementViewCount 함수는 DB에 조회수저장, Redis 캐시에 업데이트, 이미지 랭킹점수 업데이트를 동시에 행한다(Transactional 어노테이션 활용)",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisCacheLikeCount.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6RedisCacheLikeCount.PNG",
         comment:
           "레디스를 활용한 좋아요 숫자값 return함수 처음엔 DB에서 일일히 조회하는걸 AI가 놓쳐서 내가 의문을 제기하니까 맞는말하셨네요 죄송합니다! 라고 AI가 순순히 실수를 인정했다",
       },
@@ -387,7 +387,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6-1RedisRecentRefactoring.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/6-1RedisRecentRefactoring.PNG",
       ],
       comment:
         "레디스 활용 리팩토링코드. 기존의 최근 본 목록은 Image의 id를 리스트로 모아서 -> 해당 id에 맞는 이미지들을 API요청 -> DB에서 리스트로 불러왔는데 / 레디스를 활용해서 API, DB조회를 스킵하고 다이렉트로 ImageURL을 레디스에 저장하고 그 URL을 직접 렌더링하는 방식으로 개선했다. 물론 기존에 저장하던 이미지 id도 어디에선가 사용할 수 있을것 같아서 JSON형식으로 Value를 저장했다.",
@@ -401,25 +401,25 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-NewTopRanking.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-NewTopRanking.jpg",
         comment:
           "GetTopImages 메서드 리팩토링 스크린샷. String table 파라미터를 추가했고 이후 Image Forum이외에도 랭킹이 필요한 곳에 더 편리하게 사용할 수 있게 확장하였다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-ForumRankingDemo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-ForumRankingDemo.webp",
         comment:
           "Forum 랭킹 시연영상. 조회는 1점 좋아요는 3점으로 Image때와 같이 TTL설정도 잘 되어있다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-DistributedMethod.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-DistributedMethod.jpg",
         comment:
           "분산락 편의 메서드. executeWithLock이 오버로딩되어 두개있는데 하나는 return값이 없는 것, 하나는 리턴값이 있을때 어떤 타입이 들어올지 모를때 사용하는 제네릭 문법을 이용한 코드. Github참조.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-DistributedLockDemo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-DistributedLockDemo.webp",
         comment:
           "좋아요 중복 시연영상. 테스트라 5초의 텀을 지정해놓고 시험해보니 중복좋아요 방지가 잘 기능하고있다. GlobalException으로 프론트에서도 무슨에러인지 잘 확인가능.",
       },
@@ -432,7 +432,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-RateLimiting.jpg",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/16.Redis-RateLimiting.jpg",
       ],
       comment:
         'API RateLimiting도 구현했다. ......사실 nginx만으로도 충분할 것 같은 느낌이 들어서 별도로 항목을 개설하진 않았지만 커스텀 어노테이션, 3가지의 RateLimiting 방식, 인터셉터 등록 등 단계별 설정과 상황별 방식사용등 구조와 기능 흐름자체를 이해하는데에 큰 공부가 되었다. 코드는 AI가 짜고 기능까지 만들었지만 결국 "흐름"을 이해해야하는게 개발자인 것 같고 요새 개발자는 코더가아닌 설계자가 되어가는 느낌이 강한 것 같다..',
@@ -445,19 +445,19 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminDashboard.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminDashboard.webp",
         comment:
           "대시보드 시연영상 이미지 디테일, 최근 작성된 게시판 글을 간단하게 확인",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminMemberlist.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminMemberlist.webp",
         comment:
           "유저 관리 시연영상. 검색어 입력후 0.5초 후에 자동으로 검색목록을 불러온다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminImageList.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/7AdminImageList.webp",
         comment: "이미지 관리 시연영상. 간단하게 공개->비공개로 변경",
       },
     ],
@@ -480,23 +480,23 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzationDemon1.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzationDemon1.webp",
         comment: "업로드에 새로이 추가된 AI분석기능 시연영상",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzationDemon2.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzationDemon2.webp",
         comment: "AI로 추가된 태그들도 정상적으로 태그검색이 가능하다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzation5.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIAnalyzation5.PNG",
         comment:
           "바이브 코딩의 한 장면. 여기선 간단하게 원하는기능과 문제점을 서술하고있다. 결국 물리세계에서 체험은 인간이하고 AI에게 전달해야하는 것",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIService.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIService.PNG",
         comment:
           '프롬프트 엔지니어링. AI가 정확한 정보를 제공할 수 있게 5살짜리도 알아들을 수 있게 "설계"를 해야한다.',
       },
@@ -513,7 +513,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIController.PNG",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10.AIController.PNG",
       ],
       comment:
         "백엔드 컨트롤러 코드. 사실 Swagger도 이전에 도입했는데 프로젝트에는 굳이 서술하지 않을예정이다. 사용법도 별 거 없고 그냥 AI시키면 뚝딱 뿅~ 이기에.. 문서화로 인한 개발자 혹은 클라이언트간의 소통 개선.. 도있지만 사실 백엔드 코드보면 더 복잡해지는 단점도 있는 듯 하다.",
@@ -527,31 +527,31 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/Power_of_Gemini2.5.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/Power_of_Gemini2.5.jpg",
         comment:
           '검은수염 마샬 D.티치의 이미지 분석 시연(Gemini 2.5 Flash 버전). 상당히 정밀한 분석을 해주고있다. 아래의 Flash-1.5버전과는 다른 정교함. 루피가 날아가는모습, 한자로 써있는 "뇌명팔괘"도 번역하고 원피스 세계관과 잘 연결되어서 대답하고있는 모습이다. ',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo2.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo2.webp",
         comment:
           "검은수염 마샬 D.티치의 이미지 분석 시연. 이미지 파일 혹은 이미지 URL을 입력하면 원피스의 캐릭터 마샬 D.티치(검은수염)가 이미지를 분석해준다. 본인 사진이 맘에드는건지 안드는건지 모르겠다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDemo.webp",
         comment:
           "검은수염 마샬 D.티치의 이미지 분석 시연2. 최대의 라이벌 붉은머리 샹크스에 대한 말. 뭔가 헛소리하시는 것 같기도 하고 40세 답지 않은 중학생스러움이 매력적이다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharController.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharController.PNG",
         comment:
           "컨트롤러에 새로 추가된 코드(상세 GITHUB 백엔드 ImageController참조) 기존에 쓰던 이미지 분석 컨트롤러에서 함수만 살짝 바꿨다 이런식으로 Gemini등 프롬프트활용 API는 약간의 수정으로도 여러 컨텐츠를 만들어낼 수 있다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDTO.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/10-1.CharDTO.PNG",
         comment:
           "DTO도 기존의 것을 내가 원하는 데이터로 수정해서 Gemini에게 전달하고 전달 받는다. 서비스 역시 동일.",
       },
@@ -574,25 +574,25 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCode.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCode.PNG",
         comment:
           '테스트코드 샘플. "닉네임 중복에 대한 테스트코드" when의 thenReturn값을 바꾸면 아래의 테스트 실패가 발생한다.',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed.PNG",
         comment:
           '테스트 실패1. when(memberRepository\n.existsByUsername("user123"))\n.thenReturn(true); 로 실험(중복 아이디가 있어서 닉네임 검사 전에 바로 에러) 그 아래의 when코드가 실행되지 않기때문에 컴퓨터가 ??니 발동안하는 코드 있음 테스트실패 ㅅㄱ 라고 알려준다',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed2.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestCodeFailed2.PNG",
         comment:
           '테스트 실패2. 이번엔 when(memberRepository\n.existsByDisplayName("nickname"))\n.thenReturn(false); 로 했을 시(중복 닉네임이 없을시) 에러가 나질 않으니까 컴퓨터가 ??에러 안나는데? 너 테스트실패함 이라고 알려준다',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestPassed.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/11.SpringTestPassed.PNG",
         comment:
           "모든 단위 테스트 성공. 이렇게 테스트코드를 작성해놓으면 추후 여기서 사용했던 로직이 변경되어서 테스트가 실패되고 바로 디버깅->수정이 가능하다. 모든것이 자동화 되어 종합적으로 비용이 더 절약된다",
       },
@@ -617,54 +617,54 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-RedisError.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-RedisError.PNG",
         comment:
           "배포 전 도커환경 테스트에서의 Redis 서버 구동 오류. Production으로 바뀌었을때 포트설정 등의 오류가 있었다. 개발 초창기의 배포시 보다는 적극적으로 application-prod 파일 등을 적극적으로 써서 그나마 덜했으나 가끔 이런류의 예기치 못한 상황도 나오곤 한다. 이런 예기치 못한 오류가 있기 때문에 바이브코딩 등으론 한계가있다고 생각한다. 내가 찾아내기 전까지 AI는 다른거 고치라고 조잘 조잘..",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.DeployDocker.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.DeployDocker.PNG",
         comment: "로컬에서 확인한 도커환경 구동화면. 모드 정상작동한다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-totalModified.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-totalModified.PNG",
         comment:
           "내가 배포할 방법을 설명하고 yml파일 작성을 요구하고있다. 하지만..",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-ymlTrue.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-ymlTrue.jpg",
         comment:
           'AI는 내가 docker compose를 사용하리라곤 생각 못했는지 tar파일을 만들고 도커이미지 직접 생성하고 포트지정까지 하고있었다 그걸 본 내가 수정을 요구하는 모습. 이렇게 YML작성법, 문법을 내가 외울 이유는없다 이게 왜 틀렸는지 무슨코드인지 흐름을 알면 "단순기억"은 AI가 압도적으로 잘하기 때문에 쉽게 고칠 수 있다',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-DockerComposeUp.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-DockerComposeUp.PNG",
         comment:
           "ubuntu환경의 EC2 인스턴스 실행중 ls nano cd 등등.. 여러가지 리눅스 명령어를 사용했다. 이 배포과정에서 상당히 익숙해졌지만 배포란게 자주있는게 아니기에 필연적으로 머리론 까먹는다. 하지만 몸이 기억하고있다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-Overbuild.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-Overbuild.PNG",
         comment:
           "t2.micro 프리티어 메모리부족으로 빌드타임 오버. Github Actions도 똑같이 리소스부족으로 빌드타임 오버 현상이 일어났다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-On.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-On.PNG",
         comment:
           "돈만이 모든것을 능가한다!! t3.medium으로 배포성공. 요금 얼마나 먹을지 벌벌떨어가면서 몇 시간동안 테스트했다.",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.DeploySite.PNG",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.DeploySite.PNG",
         comment:
           "정상적으로 웹페이지가 접속된 모습. https 인증, 도메인 구매는 생략한다..",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-last.png",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/13.Deploy-last.png",
         comment:
           "GitHub Actions도 정상적으로 동작하는 모습. 아래 alert는 git push가 정상적으로 됐는지 확인하기위해 넣었다. 잘된다.",
       },
@@ -693,31 +693,31 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingAdminException.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingAdminException.jpg",
         comment:
           "최초 AI가 제시해준 클래스별 에러 코드. Admin이라는 디렉토리(기능)에 에러클래스들을 하나의 자바파일안에 여러개의 클래스로 작성해놨다.. 흠.. 이게 맞나 싶었다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingGlobalEH.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingGlobalEH.jpg",
         comment:
           "전역 에러 처리 핸들러 코드. 간단하게 GlobalException 하나로 에러처리기를 통일하고 서비스 계층에서 파라미터값을 메세지, 에러코드를 유동적으로 할당하여 편리성, 재사용성, 가독성 UP",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingGemini.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingGemini.jpg",
         comment:
           "이런식으로 서비스계층에서 GlobalException을 유동적으로 사용. 프론트에서도 직관적인 에러코드, HttpsStatus를 받아서 확인, 처리하기 편하다. 또한 RuntimeException을 남용하여 개발자도구에서 노출되었던 API구조 등도 숨길 수 있어서 보안도UP",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingDemo.webp",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingDemo.webp",
         comment:
           "프론트에서 받고있는 새로운 에러 메세지. 프론트의 에러처리 util함수도 추가했다 GitHub참조",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingMemberController.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/14.ErrorHandlingMemberController.jpg",
         comment:
           "이런 쓸데없이 컨트롤러에서 try catch 쓰는 코드도 사라졌다. 서비스 계층에서 모든 에러를 처리하여 일관성 확보",
       },
@@ -740,24 +740,24 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-MetricNameChange.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-MetricNameChange.jpg",
         comment:
           "Metrics Config의 커스텀 메트릭. 저 builder()의 파라미터값 지정이 곧 그라파나에서 보여지는 Query명이 되는데, 기존에 AI가 그라파나에서 사용하는 _가 아닌 .으로 지정해놔서 수정하고 있는모습. ( 수정 전의 이름으로해도 그라파나 내부에서 알아서 변환해주긴 한데 일관성, 직관성이 떨어져서 바꿨다. )",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-Docker.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-Docker.jpg",
         comment:
           "역시 도커신의 힘을 빌렸다.. 근데 프로젝트 하나에 이렇게 덕지덕지 붙어있는걸 보면 뭔가.. 익숙하지 않다",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-Prometheus.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-Prometheus.jpg",
         comment: "프로메테우스화면. 대체 이게 뭐가 뭔지..",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-GrafanaDashBoard-2.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/15.Monitoring-GrafanaDashBoard-2.jpg",
         comment:
           "그라파나의 Dashboard 화면.  이미지 업로드, 포스트 업로드를 실제 행해서 적용되는지 확인해보고 각 패널이름도 변경해봤다. ",
       },
@@ -784,34 +784,34 @@ const sections = [
     images: [
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka.png",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka.png",
         comment: "카프카 클러스터 구조도",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-1.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-1.jpg",
         comment: "카프카의 구성요소 간단정리",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-EmailOK.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-EmailOK.jpg",
         comment: "결과부터 확인 : 이메일 발송, 수신완료!",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-AIMiss.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-AIMiss.jpg",
         comment:
           'AI와의 문답1. 설명을 너무 못한다. 카프카의 "필수요소 즉시응답"을 말하고 싶은 듯 했으나 내 이미지 분석로직을 잘못분석해서 필수요소를 선택적요소라고 파악하고 Kafka에 맡겨버리는 생각을 한 듯하다.. 이렇듯 이상한소리하는 AI에 채찍질 하는 사람이 되야겠다',
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-Answer.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-Answer.jpg",
         comment:
           "AI와의 문답2. 뭔가 요즘 AI는 죄다 아이고 내새끼 잘했어!! 다 니가맞아!! 하는경향이 있는 것 같아서 틀리면 틀렸다고 말하라 해야하는 것 같다. 뭘 자꾸 핵심을 찌르는 질문이란건지..",
       },
       {
         image:
-          "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-LOWROI.jpg",
+          "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-LOWROI.jpg",
         comment:
           "AI와의 문답3. 카프카를 이해하고 사용하고자 했으나 AI는 역시 기능A를 모든곳에 사용하려고 하는듯하다.. 아직까지 비즈니스 로직 사용은 인간이 판단해야하는 것 같다",
       },
@@ -832,7 +832,7 @@ const sections = [
     specialStyle: {},
     spDescription: {
       image: [
-        "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-ElasticSearchComplete.jpg",
+        "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/imgbell/17.Kafka-ElasticSearchComplete.jpg",
       ],
       comment:
         "카프카 엘라스틱서치 동기화 구현에 성공한 로그. 자세한 코드는 ImgBell백엔드 깃허브 Kafka디렉토리에서 확인가능하다",

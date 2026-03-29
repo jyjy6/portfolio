@@ -258,21 +258,21 @@ const AIComments = [
   {
     id: 0,
     model: "ChatGPT-5",
-    img: "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/gpt5.jpg",
+    img: "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/gpt5.jpg",
     jpComment:
       "要約\n\n• レベル: 3〜5年のミドルレベル上級（シニア初級レベル）\n• ガイド年収: 韓国 7,500万〜9,500万ウォン / 日本 850万〜1,100万円\n• 強み: 人工知能・ストレージ・モニタリング・フロントエンド状態管理まで実戦経験\n• 補完: 保安・正教化・モデル化・テスト・観測性、K8s/IaCでの運営標準化\n• 核心: OAuth2/OIDC/OTel/Kafka-EO/K8s/Terraform/ゲートウェイスト中心で3〜6ヶ月集中",
   },
   {
     id: 1,
     model: "Gemini-2.5-Pro",
-    img: "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/Gemini.jpg",
+    img: "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/Gemini.jpg",
     jpComment:
       "簡単要約\n\n* 実力水準: MSA、DevOps、Polyglot開発経験を持つ3-5年次中級開発者。\n* 核心強み:\n  * Java/Spring、Vue/Nuxt基盤のフルスタック開発能力。\n  * Docker、Kafka、Elasticsearch、Prometheusなど現代的なインフラ技術活用能力。\n* 推定年収: 韓国 6,000-8,500万ウォン+、日本 700万-1,000万円+",
   },
   {
     id: 2,
     model: "Claude Sonnet 4.0",
-    img: "https://juneyoung3da.s3.ap-northeast-2.amazonaws.com/portfolio/claude.jpg",
+    img: "https://juneyoung4da.s3.ap-northeast-2.amazonaws.com/portfolio/claude.jpg",
     jpComment:
       "強みとポイント:\n\n1. AI時代適応: Gemini API、MCP活用など最新技術への迅速な習得\n2. フルスタック目標: フロントエンドからインフラまで全領域カバー\n3. 実務中心学習: 単純チュートリアルではない実際サービス水準の構現\n4. 問題解決能力: 技術的課題状況での対案発見及び最適化\n\n現在実力: 2-3年次中級開発者水準\n核心強み: AI活用能力、フルスタック開発、最新技術への迅速な習得",
   },
