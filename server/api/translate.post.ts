@@ -7,26 +7,26 @@ ${text}`;
 
   try {
     const response = await fetch(
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": config.NUXT_API_KEY,
-    },
-    body: JSON.stringify({
-      contents: [
-        {
-          parts: [
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": config.NUXT_API_KEY,
+        },
+        body: JSON.stringify({
+          contents: [
             {
-              text: prompt,
+              parts: [
+                {
+                  text: prompt,
+                },
+              ],
             },
           ],
-        },
-      ],
-    }),
-  }
-);
+        }),
+      },
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
