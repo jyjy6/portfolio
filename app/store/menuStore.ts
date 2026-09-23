@@ -59,7 +59,7 @@ export const useMenuStore = defineStore("menu", () => {
       icon: "mdi-brain",
       route: "/nano-banana",
       recommended: true,
-      level: "current",
+      level: "intermediate",
     },
     {
       title: "개발자맞춤형 커리어 AI챗봇 API",
@@ -69,19 +69,34 @@ export const useMenuStore = defineStore("menu", () => {
       level: "intermediate",
     },
     {
-      title: "LangChain4j 프로젝트",
-      icon: "mdi-link-variant",
-      route: "/langchain4j",
+      title: "[Released App] Pitch Player",
+      icon: "mdi-play",
+      link: "https://play.google.com/store/apps/details?id=com.pitchplayer.app",
       recommended: true,
       level: "current",
     },
     {
-      title: "[진행중] MSA 이커머스 프로젝트(Spring Cloud Gateway+SDD)",
-      icon: "mdi-store",
-      link: "https://github.com/jyjy6/jymusic",
+      title: "[진행중] MSA+AI Service 프로젝트",
+      icon: "mdi-music",
+      link: "https://github.com/jungjyport/rtcdelivery",
       recommended: true,
       level: "current",
     },
+    {
+      title: "MSA 이커머스 프로젝트",
+      icon: "mdi-store",
+      link: "https://github.com/jyjy6/jymusic",
+      recommended: false,
+      level: "current",
+    },
+    {
+      title: "LangChain4j 프로젝트",
+      icon: "mdi-link-variant",
+      route: "/langchain4j",
+      recommended: false,
+      level: "current",
+    },
+
     { title: "CONTACT", icon: "mdi-email", route: "/contact" },
   ];
 
